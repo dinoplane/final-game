@@ -67,7 +67,7 @@ To properly add a cat to the level, you have to:
 2. The cat is added to the level.
 3. The cats tilesheet contains the cat and the cat has the correct type. You can edit tilesheets by clicking on the bottom right of the screen.
 
-![This is an image](/assets/docs/edit_tilesets.JPG)
+![This is an image](/assets/docs/edit_tileset.JPG)
 ![This is an image](/assets/docs/change_type.JPG)
 
 4. Make sure the atlas contains the cat you want to add (or the texture is loaded). 
