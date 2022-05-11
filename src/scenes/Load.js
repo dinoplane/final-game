@@ -6,6 +6,8 @@ class Load extends Phaser.Scene { // First time load
 
     preload(){
         this.load.image("player", "./assets/images/player.png");
+        this.load.image("food", "./assets/images/food.png");
+        
 
         this.load.image("ground_tileset_image", "./assets/tilesets/ground_tileset.png" );
         // Load.CAT_NAMES.forEach(cat => { 

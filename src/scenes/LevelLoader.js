@@ -38,10 +38,16 @@ Make sure the atlas contains the cat you want.
 */
 
 class LevelLoader {
-    static TYPE_MAP = {"food" : Food,
+    static TYPE2TEXTURE = {
+                            "food" : 'food',
+                            "player" : 'player',
+                            "biscuit": ''
+                          }
+    static TYPE2CLASS = {
+                        "food" : Food,
                         "player" : Player,
                         "biscuit": PlatformCat
-                    }
+                        }
 
     constructor(scene, i){
         this.scene = scene;
@@ -62,8 +68,10 @@ class LevelLoader {
         this.map.objects.forEach( (objlayer) => {
             console.log(objlayer.objects)
             objlayer.objects.forEach((obj) => {
-                console.log(obj)
-                this.scene.add.sprite(obj.x, obj.y,"cats_atlas", obj.type).setOrigin(0,1)
+                if (obj.type == "player") this.scene.add.sprite(obj.x, obj.y, "player").setOrigin(0,1);
+                else if (obj.type == "food") this.scene.add.sprite(obj.x, obj.y, "food").setOrigin(0,1);
+                else this.scene.add.sprite(obj.x, obj.y,"cats_atlas", obj.type).setOrigin(0,1); 
+                
             })
         });
 
