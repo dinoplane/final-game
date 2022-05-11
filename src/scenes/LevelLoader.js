@@ -38,11 +38,6 @@ Make sure the atlas contains the cat you want.
 */
 
 class LevelLoader {
-    static TYPE2TEXTURE = {
-                            "food" : 'food',
-                            "player" : 'player',
-                            "biscuit": ''
-                          }
     static TYPE2CLASS = {
                         "food" : Food,
                         "player" : Player,
