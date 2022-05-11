@@ -7,14 +7,38 @@ A game about cats in space!
 
 ## How to use Level Loader
 
-There are 2 major steps divided by the application you use and what you are adding.  
-
 Folder structure:
-
-
+```
+final-game
+  -assets
+    -docs (images for this guide)
+    -images
+      -concept  (concept art lives here)
+      -(player and food assets)
+      -cat_atlas.png  (atlas itself)
+      -cat_atlas.json (for atlas) 
+    -tilemaps
+      -level0.tmx (the tilemap file)
+      -level0.json (exported json)
+    -tilesets (put your tilesets in here)
+      -cats_tileset
+        -(various tileset_images by cat name only)
+        -ground_tileset.png
+  -lib (phaser lives here)
+  -src
+    -prefab  (all prefabs live here)
+    -scenes  (all scenes live here)
+  main.js   (starts the mainloop)
+```
 
 TILED:
 In TILED, the tilemap file should look like this:
+
+![This is an image](/assets/docs/folder_structure.JPG)
+
+Make sure you have created the tilemap file inside the ```tilemaps``` folder. The name of the file should be ```level{i}``` where i is the level name. So level 1 would have a filename of level1.tmx. 
+
+
 
 Each tile is currently on a ground_tileset. You may add more tiles as needed. 
 All these tiles have the same behavior; they collide with the player. 
