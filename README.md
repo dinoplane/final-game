@@ -35,5 +35,5 @@ To properly add a cat to the level, you have to:
 
 Loading up the images in phaser:
 
-Make sure the atlas contains the cat you want. 
+
 
