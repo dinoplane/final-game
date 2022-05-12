@@ -68,7 +68,7 @@ class LevelLoader {
         this.map.objects.forEach( (objlayer) => {
             console.log(objlayer.objects)
             objlayer.objects.forEach((obj) => {
-                if (obj.type == "player") this.scene.add.sprite(obj.x, obj.y, "player").setOrigin(0,1);
+                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1);
                 else if (obj.type == "food") this.scene.add.sprite(obj.x, obj.y, "food").setOrigin(0,1);
                 else this.scene.add.sprite(obj.x, obj.y,"cats_atlas", obj.type).setOrigin(0,1); 
                 
