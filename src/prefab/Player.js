@@ -50,6 +50,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.setDragX(Player.DRAG);
 
+        //this.body.setCollideWorldBounds(true);
+        //this.body.onWorldBounds = true;   
+
     }
     
     resetJumps(){

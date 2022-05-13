@@ -46,7 +46,8 @@ class LevelLoader {
     static TYPE2CLASS = {
                         "food" : Food,
                         "player" : Player,
-                        "biscuit": PlatformCat
+                        "luna": PlatformCat,
+                        "newton": FallingCat
                         }
 
     constructor(scene, i){
@@ -74,7 +75,7 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y).setOrigin(0,1));
                 } else {
-                    cat_array.push(new FallingCat(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1));
+                    cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](this.scene, obj.x, obj.y, obj.type).setOrigin(0,1));
                 } 
                 
             })

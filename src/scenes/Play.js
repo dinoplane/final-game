@@ -37,7 +37,8 @@ class Play extends Phaser.Scene {
             }
         })
         //this.physics.add.collider(this.player, )
-
+        this.physics.world.setBounds(game.config.width, game.config.height);
+        
         
 
         

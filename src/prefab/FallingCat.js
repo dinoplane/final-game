@@ -3,25 +3,15 @@ class FallingCat extends PlatformCat { // A cat that caan be collided with
 
     constructor(scene, x, y, texture){
         super(scene, x, y, texture);
-        
-        this.body.allowGravity = false;
-        this.setImmovable(true);
-        
-
     }
-
-
-
 
     onCollide(player){
         super.onCollide(player);
-        this.body.allowGravity = true;
+
+        this.setInteractive(false);
+        this.setAccelerationY(100);
 
     }
-
-
-
-
 
     update(){
     }

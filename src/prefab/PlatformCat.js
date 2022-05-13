@@ -3,13 +3,9 @@ class PlatformCat extends Cat { // A cat that caan be collided with
 
     constructor(scene, x, y, texture){
         super(scene, x, y, texture);
-        
-        
-
+        this.body.allowGravity = false;
+        this.setImmovable(true);
     }
-
-
-
 
     onCollide(player){
         player.resetJumps();
@@ -20,12 +16,5 @@ class PlatformCat extends Cat { // A cat that caan be collided with
             player.setVelocityY(0);
             player.y -= player.y - this.y + this.height
         //}
-
-    }
-
-
-
-
-    update(){
     }
 }
