@@ -1,4 +1,4 @@
-class PlatformCat extends Cat { // A cat that caan be collided with
+class PlatformCat extends Cat { // A cat that can be collided with.
     static SELECTED_CAT = null;
 
     constructor(scene, x, y, texture){

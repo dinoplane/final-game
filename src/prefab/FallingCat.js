@@ -1,6 +1,4 @@
-class FallingCat extends PlatformCat { // A cat that caan be collided with
-    static SELECTED_CAT = null;
-
+class FallingCat extends PlatformCat { // A cat that falls
     constructor(scene, x, y, texture){
         super(scene, x, y, texture);
     }
@@ -11,8 +9,5 @@ class FallingCat extends PlatformCat { // A cat that caan be collided with
         this.setInteractive(false);
         this.setAccelerationY(100);
 
-    }
-
-    update(){
     }
 }
