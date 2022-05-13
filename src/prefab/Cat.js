@@ -1,14 +1,22 @@
 class Cat extends Phaser.Physics.Arcade.Sprite {
+    static SELECTED_CAT = null;
+
     constructor(scene, x, y, frame){
         super(scene, x, y, "cats_atlas", frame);
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
+        this.addPointerCallbacks();
 
         this.name = frame;
         this.selected = false;
-        this.body.allowGravity = false;
-        this.setImmovable(true);
+    }
+
+    addPointerCallbacks(){
+        this.setInteractive();
+        this.on('pointerdown', (pointer) => {
+            this.onLeftClicked();
+        });
     }
 
     onCollide(player){
@@ -16,19 +24,34 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     onOverlap(player){
-        
-    }
-
-    onClicked(pointer){
 
     }
 
-    onSelected(pointer){
+    onLeftClicked(){
+        console.log (this.selected)
+        if (!this.selected && Cat.SELECTED_CAT == null){
+            this.onSelected();
+        } else if (this.selected && Cat.SELECTED_CAT != null){
+            this.onDeselected()
+        };
+    }
+
+    onRightClicked(){
 
     }
 
-    onDeselected(pointer){
+    onSelected(){
+        this.selected = true;
+        Cat.SELECTED_CAT = this;
+        this.setTexture("cats_atlas", this.name+"_owo");
+        // Create a sprite after image. add a collider that switches its animations. 
 
+    }
+
+    onDeselected(){
+        Cat.SELECTED_CAT = null;
+        this.setTexture("cats_atlas", this.name);
+        this.selected = false;
     }
 
     update(){
