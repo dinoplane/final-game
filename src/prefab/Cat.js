@@ -15,6 +15,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     }
 
+    onOverlap(player){
+        
+    }
+
     onClicked(pointer){
 
     }

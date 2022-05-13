@@ -25,6 +25,10 @@ class Play extends Phaser.Scene {
         this.physics.add.collider(this.player, this.objects.cats, (player, cat) => {
             cat.onCollide(player);
         });
+        this.physics.add.overlap(this.player, this.objects.cats, (player, cat) => {
+            cat.onOverlap(player);
+        });
+        
         
         this.input.on("pointerdown", (pointer, obj) => {
             if (Cat.SELECTED_CAT != null && obj.length == 0){

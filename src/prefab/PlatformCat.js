@@ -20,6 +20,15 @@ class PlatformCat extends Cat { // A cat that caan be collided with
         player.resetJumps();
     }
 
+    onOverlap(player){
+        console.log("HOLY");
+        //if (player.y + player.height < this.y){
+            player.setVelocityY(0);
+            player.y -= player.y - this.y + this.height
+        //}
+
+    }
+
     onLeftClicked(){
         console.log (this.selected)
         if (!this.selected && Cat.SELECTED_CAT == null){
