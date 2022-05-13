@@ -1,18 +1,18 @@
 { "compressionlevel":-1,
- "height":7,
+ "height":11,
  "infinite":false,
  "layers":[
         {
          "compression":"",
-         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=",
+         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAA==",
          "encoding":"base64",
-         "height":7,
+         "height":11,
          "id":1,
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":14,
+         "width":20,
          "x":0,
          "y":0
         }, 
@@ -31,7 +31,7 @@
                  "visible":true,
                  "width":64,
                  "x":449,
-                 "y":381
+                 "y":637
                 }, 
                 {
                  "gid":2,
@@ -43,7 +43,7 @@
                  "visible":true,
                  "width":64,
                  "x":125,
-                 "y":380
+                 "y":636
                 }, 
                 {
                  "gid":2,
@@ -55,7 +55,7 @@
                  "visible":true,
                  "width":64,
                  "x":833,
-                 "y":384
+                 "y":640
                 }, 
                 {
                  "gid":4,
@@ -67,7 +67,67 @@
                  "visible":true,
                  "width":64,
                  "x":0,
-                 "y":383
+                 "y":639
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":46,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":609,
+                 "y":245
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":47,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":173,
+                 "y":116
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":48,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":991,
+                 "y":132
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":49,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":273,
+                 "y":445
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":50,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":943,
+                 "y":448
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -81,40 +141,76 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":25,
+                 "gid":57,
+                 "height":65,
+                 "id":40,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"luna",
                  "visible":true,
-                 "width":215,
-                 "x":184,
-                 "y":260
+                 "width":132,
+                 "x":357,
+                 "y":541
                 }, 
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":26,
+                 "gid":57,
+                 "height":65,
+                 "id":42,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"luna",
                  "visible":true,
-                 "width":215,
-                 "x":428,
-                 "y":132
+                 "width":132,
+                 "x":898,
+                 "y":517
                 }, 
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":27,
+                 "gid":57,
+                 "height":65,
+                 "id":45,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"luna",
                  "visible":true,
-                 "width":215,
-                 "x":600,
-                 "y":326
+                 "width":132,
+                 "x":390,
+                 "y":265
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":51,
+                 "name":"",
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":68,
+                 "y":363
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":52,
+                 "name":"",
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":626,
+                 "y":378
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":53,
+                 "name":"",
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":1007,
+                 "y":353
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -134,7 +230,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":39,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
@@ -245,5 +341,5 @@
  "tilewidth":64,
  "type":"map",
  "version":"1.8",
- "width":14
+ "width":20
 }

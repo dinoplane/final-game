@@ -2,7 +2,8 @@ class LevelLoader {
     static TYPE2CLASS = {
                         "food" : Food,
                         "player" : Player,
-                        "biscuit": PlatformCat
+                        "luna": PlatformCat,
+                        "newton": FallingCat
                         }
 
     constructor(scene, i){
@@ -20,18 +21,23 @@ class LevelLoader {
     }
 
     loadLevel(){
-        let ret_array = [];
+        let food_array = [];
+        let cat_array = [];
         this.map.objects.forEach( (objlayer) => {
             console.log(objlayer.objects)
             objlayer.objects.forEach((obj) => {
-                if (obj.type == "player") this.scene.add.sprite(obj.x, obj.y, "player").setOrigin(0,1);
-                else if (obj.type == "food") this.scene.add.sprite(obj.x, obj.y, "food").setOrigin(0,1);
-                else this.scene.add.sprite(obj.x, obj.y,"cats_atlas", obj.type).setOrigin(0,1); 
+                let e = null;
+                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1);
+                else if (obj.type == "food") {
+                    food_array.push(new Food(this.scene, obj.x, obj.y).setOrigin(0,1));
+                } else {
+                    cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](this.scene, obj.x, obj.y, obj.type).setOrigin(0,1));
+                } 
                 
             })
         });
 
-        return ret_array;
+        return {food: food_array, cats: cat_array};
     }
 
     loadGround(){
