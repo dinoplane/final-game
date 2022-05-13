@@ -1,4 +1,4 @@
-class Cat extends Phaser.Physics.Arcade.Sprite {
+class CatSoul extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y, frame){
         super(scene, x, y, "cats_atlas", frame);
         

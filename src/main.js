@@ -11,14 +11,14 @@
 var config = {
     type: Phaser.CANVAS,
     width: 1280,
-    height: 720,
+    height: 704,
     scene: [Load, Play],
     physics: {
       default: 'arcade',
       arcade: {
         gravity: {
           x: 0,
-          y: 1000
+          y: 1200
            },  
         debug: true
       }

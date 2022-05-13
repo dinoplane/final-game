@@ -1,5 +1,6 @@
 class Player extends Phaser.Physics.Arcade.Sprite {
     static ACCEL = 3000;
+    static JUMP_V = 500;
     static MAX_V = 300;
     static DRAG = 1000;
     static MAX_JUMPS = 2;
@@ -14,7 +15,10 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
 
         this.gameOver = false;
+        this.food = 0;
         this.jumps = 0;
+
+        this.pointer = 
 
         this.cursors = this.scene.input.keyboard.addKeys({ 
             'left': Phaser.Input.Keyboard.KeyCodes.A, 
@@ -24,7 +28,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.cursors.up.on('down', key =>{
             if (this.jumps < Player.MAX_JUMPS){
-                this.setVelocityY(-500);  
+                this.setVelocityY(-Player.JUMP_V);  
                 this.jumps += 1;
             }
         });
@@ -43,7 +47,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                 });
 //                d.push(tmpKey);
         }
-        this.setMaxVelocity(Player.MAX_V);
+        this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.setDragX(Player.DRAG);
 
     }
@@ -51,7 +55,15 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     resetJumps(){
         this.jumps = 0;
     }
-    
+
+    incrementFood(){
+        this.food += 1;
+    }
+
+    resetFood(){
+        this.food = 0;
+    }
+
     update(){
         console.log(this.isMidair)
     }
@@ -66,11 +78,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                 if (!k.isDown){
                     this.setAcceleration(0, 0);
                 } else {
-                    if (-a < 0){
-                        d = 0.5;
-                    } else {
-                        d = 10;
-                    };
                     this.setAcceleration(-a, 0);
             //        break;
                 }

@@ -10,7 +10,8 @@ class Play extends Phaser.Scene {
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
         
-        let objects = this.levelLoader.loadLevel();
+        this.objects = this.levelLoader.loadLevel();
+        console.log(this.objects)
 
         //this.player = this.physics.add.sprite(0,0, 'player');
         this.physics.add.collider(this.player, this.levelLoader.loadGround(),
@@ -18,6 +19,19 @@ class Play extends Phaser.Scene {
                                         this.onGroundCollide(p, g);
                                     });
 
+        this.physics.add.overlap(this.player, this.objects.food, (player, food) => {
+            food.onCollide(player);
+        });
+        this.physics.add.collider(this.player, this.objects.cats, (player, cat) => {
+            cat.onCollide(player);
+        });
+        
+        this.input.on("pointerdown", (pointer, obj) => {
+            if (Cat.SELECTED_CAT != null && obj.length == 0){
+                Cat.SELECTED_CAT.setPosition(pointer.x-Cat.SELECTED_CAT.width/2, pointer.y+Cat.SELECTED_CAT.height/2);
+                Cat.SELECTED_CAT.onDeselected();
+            }
+        })
         //this.physics.add.collider(this.player, )
 
         
@@ -42,7 +56,6 @@ class Play extends Phaser.Scene {
         //     this.player.body.setVelocityY(-this.VELOCITY);
         // }
 
-        console.log(this.player.isMidair);
     }
 
     onGroundCollide(player, ground){
