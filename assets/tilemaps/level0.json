@@ -30,8 +30,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":449,
-                 "y":637
+                 "x":579,
+                 "y":217
                 }, 
                 {
                  "gid":2,
@@ -42,8 +42,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":125,
-                 "y":636
+                 "x":850,
+                 "y":127
                 }, 
                 {
                  "gid":2,
@@ -66,20 +66,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":0,
-                 "y":639
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
-                 "id":46,
-                 "name":"",
-                 "rotation":0,
-                 "type":"food",
-                 "visible":true,
-                 "width":64,
-                 "x":609,
-                 "y":245
+                 "x":25,
+                 "y":470
                 }, 
                 {
                  "gid":2,
@@ -114,8 +102,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":273,
-                 "y":445
+                 "x":164,
+                 "y":350
                 }, 
                 {
                  "gid":2,
@@ -143,38 +131,14 @@
                 {
                  "gid":57,
                  "height":65,
-                 "id":40,
-                 "name":"",
-                 "rotation":0,
-                 "type":"luna",
-                 "visible":true,
-                 "width":132,
-                 "x":357,
-                 "y":541
-                }, 
-                {
-                 "gid":57,
-                 "height":65,
-                 "id":42,
-                 "name":"",
-                 "rotation":0,
-                 "type":"luna",
-                 "visible":true,
-                 "width":132,
-                 "x":898,
-                 "y":517
-                }, 
-                {
-                 "gid":57,
-                 "height":65,
                  "id":45,
                  "name":"",
                  "rotation":0,
                  "type":"luna",
                  "visible":true,
                  "width":132,
-                 "x":390,
-                 "y":265
+                 "x":345,
+                 "y":323
                 }, 
                 {
                  "gid":58,
@@ -185,20 +149,8 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":68,
-                 "y":363
-                }, 
-                {
-                 "gid":58,
-                 "height":96,
-                 "id":52,
-                 "name":"",
-                 "rotation":0,
-                 "type":"newton",
-                 "visible":true,
-                 "width":157,
-                 "x":626,
-                 "y":378
+                 "x":103,
+                 "y":511
                 }, 
                 {
                  "gid":58,
@@ -209,8 +161,54 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":1007,
-                 "y":353
+                 "x":818,
+                 "y":258
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":54,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.5
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":1086,
+                 "y":639
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":55,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.25
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":563,
+                 "y":639
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -230,7 +228,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":54,
+ "nextobjectid":56,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
@@ -299,6 +297,17 @@
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
                  "imageheight":351,
                  "imagewidth":83,
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":1
+                        }],
                  "type":"hubert"
                 }, 
                 {

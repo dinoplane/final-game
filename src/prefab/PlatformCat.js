@@ -1,7 +1,7 @@
 class PlatformCat extends Cat { // A cat that can be collided with.
     static SELECTED_CAT = null;
 
-    constructor(scene, x, y, texture){
+    constructor(scene, x, y, texture, data){
         super(scene, x, y, texture);
         this.body.allowGravity = false;
         this.setImmovable(true);

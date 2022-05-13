@@ -1,7 +1,7 @@
 class Cat extends Phaser.Physics.Arcade.Sprite {
     static SELECTED_CAT = null;
 
-    constructor(scene, x, y, frame){
+    constructor(scene, x, y, frame, data){
         super(scene, x, y, "cats_atlas", frame);
         
         scene.add.existing(this);

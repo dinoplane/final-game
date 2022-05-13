@@ -3,7 +3,8 @@ class LevelLoader {
                         "food" : Food,
                         "player" : Player,
                         "luna": PlatformCat,
-                        "newton": FallingCat
+                        "newton": FallingCat,
+                        "hubert": LongCat
                         }
 
     constructor(scene, i){
@@ -31,7 +32,9 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y).setOrigin(0,1));
                 } else {
-                    cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](this.scene, obj.x, obj.y, obj.type).setOrigin(0,1));
+                    console.log(obj)
+                    cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
+                                this.scene, obj.x, obj.y, obj.type, obj.properties).setOrigin(0,1));
                 } 
                 
             })

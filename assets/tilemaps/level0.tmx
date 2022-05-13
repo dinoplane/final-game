@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="54">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="56">
  <editorsettings>
   <export target="level0.json" format="json"/>
  </editorsettings>
@@ -20,6 +20,10 @@
    <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
   </tile>
   <tile id="4" type="hubert">
+   <properties>
+    <property name="end_scale" type="float" value="1"/>
+    <property name="init_scale" type="float" value="1"/>
+   </properties>
    <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
   </tile>
   <tile id="5" type="jasmine">
@@ -44,23 +48,29 @@
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="449" y="637" width="64" height="64"/>
-  <object id="36" gid="2" x="125" y="636" width="64" height="64"/>
+  <object id="35" gid="2" x="579" y="217" width="64" height="64"/>
+  <object id="36" gid="2" x="850" y="127" width="64" height="64"/>
   <object id="37" gid="2" x="833" y="640" width="64" height="64"/>
-  <object id="38" gid="4" x="0" y="639" width="64" height="64"/>
-  <object id="46" gid="2" x="609" y="245" width="64" height="64"/>
+  <object id="38" gid="4" x="25" y="470" width="64" height="64"/>
   <object id="47" gid="2" x="173" y="116" width="64" height="64"/>
   <object id="48" gid="2" x="991" y="132" width="64" height="64"/>
-  <object id="49" gid="2" x="273" y="445" width="64" height="64"/>
+  <object id="49" gid="2" x="164" y="350" width="64" height="64"/>
   <object id="50" gid="2" x="943" y="448" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="40" gid="57" x="357" y="541" width="132" height="65"/>
-  <object id="42" gid="57" x="898" y="517" width="132" height="65"/>
-  <object id="45" gid="57" x="390" y="265" width="132" height="65"/>
-  <object id="51" gid="58" x="68" y="363" width="157" height="96"/>
-  <object id="52" gid="58" x="626" y="378" width="157" height="96"/>
-  <object id="53" gid="58" x="1007" y="353" width="157" height="96"/>
+  <object id="45" gid="57" x="345" y="323" width="132" height="65"/>
+  <object id="51" gid="58" x="103" y="511" width="157" height="96"/>
+  <object id="53" gid="58" x="818" y="258" width="157" height="96"/>
+  <object id="54" gid="55" x="1086" y="639" width="83" height="351">
+   <properties>
+    <property name="init_scale" type="float" value="0.5"/>
+   </properties>
+  </object>
+  <object id="55" gid="55" x="563" y="639" width="83" height="351">
+   <properties>
+    <property name="init_scale" type="float" value="0.25"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="Player"/>
 </map>
