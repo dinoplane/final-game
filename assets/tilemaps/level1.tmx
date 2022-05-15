@@ -20,6 +20,10 @@
    <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
   </tile>
   <tile id="4" type="hubert">
+   <properties>
+    <property name="end_scale" type="float" value="1"/>
+    <property name="init_scale" type="float" value="1"/>
+   </properties>
    <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
   </tile>
   <tile id="5" type="jasmine">

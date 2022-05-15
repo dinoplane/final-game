@@ -4,7 +4,9 @@ class LevelLoader {
                         "player" : Player,
                         "luna": PlatformCat,
                         "newton": FallingCat,
-                        "hubert": LongCat
+                        "hubert": LongCat,
+                        "biscuit": PlatformCat,
+                        "quinn": PlatformCat
                         }
 
     constructor(scene, i){
