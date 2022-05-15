@@ -18,8 +18,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.food = 0;
         this.jumps = 0;
 
-        this.pointer = 
-
         this.cursors = this.scene.input.keyboard.addKeys({ 
             'left': Phaser.Input.Keyboard.KeyCodes.A, 
             'right': Phaser.Input.Keyboard.KeyCodes.D, 
@@ -32,6 +30,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                 this.jumps += 1;
             }
         });
+
         this.controls = [];
         for (let c of Player.CONTROL_CONFIG){
             // let d = [];
@@ -45,14 +44,13 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                     console.log(key)
                     this.onXUp(c.arg);
                 });
-//                d.push(tmpKey);
+//                d.push(tmpKey);   
         }
+
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.setDragX(Player.DRAG);
-
         //this.body.setCollideWorldBounds(true);
         //this.body.onWorldBounds = true;   
-
     }
     
     resetJumps(){

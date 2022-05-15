@@ -47,7 +47,11 @@ class LevelLoader {
                         "food" : Food,
                         "player" : Player,
                         "luna": PlatformCat,
-                        "newton": FallingCat
+                        "newton": FallingCat,
+                        "hubert": LongCat,
+                        "horton": BounceCat,
+                        "biscuit": PlatformCat,
+                        "quinn": PlatformCat,
                         }
 
     constructor(scene, i){

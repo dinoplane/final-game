@@ -7,6 +7,7 @@ class Play extends Phaser.Scene {
     }
 
     create(){
+
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
         
@@ -22,6 +23,8 @@ class Play extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.objects.food, (player, food) => {
             food.onCollide(player);
         });
+        this.foodNum = this.objects.food.length;
+
         this.physics.add.collider(this.player, this.objects.cats, (player, cat) => {
             cat.onCollide(player);
         });
@@ -37,29 +40,17 @@ class Play extends Phaser.Scene {
             }
         })
         //this.physics.add.collider(this.player, )
-        this.physics.world.setBounds(game.config.width, game.config.height);
-        
-        
-
-        
+        //this.physics.world.setBounds(game.config.width, game.config.height);
     }
 
     onGameOver(){
     }
     
     update(time, delta){
-        // if (!cursors.right.isDown && !cursors.left.isDown){
-        //     this.player.body.setVelocityX(0);            
-        // }
-
-        // // check keyboard input
-        // if(cursors.left.isDown) {
-        //     this.player.body.setVelocityX(-this.VELOCITY);
-        // } else if(cursors.right.isDown) {
-        //     this.player.body.setVelocityX(this.VELOCITY);
-        // } else if(cursors.up.isDown) {
-        //     this.player.body.setVelocityY(-this.VELOCITY);
-        // }
+        if (this.player.food == this.foodNum){
+            level = (level + 1) % gameOptions.levels;
+            this.scene.restart();
+        }
 
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="54">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="57">
  <editorsettings>
   <export target="level0.json" format="json"/>
  </editorsettings>
@@ -8,36 +8,7 @@
   <tile id="1" type="food"/>
   <tile id="3" type="player"/>
  </tileset>
- <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="9" columns="0">
-  <grid orientation="orthogonal" width="1" height="1"/>
-  <tile id="0" type="biscuit">
-   <image width="215" height="53" source="../tilesets/cats_tileset/biscuit.png"/>
-  </tile>
-  <tile id="1" type="clyde">
-   <image width="152" height="60" source="../tilesets/cats_tileset/clyde.png"/>
-  </tile>
-  <tile id="3" type="horton">
-   <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
-  </tile>
-  <tile id="4" type="hubert">
-   <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
-  </tile>
-  <tile id="5" type="jasmine">
-   <image width="102" height="189" source="../tilesets/cats_tileset/jasmine.png"/>
-  </tile>
-  <tile id="6" type="luna">
-   <image width="132" height="65" source="../tilesets/cats_tileset/luna.png"/>
-  </tile>
-  <tile id="7" type="newton">
-   <image width="157" height="96" source="../tilesets/cats_tileset/newton.png"/>
-  </tile>
-  <tile id="8" type="quinn">
-   <image width="127" height="85" source="../tilesets/cats_tileset/quinn.png"/>
-  </tile>
-  <tile id="2" type="davinci">
-   <image width="58" height="129" source="../tilesets/cats_tileset/davinci.png"/>
-  </tile>
- </tileset>
+ <tileset firstgid="51" source="../tilesets/cats.tsx"/>
  <layer id="1" name="Ground" width="20" height="11">
   <data encoding="base64">
    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAA==
@@ -47,20 +18,27 @@
   <object id="35" gid="2" x="449" y="637" width="64" height="64"/>
   <object id="36" gid="2" x="125" y="636" width="64" height="64"/>
   <object id="37" gid="2" x="833" y="640" width="64" height="64"/>
-  <object id="38" gid="4" x="0" y="639" width="64" height="64"/>
-  <object id="46" gid="2" x="609" y="245" width="64" height="64"/>
+  <object id="38" gid="4" x="64" y="616" width="64" height="64"/>
   <object id="47" gid="2" x="173" y="116" width="64" height="64"/>
   <object id="48" gid="2" x="991" y="132" width="64" height="64"/>
   <object id="49" gid="2" x="273" y="445" width="64" height="64"/>
   <object id="50" gid="2" x="943" y="448" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="40" gid="57" x="357" y="541" width="132" height="65"/>
-  <object id="42" gid="57" x="898" y="517" width="132" height="65"/>
-  <object id="45" gid="57" x="390" y="265" width="132" height="65"/>
-  <object id="51" gid="58" x="68" y="363" width="157" height="96"/>
-  <object id="52" gid="58" x="626" y="378" width="157" height="96"/>
-  <object id="53" gid="58" x="1007" y="353" width="157" height="96"/>
+  <object id="45" gid="57" x="345" y="323" width="132" height="65"/>
+  <object id="51" gid="58" x="103" y="511" width="157" height="96"/>
+  <object id="53" gid="58" x="818" y="258" width="157" height="96"/>
+  <object id="54" gid="55" x="1086" y="639" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="0.5"/>
+    <property name="init_scale" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="55" gid="55" x="563" y="639" width="83" height="351">
+   <properties>
+    <property name="init_scale" type="float" value="0.25"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="Player"/>
 </map>
