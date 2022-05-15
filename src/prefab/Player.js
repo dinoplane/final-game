@@ -69,8 +69,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         console.log(this.isMidair)
     }
 
-    
-
     onXUp(a){
         if (!this.gameOver){
             let d = (a < 0) ? 'right': 'left';

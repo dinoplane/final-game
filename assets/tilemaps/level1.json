@@ -203,17 +203,6 @@
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
                  "imageheight":351,
                  "imagewidth":83,
-                 "properties":[
-                        {
-                         "name":"end_scale",
-                         "type":"float",
-                         "value":1
-                        }, 
-                        {
-                         "name":"init_scale",
-                         "type":"float",
-                         "value":1
-                        }],
                  "type":"hubert"
                 }, 
                 {

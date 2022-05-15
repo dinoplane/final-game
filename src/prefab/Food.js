@@ -20,4 +20,6 @@ class Food extends Phaser.Physics.Arcade.Sprite {
     reset(){
         this.visible = true;
     }
+
+    
 }

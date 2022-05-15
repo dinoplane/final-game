@@ -27,7 +27,7 @@
                  "id":35,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":256,
@@ -39,7 +39,7 @@
                  "id":36,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":512,
@@ -51,7 +51,7 @@
                  "id":37,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":768,
@@ -63,11 +63,11 @@
                  "id":38,
                  "name":"",
                  "rotation":0,
-                 "type":"player",
+                 "type":"",
                  "visible":true,
                  "width":64,
-                 "x":-2.28922,
-                 "y":573.005
+                 "x":-2.28921819110884,
+                 "y":573.005109862034
                 }, 
                 {
                  "gid":59,
@@ -75,7 +75,7 @@
                  "id":53,
                  "name":"",
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"",
                  "visible":true,
                  "width":127,
                  "x":896,
@@ -87,7 +87,7 @@
                  "id":54,
                  "name":"",
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"",
                  "visible":true,
                  "width":127,
                  "x":576,
@@ -99,7 +99,7 @@
                  "id":55,
                  "name":"",
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"",
                  "visible":true,
                  "width":127,
                  "x":320,
@@ -111,7 +111,7 @@
                  "id":56,
                  "name":"",
                  "rotation":0,
-                 "type":"luna",
+                 "type":"",
                  "visible":true,
                  "width":132,
                  "x":960,
@@ -133,19 +133,8 @@
                  "height":351,
                  "id":39,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"end_scale",
-                         "type":"float",
-                         "value":1
-                        }, 
-                        {
-                         "name":"init_scale",
-                         "type":"float",
-                         "value":1
-                        }],
                  "rotation":0,
-                 "type":"hubert",
+                 "type":"",
                  "visible":true,
                  "width":83,
                  "x":64,
@@ -157,7 +146,7 @@
                  "id":40,
                  "name":"",
                  "rotation":0,
-                 "type":"newton",
+                 "type":"",
                  "visible":true,
                  "width":157,
                  "x":192,
@@ -169,7 +158,7 @@
                  "id":41,
                  "name":"",
                  "rotation":0,
-                 "type":"newton",
+                 "type":"",
                  "visible":true,
                  "width":157,
                  "x":448,
@@ -181,7 +170,7 @@
                  "id":42,
                  "name":"",
                  "rotation":0,
-                 "type":"newton",
+                 "type":"",
                  "visible":true,
                  "width":157,
                  "x":704,
@@ -274,17 +263,6 @@
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
                  "imageheight":351,
                  "imagewidth":83,
-                 "properties":[
-                        {
-                         "name":"end_scale",
-                         "type":"float",
-                         "value":1
-                        }, 
-                        {
-                         "name":"init_scale",
-                         "type":"float",
-                         "value":1
-                        }],
                  "type":"hubert"
                 }, 
                 {
