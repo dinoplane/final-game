@@ -1,6 +1,7 @@
 # final-game
 
 Final Game
+https://dinoplane.github.io/final-game/
 
 A game about cats in space!
 
