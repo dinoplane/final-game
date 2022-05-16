@@ -14,12 +14,15 @@ class LevelLoader {
         this.map = scene.make.tilemap({key: 'level'+i});
         console.log(this.map);
 
+        scene.physics.world.setBounds(0,0, this.map.widthInPixels, this.map.heightInPixels);
         // this.map.tilesets.forEach(t => {
         //     let tileset_name;
         //     //if (t.name != "ground_tileset") tileset_name = t.name.replace(/.*\/([^/]+)\.[^/.]+$/, "$1_image");
         //     tileset_name = t.name+"_image";
             
         // });
+
+        
         this.map.addTilesetImage("ground_tileset", "ground_tileset_image");
     }
 

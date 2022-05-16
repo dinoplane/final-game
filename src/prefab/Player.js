@@ -15,8 +15,11 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
 
         this.gameOver = false;
+        this.levelComplete = false;
         this.food = 0;
         this.jumps = 0;
+
+        this.scene.input.keyboard.enabled = true;
 
         this.cursors = this.scene.input.keyboard.addKeys({ 
             'left': Phaser.Input.Keyboard.KeyCodes.A, 
@@ -31,7 +34,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             }
         });
 
-        this.controls = [];
         for (let c of Player.CONTROL_CONFIG){
             // let d = [];
             // for (let kc of c.keycodes){
@@ -49,8 +51,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.setDragX(Player.DRAG);
-        //this.body.setCollideWorldBounds(true);
-        //this.body.onWorldBounds = true;   
+        this.setCollideWorldBounds(true);
+        this.body.onWorldBounds = true;   
     }
     
     resetJumps(){
@@ -70,7 +72,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     onXUp(a){
-        if (!this.gameOver){
+        if (!this.gameOver && !this.levelComplete){
             let d = (a < 0) ? 'right': 'left';
             let k = this.cursors[d];
             //for (let k of this.controls[d]){
@@ -85,9 +87,26 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     onXDown(a){
-        if (!this.gameOver){
+        if (!this.gameOver && !this.levelComplete){
             this.setAcceleration(a, 0);
         }
     }
 
+    onLevelComplete(){
+        this.levelComplete = true;
+        this.scene.input.keyboard.enabled = false;
+       
+        let exit = this.scene.tweens.create({
+            targets: this,
+            alpha: 0,
+            duration: 2000,
+            ease: 'Cubic.easeInOut',
+            //easeParams: [ 3.5 ],
+            //delay: 1000,
+            onComplete: () => {  
+                this.scene.loadNextLevel();
+            },
+        });
+        exit.play();
+    }
 }

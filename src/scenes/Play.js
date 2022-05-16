@@ -10,6 +10,7 @@ class Play extends Phaser.Scene {
 
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
+        this.levelComplete = false;
         
         this.objects = this.levelLoader.loadLevel();
         console.log(this.objects)
@@ -47,11 +48,16 @@ class Play extends Phaser.Scene {
     }
     
     update(time, delta){
-        if (this.player.food == this.foodNum){
-            level = (level + 1) % gameOptions.levels;
-            this.scene.restart();
+        if (this.player.food == this.foodNum && !this.levelComplete){
+            console.log("Hello")
+            this.levelComplete = true;
+            this.player.onLevelComplete();
         }
+    }
 
+    loadNextLevel(){
+        level = (level + 1) % gameOptions.levels;
+        this.scene.restart();
     }
 
     onGroundCollide(player, ground){
