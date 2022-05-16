@@ -15,6 +15,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     addPointerCallbacks(){
         this.setInteractive();
         this.on('pointerdown', (pointer) => {
+            console.log(pointer.x, pointer.y);
             this.onLeftClicked();
         });
     }
@@ -52,6 +53,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         Cat.SELECTED_CAT = null;
         this.setTexture("cats_atlas", this.name);
         this.selected = false;
+        console.log(this.x, this.y)
     }
 
     update(){
