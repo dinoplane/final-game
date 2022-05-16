@@ -18,6 +18,9 @@ class Load extends Phaser.Scene { // First time load
         
         for (let i = 0; i < gameOptions.levels; i++)
             this.load.tilemapTiledJSON('level'+i, './assets/tilemaps/level'+i+'.json');
+
+
+        this.load.audio('pickup_food', './assets/audio/pickup_food.wav');
             
     }
 

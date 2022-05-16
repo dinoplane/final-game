@@ -40,6 +40,15 @@ class Play extends Phaser.Scene {
                 Cat.SELECTED_CAT.onDeselected();
             }
         })
+
+        // Cameras
+
+        this.cameras.main.startFollow(this.player, false);
+        // set camera dead zone
+//        this.cameras.main.setDeadzone(200, 200);
+        this.cameras.main.setName("center");
+
+
         //this.physics.add.collider(this.player, )
         //this.physics.world.setBounds(game.config.width, game.config.height);
     }
