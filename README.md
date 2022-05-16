@@ -88,5 +88,7 @@ For tiles...
 
 ![This is an image](/assets/docs/tileset_image.JPG)
 
+You can also save a tileset as a separate file and load it into each tilemap. Make sure to embed it in though!
+
 
 
