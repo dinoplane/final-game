@@ -27,11 +27,11 @@
                  "id":35,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
-                 "x":449,
-                 "y":381
+                 "x":456.311301509588,
+                 "y":190.906160750714
                 }, 
                 {
                  "gid":2,
@@ -39,11 +39,11 @@
                  "id":36,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
-                 "x":125,
-                 "y":380
+                 "x":139.622603019176,
+                 "y":186.25050999592
                 }, 
                 {
                  "gid":2,
@@ -51,11 +51,11 @@
                  "id":37,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
-                 "x":833,
-                 "y":384
+                 "x":776.337413300694,
+                 "y":188.422684618523
                 }, 
                 {
                  "gid":4,
@@ -63,11 +63,11 @@
                  "id":38,
                  "name":"",
                  "rotation":0,
-                 "type":"player",
+                 "type":"",
                  "visible":true,
                  "width":64,
-                 "x":0,
-                 "y":383
+                 "x":3.65565075479396,
+                 "y":313.542635658915
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -81,40 +81,52 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":25,
+                 "gid":70,
+                 "height":50,
+                 "id":49,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"",
                  "visible":true,
-                 "width":215,
-                 "x":184,
-                 "y":260
+                 "width":204,
+                 "x":85.6301928396573,
+                 "y":130.745814157487
                 }, 
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":26,
+                 "gid":70,
+                 "height":50,
+                 "id":50,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"",
                  "visible":true,
-                 "width":215,
-                 "x":428,
-                 "y":132
+                 "width":204,
+                 "x":389.049492839657,
+                 "y":138.057163402693
                 }, 
                 {
-                 "gid":51,
-                 "height":53,
-                 "id":27,
+                 "gid":70,
+                 "height":50,
+                 "id":51,
                  "name":"",
                  "rotation":0,
-                 "type":"biscuit",
+                 "type":"",
                  "visible":true,
-                 "width":215,
-                 "x":600,
-                 "y":326
+                 "width":204,
+                 "x":703.435492839657,
+                 "y":134.401163402693
+                }, 
+                {
+                 "gid":67,
+                 "height":65,
+                 "id":52,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":132,
+                 "x":-0.834105650754857,
+                 "y":374.535703590371
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -134,10 +146,10 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":39,
+ "nextobjectid":53,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.8.5",
  "tileheight":64,
  "tilesets":[
         {
@@ -163,95 +175,12 @@
          "tilewidth":64
         }, 
         {
-         "columns":0,
          "firstgid":51,
-         "grid":
-            {
-             "height":1,
-             "orientation":"orthogonal",
-             "width":1
-            },
-         "margin":0,
-         "name":"cats",
-         "spacing":0,
-         "tilecount":9,
-         "tileheight":351,
-         "tiles":[
-                {
-                 "id":0,
-                 "image":"..\/tilesets\/cats_tileset\/biscuit.png",
-                 "imageheight":53,
-                 "imagewidth":215,
-                 "type":"biscuit"
-                }, 
-                {
-                 "id":1,
-                 "image":"..\/tilesets\/cats_tileset\/clyde.png",
-                 "imageheight":60,
-                 "imagewidth":152,
-                 "type":"clyde"
-                }, 
-                {
-                 "id":3,
-                 "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
-                 "type":"horton"
-                }, 
-                {
-                 "id":4,
-                 "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
-                 "properties":[
-                        {
-                         "name":"end_scale",
-                         "type":"float",
-                         "value":1
-                        }, 
-                        {
-                         "name":"init_scale",
-                         "type":"float",
-                         "value":1
-                        }],
-                 "type":"hubert"
-                }, 
-                {
-                 "id":5,
-                 "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
-                 "type":"jasmine"
-                }, 
-                {
-                 "id":6,
-                 "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
-                 "type":"luna"
-                }, 
-                {
-                 "id":7,
-                 "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
-                 "type":"newton"
-                }, 
-                {
-                 "id":8,
-                 "image":"..\/tilesets\/cats_tileset\/quinn.png",
-                 "imageheight":85,
-                 "imagewidth":127,
-                 "type":"quinn"
-                }, 
-                {
-                 "id":2,
-                 "image":"..\/tilesets\/cats_tileset\/davinci.png",
-                 "imageheight":129,
-                 "imagewidth":58,
-                 "type":"davinci"
-                }],
-         "tilewidth":228
+         "source":"..\/tilesets\/cats.tsx"
+        }, 
+        {
+         "firstgid":61,
+         "source":"..\/tilesets\/cats.tsx"
         }],
  "tilewidth":64,
  "type":"map",
