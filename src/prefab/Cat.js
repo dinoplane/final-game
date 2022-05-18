@@ -19,28 +19,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.my_friend = null;
     }
 
-//Cat
-// when clicked create a cat soul
-
-// cat soul follows pointer as we drag
-
-// when the drag ends check  if the cat soul is in a valid position
-
-// If so move and decrement selects
-// If not move back and act like that never happened.
-
-
     addPointerCallbacks(){
-        this.setInteractive();
-        // this.on('pointerdown', (pointer) => {
-        //     console.log(pointer.x, pointer.y);
-        //     this.onDragStart();
-        // });
         this.scene.input.setDraggable(this.setInteractive());
 
         this.on('dragstart', (pointer, dragX, dragY) => {
-            console.log("HELLO!");
-            
             this.onDragStart()
         });
 
@@ -49,9 +31,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         });
 
         this.on('dragend', (pointer, dragX, dragY) => {
-            console.log("END");
-            this.onDragEnd();
-            
+            this.onDragEnd();  
         });
     }
 
@@ -63,21 +43,21 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     }
 
-    onCatOverlap(that){ // No pun intended no pun intended
+    onCatOverlap(that){ // X3 sowwy me touchy
         this.my_friend = that;  // Cats are friendly to each other
         that.setTexture("cats_atlas", that.name+"_x3");
         this.setTexture("cats_atlas", this.name+"_x3");
     }
 
-    isTouching(){
+    isTouching(){       // Am i touchy?
         return this.body.embedded || !this.body.touching.none ;
     }
 
-    isSelectable(){
+    isSelectable(){     // Am i tired?
         return this.selectsLeft > 0;
     }
 
-    onDragStart(){
+    onDragStart(){  // OwO you grab me!
         if (this.isSelectable() && !this.isTouching() && !this.selected){
             let i = Cat.P2C_COLLIDER.object2.indexOf(this);
             let j = Cat.P2C_OVERLAP.object2.indexOf(this);
@@ -98,12 +78,11 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
-    whileDrag(dragX, dragY){
+    whileDrag(dragX, dragY){    // OwO AAAAAAAA
         if (this.selected){   
             if (this.body.wasTouching && !this.isTouching()){
                 this.setTexture("cats_atlas", this.name+"_owo");
-                let friend_state = (this.my_friend.isSelectable()) ? "" : "_uwu";
-                this.my_friend.setTexture("cat_atlas", this.my_friend.name + friend_state);
+                this.checkFriend();
             }
             this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
             this.x = dragX;
@@ -111,15 +90,16 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
-    onDragEnd(){
+    onDragEnd(){    // PUT ME DOWN PUT ME DOWN PUT ME DOWN
         if (this.selected){  
-            if (this.isTouching()){
+            if (this.isTouching()){     // No not here!!!
                 this.setPosition(this.catSoul.x, this.catSoul.y);
                 this.setTexture("cats_atlas", this.name);
             }
             else {
-                this.decrementSelect();
+                this.decrementSelect();     // ah yea thats the spot.
             }
+            this.checkFriend();
             Cat.P2C_COLLIDER.object2.push(this);
             Cat.P2C_OVERLAP.object2.push(this);
             this.catSoul.destroy();
@@ -129,10 +109,17 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
         }
     }
-
-    decrementSelect(){
+    checkFriend(){
+        if (this.my_friend != null){    // sowwy X3 me touch!
+            let friend_state = (this.my_friend.isSelectable()) ? "" : "_uwu";
+            this.my_friend.setTexture("cats_atlas", this.my_friend.name + friend_state);
+            this.my_friend = null;  // bye bye OwO
+        }            
+    }
+    decrementSelect(){  // Am I tired yet? 
         this.selectsLeft -= 1;
-        if (!this.isSelectable) this.setTexture("cat_atlas", this.my_friend.name + "_uwu");
+        if (!this.isSelectable()) // Me sleepy uwu
+            this.setTexture("catss_atlas", this.name + "_uwu");
         else this.setTexture("cats_atlas", this.name);
     }
 
