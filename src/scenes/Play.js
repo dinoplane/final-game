@@ -26,16 +26,21 @@ class Play extends Phaser.Scene {
         });
         this.foodNum = this.objects.food.length;
 
-        this.physics.add.collider(this.player, this.objects.cats, (player, cat) => {
+        Cat.P2C_COLLIDER = this.physics.add.collider(this.player, this.objects.cats.slice(), (player, cat) => {
             cat.onCollide(player);
         });
-        this.physics.add.overlap(this.player, this.objects.cats, (player, cat) => {
+        Cat.P2C_OVERLAP = this.physics.add.overlap(this.player, this.objects.cats.slice(), (player, cat) => {
             cat.onOverlap(player);
+        });
+        
+        Cat.C2C_OVERLAP = this.physics.add.collider(this.objects.cats.slice(), this.objects.cats.slice(), (cat1, cat2) => {
+            cat1.onCatOverlap(cat2);
         });
         
         
         this.input.on("pointerdown", (pointer, obj) => {
             if (Cat.SELECTED_CAT != null && obj.length == 0){
+                Cat.SELECTED_CAT.decrementSelect();
                 Cat.SELECTED_CAT.setPosition(pointer.worldX - Cat.SELECTED_CAT.width/2, pointer.worldY + Cat.SELECTED_CAT.height/2);
                 Cat.SELECTED_CAT.onDeselected();
             }
