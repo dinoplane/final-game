@@ -28,7 +28,7 @@ var config = {
 
   // global game options
 let gameOptions = {
-  levels: 3,
+  levels: 5,
 }
 
 let cursors;

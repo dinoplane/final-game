@@ -137,12 +137,12 @@
                         {
                          "name":"end_scale",
                          "type":"float",
-                         "value":1
+                         "value":0.25
                         }, 
                         {
                          "name":"init_scale",
                          "type":"float",
-                         "value":1
+                         "value":3
                         }],
                  "rotation":0,
                  "type":"hubert",

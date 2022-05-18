@@ -53,6 +53,10 @@ class Play extends Phaser.Scene {
 //        this.cameras.main.setDeadzone(200, 200);
         //this.cameras.main.setName("center");
 
+        this.keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+        this.keyR.on('down', (key) => {
+            this.scene.restart();
+        }); 
 
         //this.physics.add.collider(this.player, )
         //this.physics.world.setBounds(game.config.width, game.config.height);
@@ -74,6 +78,8 @@ class Play extends Phaser.Scene {
         level = (level + 1) % gameOptions.levels;
         this.scene.restart();
     }
+
+
 
     onGroundCollide(player, ground){
         player.resetJumps();

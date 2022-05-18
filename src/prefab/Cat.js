@@ -10,7 +10,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
         scene.physics.add.existing(this);
         this.addPointerCallbacks();
-        this.debugtext = scene.add.text(x, y, "YOUR MOTHER");
+        //this.debugtext = scene.add.text(x, y, "YOUR MOTHER");
 
         this.name = frame;
         this.selected = false;
@@ -84,7 +84,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
                 this.setTexture("cats_atlas", this.name+"_owo");
                 this.checkFriend();
             }
-            this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
+            //this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
             this.x = dragX;
             this.y = dragY;
         }

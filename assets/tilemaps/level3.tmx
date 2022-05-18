@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="14" height="7" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="42">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="14" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="46">
  <editorsettings>
-  <export target="level1.json" format="json"/>
+  <export target="level3.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="ground_tileset" tilewidth="64" tileheight="64" tilecount="50" columns="10">
   <image source="../tilesets/ground_tileset.png" width="640" height="320"/>
@@ -42,20 +42,27 @@
    <image width="58" height="129" source="../tilesets/cats_tileset/davinci.png"/>
   </tile>
  </tileset>
- <layer id="1" name="Ground" width="14" height="7">
+ <layer id="1" name="Ground" width="14" height="10">
   <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="832" y="64" width="64" height="64"/>
-  <object id="36" gid="2" x="192" y="128" width="64" height="64"/>
-  <object id="37" gid="2" x="576" y="192" width="64" height="64"/>
-  <object id="38" gid="4" x="0" y="383" width="64" height="64"/>
-  <object id="39" gid="54" x="256" y="384" width="228" height="168"/>
-  <object id="40" gid="55" x="640" y="384" width="83" height="351"/>
-  <object id="41" gid="58" x="704" y="384" width="157" height="96"/>
+  <object id="35" gid="2" x="682" y="365" width="64" height="64"/>
+  <object id="36" gid="2" x="192" y="320" width="64" height="64"/>
+  <object id="37" gid="2" x="289" y="500" width="64" height="64"/>
  </objectgroup>
- <objectgroup id="3" name="Cats"/>
- <objectgroup id="4" name="Player"/>
+ <objectgroup id="3" name="Cats">
+  <object id="42" gid="54" x="202" y="575" width="228" height="168"/>
+  <object id="43" gid="55" x="586" y="575" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2"/>
+    <property name="init_scale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="44" gid="58" x="694" y="573" width="157" height="96"/>
+ </objectgroup>
+ <objectgroup id="4" name="Player">
+  <object id="45" gid="4" x="12" y="588" width="64" height="64"/>
+ </objectgroup>
 </map>

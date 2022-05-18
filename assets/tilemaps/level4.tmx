@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="14" height="7" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="46">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="14" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="51">
  <editorsettings>
-  <export target="level3.json" format="json"/>
+  <export target="level4.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="ground_tileset" tilewidth="64" tileheight="64" tilecount="50" columns="10">
   <image source="../tilesets/ground_tileset.png" width="640" height="320"/>
   <tile id="1" type="food"/>
   <tile id="3" type="player"/>
  </tileset>
- <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="9" columns="0">
+ <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0" type="biscuit">
    <image width="215" height="53" source="../tilesets/cats_tileset/biscuit.png"/>
@@ -41,22 +41,27 @@
   <tile id="2" type="davinci">
    <image width="58" height="129" source="../tilesets/cats_tileset/davinci.png"/>
   </tile>
+  <tile id="9" type="dreda">
+   <image width="204" height="50" source="../tilesets/cats_tileset/dreda.png"/>
+  </tile>
  </tileset>
- <layer id="1" name="Ground" width="14" height="7">
+ <layer id="1" name="Ground" width="14" height="11">
   <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAA==
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="704" y="128" width="64" height="64"/>
-  <object id="36" gid="2" x="256" y="64" width="64" height="64"/>
-  <object id="37" gid="2" x="512" y="128" width="64" height="64"/>
-  <object id="38" gid="4" x="0" y="383" width="64" height="64"/>
-  <object id="42" gid="58" x="64" y="384" width="157" height="96"/>
-  <object id="43" gid="57" x="0" y="256" width="132" height="65"/>
-  <object id="44" gid="58" x="704" y="384" width="157" height="96"/>
-  <object id="45" gid="55" x="448" y="384" width="83" height="351"/>
+  <object id="35" gid="2" x="704" y="384" width="64" height="64"/>
+  <object id="36" gid="2" x="256" y="320" width="64" height="64"/>
+  <object id="37" gid="2" x="512" y="384" width="64" height="64"/>
  </objectgroup>
- <objectgroup id="3" name="Cats"/>
- <objectgroup id="4" name="Player"/>
+ <objectgroup id="3" name="Cats">
+  <object id="47" gid="58" x="93" y="643" width="157" height="96"/>
+  <object id="48" gid="57" x="29" y="515" width="132" height="65"/>
+  <object id="49" gid="58" x="733" y="643" width="157" height="96"/>
+  <object id="50" gid="55" x="477" y="643" width="83" height="351"/>
+ </objectgroup>
+ <objectgroup id="4" name="Player">
+  <object id="46" gid="4" x="10" y="649" width="64" height="64"/>
+ </objectgroup>
 </map>

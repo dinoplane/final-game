@@ -58,7 +58,12 @@
   <object id="56" gid="57" x="960" y="320" width="132" height="65"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="39" gid="55" x="64" y="576" width="83" height="351"/>
+  <object id="39" gid="55" x="64" y="576" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="0.25"/>
+    <property name="init_scale" type="float" value="3"/>
+   </properties>
+  </object>
   <object id="40" gid="58" x="192" y="384" width="157" height="96"/>
   <object id="41" gid="58" x="448" y="384" width="157" height="96"/>
   <object id="42" gid="58" x="704" y="384" width="157" height="96"/>
