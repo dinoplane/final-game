@@ -34,14 +34,14 @@ class LevelLoader {
             console.log(objlayer.objects)
             objlayer.objects.forEach((obj) => {
                 let e = null;
-                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1);
+                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1).setDepth(3);
                 else if (obj.type == "food") {
-                    food_array.push(new Food(this.scene, obj.x, obj.y).setOrigin(0,1));
+                    food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1));
                 } else {
                     console.log(obj)
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
-                                this.scene, obj.x, obj.y, obj.type, obj.properties).setOrigin(0,1));
-                } 
+                                this.scene, obj.x, obj.y, obj.type, obj.properties).setOrigin(0,1).setDepth(2));
+                }
                 
             })
         });

@@ -94,6 +94,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
     onLevelComplete(){
         this.levelComplete = true;
+        this.setAcceleration(0,0);
+        this.setVelocityX(0);
         this.scene.input.keyboard.enabled = false;
        
         let exit = this.scene.tweens.create({
