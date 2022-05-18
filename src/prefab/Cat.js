@@ -92,7 +92,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     onDragEnd(){    // PUT ME DOWN PUT ME DOWN PUT ME DOWN
         if (this.selected){  
-            if (this.isTouching()){     // No not here!!!
+            if (this.isTouching() || this.scene.physics.overlap(this, this.catSoul)){     // No not here!!!
                 this.setPosition(this.catSoul.x, this.catSoul.y);
                 this.setTexture("cats_atlas", this.name);
             }
@@ -116,10 +116,11 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.my_friend = null;  // bye bye OwO
         }            
     }
+
     decrementSelect(){  // Am I tired yet? 
         this.selectsLeft -= 1;
         if (!this.isSelectable()) // Me sleepy uwu
-            this.setTexture("catss_atlas", this.name + "_uwu");
+            this.setTexture("cats_atlas", this.name + "_uwu");
         else this.setTexture("cats_atlas", this.name);
     }
 

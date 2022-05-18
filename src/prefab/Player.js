@@ -101,7 +101,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         let exit = this.scene.tweens.create({
             targets: this,
             alpha: 0,
-            duration: 2000,
+            duration: 1000,
             ease: 'Cubic.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,

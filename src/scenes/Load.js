@@ -1,5 +1,5 @@
 class Load extends Phaser.Scene { // First time load
-    static CAT_NAMES = ["newton", "horton", "jasmine", "luna", "biscuit", "quinn", "clyde", "hubert", "davinci"];
+    static CAT_NAMES = ["dreda", "newton", "horton", "jasmine", "luna", "biscuit", "quinn", "clyde", "hubert", "davinci"];
     constructor(){
         super("loadScene");
     }

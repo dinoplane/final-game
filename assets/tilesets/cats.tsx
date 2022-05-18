@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.8" tiledversion="1.8.4" name="cats" tilewidth="228" tileheight="351" tilecount="9" columns="0">
+<tileset version="1.8" tiledversion="1.8.4" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0" type="biscuit">
   <image width="215" height="53" source="cats_tileset/biscuit.png"/>
@@ -31,5 +31,8 @@
  </tile>
  <tile id="2" type="davinci">
   <image width="58" height="129" source="cats_tileset/davinci.png"/>
+ </tile>
+ <tile id="9" type="dreda">
+  <image width="204" height="50" source="cats_tileset/dreda.png"/>
  </tile>
 </tileset>

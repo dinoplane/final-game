@@ -1,13 +1,14 @@
-class CatSoul extends Phaser.GameObjects.Sprite {
+class CatSoul extends Phaser.Physics.Arcade.Sprite {
     constructor(cat){
         super(cat.scene, cat.x, cat.y, "cats_atlas", cat.name+"_owo");
         
         cat.scene.add.existing(this);
+        cat.scene.physics.add.existing(this);
+        this.body.allowGravity = false;
+        this.setImmovable(true);
 
 
         this.name = cat.name;
-        //this.body.allowGravity = false;
-        this.scene.input.setDraggable(this.setInteractive());
         this.alpha = 0.25;
 
 
