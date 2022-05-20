@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="53">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="54">
  <editorsettings>
   <export target="level1.json" format="json"/>
  </editorsettings>
@@ -87,13 +87,14 @@
   <object id="35" gid="2" x="456.311" y="446.906" width="64" height="64"/>
   <object id="36" gid="2" x="139.623" y="442.251" width="64" height="64"/>
   <object id="37" gid="2" x="776.337" y="444.423" width="64" height="64"/>
-  <object id="38" gid="4" x="3.65565" y="569.543" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
   <object id="49" gid="60" x="85.6302" y="386.746" width="204" height="50"/>
   <object id="50" gid="60" x="389.049" y="394.057" width="204" height="50"/>
   <object id="51" gid="60" x="703.435" y="390.401" width="204" height="50"/>
-  <object id="52" gid="57" x="-0.834106" y="630.536" width="132" height="65"/>
+  <object id="52" gid="57" x="15" y="629" width="132" height="65"/>
  </objectgroup>
- <objectgroup id="4" name="Player"/>
+ <objectgroup id="4" name="Player">
+  <object id="53" gid="4" x="47" y="546" width="64" height="64"/>
+ </objectgroup>
 </map>

@@ -210,9 +210,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             this.setFlipX(a < 0);
             this.setAcceleration(a, 0);
         }
-        console.log("I'm here");
+
         if (this.isGrounded) this.anims.play("miao_run")
-        else console.log("HELLO");
     }
 
 
