@@ -109,6 +109,6 @@
   <object id="60" gid="58" x="252" y="702" width="157" height="96"/>
  </objectgroup>
  <objectgroup id="4" name="Player">
-  <object id="46" gid="4" x="10" y="1353" width="64" height="64"/>
+  <object id="46" gid="4" x="10" y="1327" width="64" height="64"/>
  </objectgroup>
 </map>

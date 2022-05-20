@@ -20,7 +20,7 @@ class LevelLoader {
 
         scene.physics.world.bounds.setTo(0,0, this.map.widthInPixels, this.map.heightInPixels);
         scene.cameras.main.setBounds(0,0, this.map.widthInPixels, this.map.heightInPixels);
-        scene.cameras.main.setRoundPixels(true);
+        //scene.cameras.main.setRoundPixels(true);
         // this.map.tilesets.forEach(t => {
         //     let tileset_name;
         //     //if (t.name != "ground_tileset") tileset_name = t.name.replace(/.*\/([^/]+)\.[^/.]+$/, "$1_image");
@@ -64,11 +64,11 @@ class LevelLoader {
     }
 
     loadGround(){
-        let ret_array = [];
-        let backGround = this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5)
+
+        //let backGround = this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5)
         let ground = this.map.createLayer("Ground", 'ground_tileset',0,0);
         ground.setCollisionByExclusion(-1, true);
-            ret_array.push(ground);
+       // ret_array.push(ground);
         
         // Path count {0, {i}};
         
@@ -76,7 +76,7 @@ class LevelLoader {
             
             
         // });
-        return ret_array;
+        return ground;
     }
 
     loadBackground(){

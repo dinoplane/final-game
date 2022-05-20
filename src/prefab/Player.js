@@ -9,15 +9,18 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                              {name: 'right', arg: +Player.ACCEL}]
 
     constructor(scene, x, y){
-        super(scene, x, y, "player");
+        super(scene, x, y, "miao_atlas", "miao_idle000");
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
+        this.setUpAnimations();
 
         this.gameOver = false;
         this.levelComplete = false;
         this.food = 0;
         this.jumps = 0;
+        this.isGrounded = false;
+        this.falling = false;
 
         this.scene.input.keyboard.enabled = true;
 
@@ -29,6 +32,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.cursors.up.on('down', key =>{
             if (this.jumps < Player.MAX_JUMPS){
+                this.isGrounded = false;
+                this.anims.play("miao_hop");
+                //this.falling = false;
                 this.setVelocityY(-Player.JUMP_V);  
                 this.jumps += 1;
             }
@@ -43,7 +49,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                     this.onXDown(c.arg)
                 });
                 this.cursors[c.name].on('up', (key) => {
-                    console.log(key)
                     this.onXUp(c.arg);
                 });
 //                d.push(tmpKey);   
@@ -53,10 +58,83 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.setDragX(Player.DRAG);
         this.setCollideWorldBounds(true);
         this.body.onWorldBounds = true;   
+        this.anims.play("miao_idle");
     }
     
+    setUpAnimations(){
+        this.run = this.anims.create({
+            key: 'miao_run',
+            defaultTextureKey: 'miao_atlas',
+            frames:  this.anims.generateFrameNames('miao_atlas', { 
+                prefix: 'miao_run', 
+                start: 0, 
+                end: 6, 
+                suffix: '',
+                zeroPad: 3,
+            }),
+            frameRate: 17,
+            repeat: -1
+        });
+
+        this.hop = this.anims.create({
+            key: 'miao_hop',
+            defaultTextureKey: 'miao_atlas',
+            frames:  this.anims.generateFrameNames('miao_atlas', { 
+                prefix: 'miao_jump', 
+                start: 1, 
+                end: 3, 
+                suffix: '',
+                zeroPad: 3,
+            }),
+            frameRate: 12,
+        });
+
+        this.fall = this.anims.create({
+            key: 'miao_fall',
+            defaultTextureKey: 'miao_atlas',
+            frames:  this.anims.generateFrameNames('miao_atlas', { 
+                prefix: 'miao_jump', 
+                start: 3, 
+                end: 3, 
+                suffix: '',
+                zeroPad: 3,
+            }),
+            frameRate: 12
+        });
+
+        this.land = this.anims.create({
+            key: 'miao_land',
+            defaultTextureKey: 'miao_atlas',
+            frames:  this.anims.generateFrameNames('miao_atlas', { 
+                prefix: 'miao_jump', 
+                start: 3, 
+                end: 5, 
+                suffix: '',
+                zeroPad: 3,
+            }),
+            frameRate: 12
+        });
+
+        this.idle = this.anims.create({
+            key: 'miao_idle',
+            defaultTextureKey: 'miao_atlas',
+            frames:  this.anims.generateFrameNames('miao_atlas', { 
+                prefix: 'miao_idle', 
+                start: 0, 
+                end: 2, 
+                suffix: '',
+                zeroPad: 3,
+            }),
+            frameRate: 12,
+            repeat: -1,
+            yoyo: true,
+            //repeatDelay: 500
+        });
+    }
+
     resetJumps(){
         this.jumps = 0;
+        console.log();
     }
 
     incrementFood(){
@@ -67,8 +145,46 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.food = 0;
     }
 
+    isMidAir(){
+        return !this.body.embedded;
+    }
+
+    onGround(){
+
+        if (!this.isGrounded) {// We have just fallen (this is called multple times so gatekeep)
+                //let anim =  ;
+//                console.log("We went here %s", anim)
+            let keyDown = false;
+            for (let c of Player.CONTROL_CONFIG){
+                keyDown |= (this.cursors[c.name].isDown)
+            }
+            this.anims.play( (keyDown) ? "miao_run" : "miao_idle");
+            
+        }
+        this.isGrounded = true;
+
+        this.resetJumps();
+        //this.falling = false;
+    }
+
     update(){
-        console.log(this.isMidair)
+       // console.log("Not Embedded: %s, TouchingNone: %s, notGrounded: %s, Falling: %s", 
+         //       !this.body.embedded, this.body.touching.none, !this.isGrounded, this.falling);
+        //console.log(this.body.touching)
+        if ((!this.isGrounded) && this.body.velocity.y > 0){
+            //this.falling = true;
+            this.anims.play("miao_fall");
+        }
+
+        if (this.isGrounded && this.body.velocity.y > 0){
+            this.isGrounded = false;
+        }
+
+        // 
+        //     if (!this.body.touching.down){
+        //         console.log("FAAAAALLLING: %s", this.isMidAir())
+        //         this.isGrounded = false;
+        //     }
     }
 
     onXUp(a){
@@ -77,8 +193,11 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             let k = this.cursors[d];
             //for (let k of this.controls[d]){
                 if (!k.isDown){
+                    console.log("ended here")
+                    if (this.isGrounded) this.anims.play("miao_idle");
                     this.setAcceleration(0, 0);
                 } else {
+                    this.setFlipX(-a < 0);
                     this.setAcceleration(-a, 0);
             //        break;
                 }
@@ -88,9 +207,15 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
     onXDown(a){
         if (!this.gameOver && !this.levelComplete){
+            this.setFlipX(a < 0);
             this.setAcceleration(a, 0);
         }
+        console.log("I'm here");
+        if (this.isGrounded) this.anims.play("miao_run")
+        else console.log("HELLO");
     }
+
+
 
     onLevelComplete(){
         this.levelComplete = true;

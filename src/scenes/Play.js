@@ -49,7 +49,7 @@ class Play extends Phaser.Scene {
         // Cameras
         //game.renderer.renderSession.roundPixels = true;
         this.cameras.main.roundPixels = true;
-        this.cameras.main.startFollow(this.player, true);
+        this.cameras.main.startFollow(this.player, true, );
         // set camera dead zone
 //        this.cameras.main.setDeadzone(200, 200);
         //this.cameras.main.setName("center");
@@ -72,7 +72,7 @@ class Play extends Phaser.Scene {
             this.levelComplete = true;
             this.player.onLevelComplete();
         }
-        console.log(this.cameras.main.roundPixels)
+        this.player.update();
        //console.log(this.input.mousePointer.x, this.input.mousePointer.y);
     }
 
@@ -84,7 +84,9 @@ class Play extends Phaser.Scene {
 
 
     onGroundCollide(player, ground){
-        player.resetJumps();
+            player.onGround();
+            player.body.touching.down = true;
+            player.body.touching.none = false;
     }
 
 }
