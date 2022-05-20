@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="14" height="7" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="53">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="11" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="53">
  <editorsettings>
   <export target="level1.json" format="json"/>
  </editorsettings>
@@ -8,24 +8,92 @@
   <tile id="1" type="food"/>
   <tile id="3" type="player"/>
  </tileset>
- <tileset firstgid="51" source="../tilesets/cats.tsx"/>
- <tileset firstgid="61" source="../tilesets/cats.tsx"/>
- <layer id="1" name="Ground" width="14" height="7">
+ <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0" type="biscuit">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="215" height="53" source="../tilesets/cats_tileset/biscuit.png"/>
+  </tile>
+  <tile id="1" type="clyde">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="152" height="60" source="../tilesets/cats_tileset/clyde.png"/>
+  </tile>
+  <tile id="3" type="horton">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
+  </tile>
+  <tile id="4" type="hubert">
+   <properties>
+    <property name="end_scale" type="float" value="1"/>
+    <property name="init_scale" type="float" value="1"/>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
+  </tile>
+  <tile id="5" type="jasmine">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="102" height="189" source="../tilesets/cats_tileset/jasmine.png"/>
+  </tile>
+  <tile id="6" type="luna">
+   <properties>
+    <property name="movesLeft" type="int" value="0"/>
+   </properties>
+   <image width="132" height="65" source="../tilesets/cats_tileset/luna.png"/>
+  </tile>
+  <tile id="7" type="newton">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="157" height="96" source="../tilesets/cats_tileset/newton.png"/>
+  </tile>
+  <tile id="8" type="quinn">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="127" height="85" source="../tilesets/cats_tileset/quinn.png"/>
+  </tile>
+  <tile id="2" type="davinci">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="58" height="129" source="../tilesets/cats_tileset/davinci.png"/>
+  </tile>
+  <tile id="9" type="dreda">
+   <properties>
+    <property name="movesLeft" type="int" value="1"/>
+   </properties>
+   <image width="204" height="50" source="../tilesets/cats_tileset/dreda.png"/>
+  </tile>
+ </tileset>
+ <layer id="5" name="Background" width="20" height="11">
   <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
+   BQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAA==
+  </data>
+ </layer>
+ <layer id="1" name="Ground" width="20" height="11">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAA==
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="456.311" y="190.906" width="64" height="64"/>
-  <object id="36" gid="2" x="139.623" y="186.251" width="64" height="64"/>
-  <object id="37" gid="2" x="776.337" y="188.423" width="64" height="64"/>
-  <object id="38" gid="4" x="3.65565" y="313.543" width="64" height="64"/>
+  <object id="35" gid="2" x="456.311" y="446.906" width="64" height="64"/>
+  <object id="36" gid="2" x="139.623" y="442.251" width="64" height="64"/>
+  <object id="37" gid="2" x="776.337" y="444.423" width="64" height="64"/>
+  <object id="38" gid="4" x="3.65565" y="569.543" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="49" gid="70" x="85.6302" y="130.746" width="204" height="50"/>
-  <object id="50" gid="70" x="389.049" y="138.057" width="204" height="50"/>
-  <object id="51" gid="70" x="703.435" y="134.401" width="204" height="50"/>
-  <object id="52" gid="67" x="-0.834106" y="374.536" width="132" height="65"/>
+  <object id="49" gid="60" x="85.6302" y="386.746" width="204" height="50"/>
+  <object id="50" gid="60" x="389.049" y="394.057" width="204" height="50"/>
+  <object id="51" gid="60" x="703.435" y="390.401" width="204" height="50"/>
+  <object id="52" gid="57" x="-0.834106" y="630.536" width="132" height="65"/>
  </objectgroup>
  <objectgroup id="4" name="Player"/>
 </map>

@@ -47,8 +47,9 @@ class Play extends Phaser.Scene {
         })
 
         // Cameras
-
-        this.cameras.main.startFollow(this.player, false);
+        //game.renderer.renderSession.roundPixels = true;
+        this.cameras.main.roundPixels = true;
+        this.cameras.main.startFollow(this.player, true);
         // set camera dead zone
 //        this.cameras.main.setDeadzone(200, 200);
         //this.cameras.main.setName("center");
@@ -71,6 +72,7 @@ class Play extends Phaser.Scene {
             this.levelComplete = true;
             this.player.onLevelComplete();
         }
+        console.log(this.cameras.main.roundPixels)
        //console.log(this.input.mousePointer.x, this.input.mousePointer.y);
     }
 

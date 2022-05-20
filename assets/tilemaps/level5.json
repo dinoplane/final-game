@@ -1,12 +1,12 @@
 { "compressionlevel":-1,
- "height":15,
+ "height":22,
  "infinite":false,
  "layers":[
         {
          "compression":"",
-         "data":"BQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAA",
+         "data":"BQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAA=",
          "encoding":"base64",
-         "height":15,
+         "height":22,
          "id":5,
          "name":"Background",
          "opacity":1,
@@ -18,9 +18,9 @@
         }, 
         {
          "compression":"",
-         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAA",
+         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=",
          "encoding":"base64",
-         "height":15,
+         "height":22,
          "id":1,
          "name":"Ground",
          "opacity":1,
@@ -38,122 +38,134 @@
                 {
                  "gid":2,
                  "height":64,
-                 "id":35,
-                 "name":"",
-                 "rotation":0,
-                 "type":"food",
-                 "visible":true,
-                 "width":64,
-                 "x":256,
-                 "y":640
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
                  "id":36,
                  "name":"",
                  "rotation":0,
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":512,
-                 "y":640
+                 "x":83,
+                 "y":127
                 }, 
                 {
                  "gid":2,
                  "height":64,
-                 "id":37,
+                 "id":61,
                  "name":"",
                  "rotation":0,
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":768,
-                 "y":640
+                 "x":314,
+                 "y":209
                 }, 
                 {
-                 "gid":4,
+                 "gid":2,
                  "height":64,
-                 "id":38,
+                 "id":62,
                  "name":"",
                  "rotation":0,
-                 "type":"player",
+                 "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":-2.28922,
-                 "y":893.005
+                 "x":526,
+                 "y":324
                 }, 
                 {
-                 "gid":59,
-                 "height":85,
-                 "id":53,
+                 "gid":2,
+                 "height":64,
+                 "id":63,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":1
-                        }],
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"food",
                  "visible":true,
-                 "width":127,
-                 "x":896,
-                 "y":896
+                 "width":64,
+                 "x":707,
+                 "y":416
                 }, 
                 {
-                 "gid":59,
-                 "height":85,
-                 "id":54,
+                 "gid":2,
+                 "height":64,
+                 "id":64,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":1
-                        }],
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"food",
                  "visible":true,
-                 "width":127,
-                 "x":576,
-                 "y":896
+                 "width":64,
+                 "x":863,
+                 "y":503
                 }, 
                 {
-                 "gid":59,
-                 "height":85,
-                 "id":55,
+                 "gid":2,
+                 "height":64,
+                 "id":65,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":1
-                        }],
                  "rotation":0,
-                 "type":"quinn",
+                 "type":"food",
                  "visible":true,
-                 "width":127,
-                 "x":320,
-                 "y":896
+                 "width":64,
+                 "x":1038,
+                 "y":607
                 }, 
                 {
-                 "gid":57,
-                 "height":65,
-                 "id":56,
+                 "gid":2,
+                 "height":64,
+                 "id":66,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":0
-                        }],
                  "rotation":0,
-                 "type":"luna",
+                 "type":"food",
                  "visible":true,
-                 "width":132,
-                 "x":960,
-                 "y":640
+                 "width":64,
+                 "x":850,
+                 "y":849
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":67,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":997,
+                 "y":766
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":68,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":635,
+                 "y":967
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":69,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":460,
+                 "y":1063
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":70,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":282,
+                 "y":1152
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -167,37 +179,9 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":55,
-                 "height":351,
-                 "id":39,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"end_scale",
-                         "type":"float",
-                         "value":0.25
-                        }, 
-                        {
-                         "name":"init_scale",
-                         "type":"float",
-                         "value":3
-                        }, 
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":1
-                        }],
-                 "rotation":0,
-                 "type":"hubert",
-                 "visible":true,
-                 "width":83,
-                 "x":64,
-                 "y":896
-                }, 
-                {
                  "gid":58,
                  "height":96,
-                 "id":40,
+                 "id":47,
                  "name":"",
                  "properties":[
                         {
@@ -209,13 +193,31 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":192,
-                 "y":704
+                 "x":93,
+                 "y":1347
+                }, 
+                {
+                 "gid":57,
+                 "height":65,
+                 "id":48,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"luna",
+                 "visible":true,
+                 "width":132,
+                 "x":29,
+                 "y":1219
                 }, 
                 {
                  "gid":58,
                  "height":96,
-                 "id":41,
+                 "id":53,
                  "name":"",
                  "properties":[
                         {
@@ -227,13 +229,13 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":448,
-                 "y":704
+                 "x":38,
+                 "y":933
                 }, 
                 {
                  "gid":58,
                  "height":96,
-                 "id":42,
+                 "id":54,
                  "name":"",
                  "properties":[
                         {
@@ -245,8 +247,116 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":704,
-                 "y":704
+                 "x":232,
+                 "y":540
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":55,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":247,
+                 "y":1037
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":56,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":30,
+                 "y":634
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":57,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":45,
+                 "y":1083
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":58,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":247,
+                 "y":865
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":59,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":35,
+                 "y":788
+                }, 
+                {
+                 "gid":58,
+                 "height":96,
+                 "id":60,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":157,
+                 "x":252,
+                 "y":702
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -258,7 +368,19 @@
          "draworder":"topdown",
          "id":4,
          "name":"Player",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":4,
+                 "height":64,
+                 "id":46,
+                 "name":"",
+                 "rotation":0,
+                 "type":"player",
+                 "visible":true,
+                 "width":64,
+                 "x":10,
+                 "y":1353
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -266,7 +388,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":57,
+ "nextobjectid":71,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

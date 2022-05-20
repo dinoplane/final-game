@@ -2,7 +2,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     static P2C_COLLIDER = null;
     static P2C_OVERLAP = null;
     static C2C_OVERLAP = null;
-    
+    // MOMMY MOMMY MOMMY MOMMY
 
     constructor(scene, x, y, frame, data){
         super(scene, x, y, "cats_atlas", frame);
@@ -14,7 +14,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
         this.name = frame;
         this.selected = false;
-        this.selectsLeft = 1;
+        if (data["movesLeft"])
+            this.selectsLeft = data["movesLeft"];
+        else this.selectsLeft = 1;
+
         this.catSoul = null;
         this.my_friend = null;
     }
@@ -62,7 +65,6 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             let i = Cat.P2C_COLLIDER.object2.indexOf(this);
             let j = Cat.P2C_OVERLAP.object2.indexOf(this);
                         
-
             Cat.P2C_COLLIDER.object2.splice(i,1);
             Cat.P2C_OVERLAP.object2.splice(j,1);
             
@@ -72,7 +74,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.catSoul = new CatSoul(this).setOrigin(0,1);
             this.setTexture("cats_atlas", this.name+"_owo");
             this.selected = true;
-            this.setScale(1.2);
+            this.setScale(1.01);
             this.setDepth(4);
 
         }
@@ -119,6 +121,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     decrementSelect(){  // Am I tired yet? 
         this.selectsLeft -= 1;
+        this.checkSleep();
+    }
+
+    checkSleep(){   // Me nappy...
         if (!this.isSelectable()) // Me sleepy uwu
             this.setTexture("cats_atlas", this.name + "_uwu");
         else this.setTexture("cats_atlas", this.name);
