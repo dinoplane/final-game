@@ -61,22 +61,22 @@ class LevelLoader {
     }
 
     loadGround(){
-
         let backGround = this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5)
         let ground = this.map.createLayer("Ground", 'ground_tileset',0,0);
         ground.setCollisionByExclusion(-1, true);
-       // ret_array.push(ground);
-        
-        // Path count {0, {i}};
-        
-        // this.map.layers.forEach( (l) => {
-            
-            
-        // });
         return ground;
     }
 
     loadBackground(){
 
+    }
+
+    getMapWidth(){
+        return this.map.widthInPixels;
+
+    }
+
+    getMapHeight(){
+        return this.map.heightInPixels;
     }
 }

@@ -1,5 +1,5 @@
 class Play extends Phaser.Scene {
-
+    static RESET_DURATION = 500;
     constructor(){
         super("playScene");
         this.VELOCITY = 200;
@@ -11,10 +11,10 @@ class Play extends Phaser.Scene {
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
         this.levelComplete = false;
-        
-        this.objects = this.levelLoader.loadLevel();
+        this.resetDuration = Play.RESET_DURATION;
+        this.isZoomed = true;
 
-        //this.player = this.physics.add.sprite(0,0, 'player');
+        this.objects = this.levelLoader.loadLevel();
         this.physics.add.collider(this.player, this.levelLoader.loadGround(),
                                     (p, g) => {
                                         this.onGroundCollide(p, g);
@@ -45,9 +45,10 @@ class Play extends Phaser.Scene {
         
 
         // Cameras
+        this.moveCam();
         //game.renderer.renderSession.roundPixels = true;
-        this.cameras.main.roundPixels = true;
-        this.cameras.main.startFollow(this.player, true, );
+        // this.cameras.main.roundPixels = true;
+        // this.cameras.main.startFollow(this.player, true, );
         // set camera dead zone
 //        this.cameras.main.setDeadzone(200, 200);
         //this.cameras.main.setName("center");
@@ -55,6 +56,13 @@ class Play extends Phaser.Scene {
         this.keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         this.keyR.on('down', (key) => {
             this.scene.restart();
+        }); 
+
+        this.keyQ = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
+        this.keyQ.on('down', (key) => {
+            if (this.isZoomed)
+                this.resetCam();
+            else this.moveCam();
         }); 
 
         //this.physics.add.collider(this.player, )
@@ -77,7 +85,29 @@ class Play extends Phaser.Scene {
         this.scene.restart();
     }
 
+    moveCam() {
+        this.isZoomed = true;
+        // startFollow(target [, roundPixels] [, lerpX] [, lerpY] [, offsetX] [, offsetY])
+        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+        // zoom in: zoomTo(zoom [, duration] [, ease] [, force] [, callback] [, context])
+        this.cameras.main.zoomTo(1, this.resetDuration, 'Sine.easeInOut', false);
+    }
 
+    resetCam() {
+        this.isZoomed  =false;
+        // stop following game objects
+        this.cameras.main.stopFollow();
+        // pan to center world: pan(x, y [, duration] [, ease] [, force] [, callback] [, context])
+        this.cameras.main.pan(game.config.width/2, game.config.height/2, this.resetDuration, 'Sine.easeInOut');
+        // Calculate the zoom factor f, g to fit map on screen
+        // z =  game screen size / map size . Choose more zoom (smaller z)
+        let f = game.config.width / this.levelLoader.getMapWidth(); 
+        let g = game.config.height / this.levelLoader.getMapHeight();
+        let z = Math.min(f, g);
+        
+        // zoom out
+        this.cameras.main.zoomTo(z, this.resetDuration, 'Sine.easeInOut');
+    }
 
     onGroundCollide(player, ground){
             player.onGround();
