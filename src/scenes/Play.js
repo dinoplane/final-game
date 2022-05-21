@@ -13,7 +13,6 @@ class Play extends Phaser.Scene {
         this.levelComplete = false;
         
         this.objects = this.levelLoader.loadLevel();
-        console.log(this.objects)
 
         //this.player = this.physics.add.sprite(0,0, 'player');
         this.physics.add.collider(this.player, this.levelLoader.loadGround(),
@@ -37,14 +36,13 @@ class Play extends Phaser.Scene {
             cat1.onCatOverlap(cat2);
         });
         
-        
+        this.input.mouse.disableContextMenu();
         this.input.on("pointerdown", (pointer, obj) => {
-            if (Cat.SELECTED_CAT != null && obj.length == 0){
-                Cat.SELECTED_CAT.decrementSelect();
-                Cat.SELECTED_CAT.setPosition(pointer.worldX - Cat.SELECTED_CAT.width/2, pointer.worldY + Cat.SELECTED_CAT.height/2);
-                Cat.SELECTED_CAT.onDeselected();
+            if (pointer.rightButtonDown() && Cat.SELECTED_CAT != null){
+                Cat.SELECTED_CAT.canceled = true;
             }
-        })
+        });
+        
 
         // Cameras
         //game.renderer.renderSession.roundPixels = true;
@@ -68,12 +66,10 @@ class Play extends Phaser.Scene {
     
     update(time, delta){
         if (this.player.food == this.foodNum && !this.levelComplete){
-            console.log("Hello")
             this.levelComplete = true;
             this.player.onLevelComplete();
         }
         this.player.update();
-       //console.log(this.input.mousePointer.x, this.input.mousePointer.y);
     }
 
     loadNextLevel(){

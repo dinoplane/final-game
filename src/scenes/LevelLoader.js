@@ -16,7 +16,6 @@ class LevelLoader {
         this.scene = scene;
         this.map = scene.make.tilemap({key: 'level'+i});
         //this.dataManager = new Phaser.Data.DataManager(this);
-        console.log(this.map);
 
         scene.physics.world.bounds.setTo(0,0, this.map.widthInPixels, this.map.heightInPixels);
         scene.cameras.main.setBounds(0,0, this.map.widthInPixels, this.map.heightInPixels);
@@ -44,7 +43,6 @@ class LevelLoader {
         let food_array = [];
         let cat_array = [];
         this.map.objects.forEach( (objlayer) => {
-            //console.log(objlayer.objects)
             objlayer.objects.forEach((obj) => {
                 
                 let e = null;
@@ -52,7 +50,6 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1).setDepth(2));
                 } else {
-                    console.log()
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
                                 this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(2));
                 }
@@ -65,7 +62,7 @@ class LevelLoader {
 
     loadGround(){
 
-        //let backGround = this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5)
+        let backGround = this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5)
         let ground = this.map.createLayer("Ground", 'ground_tileset',0,0);
         ground.setCollisionByExclusion(-1, true);
        // ret_array.push(ground);

@@ -8,8 +8,8 @@ class PlatformCat extends Cat { // A cat that can be collided with.
     }
 
     onCollide(player){
-    if (player.body.touching.down) 
-        player.onGround();
+        if (player.body.touching.down) 
+            player.onGround();
     }
 
     onOverlap(player){
