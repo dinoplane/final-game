@@ -8,7 +8,6 @@ class Load extends Phaser.Scene { // First time load
         this.load.image("player", "./assets/images/player.png");
         this.load.atlas("miao_atlas", "./assets/images/miao_atlas.png", "./assets/images/miao_atlas.json")
         this.load.image("food", "./assets/images/food.png");
-        
 
         this.load.image("ground_tileset_image", "./assets/tilesets/ground_tileset.png" );
         // Load.CAT_NAMES.forEach(cat => { 
@@ -22,7 +21,7 @@ class Load extends Phaser.Scene { // First time load
 
 
         this.load.audio('pickup_food', './assets/audio/pickup_food.wav');
-            
+        this.load.audio('bg_music1', './assets/audio/wander.mp3');
     }
 
     create(){

@@ -120,10 +120,10 @@ class Player extends Phaser.Physics.Arcade.Sprite {
                 suffix: '',
                 zeroPad: 3,
             }),
-            frameRate: 12,
+            frameRate: 6,
             repeat: -1,
             yoyo: true,
-            repeatDelay: 5000
+
         });
     }
 
@@ -167,6 +167,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
 
         if (this.isGrounded && this.body.velocity.y > 0){
             this.isGrounded = false;
+            console.log("WHAT")
         }
     }
 
@@ -176,10 +177,10 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             let k = this.cursors[d];
             if (!k.isDown){
                 if (this.isGrounded) this.anims.play("miao_idle");
-                this.setAcceleration(0, 0);
+                this.setAccelerationX(0);
             } else {
                 this.setFlipX(-a < 0);
-                this.setAcceleration(-a, 0);
+                this.setAccelerationX(-a);
             }    
         }
     }
@@ -187,7 +188,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     onXDown(a){
         if (!this.gameOver && !this.levelComplete){
             this.setFlipX(a < 0);
-            this.setAcceleration(a, 0);
+            this.setAccelerationX(a);
         }
 
         if (this.isGrounded) this.anims.play("miao_run")

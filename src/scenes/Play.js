@@ -88,7 +88,7 @@ class Play extends Phaser.Scene {
     moveCam() {
         this.isZoomed = true;
         // startFollow(target [, roundPixels] [, lerpX] [, lerpY] [, offsetX] [, offsetY])
-        this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+        this.cameras.main.startFollow(this.player, true);
         // zoom in: zoomTo(zoom [, duration] [, ease] [, force] [, callback] [, context])
         this.cameras.main.zoomTo(1, this.resetDuration, 'Sine.easeInOut', false);
     }
