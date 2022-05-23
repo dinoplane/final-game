@@ -14,6 +14,8 @@ class Play extends Phaser.Scene {
         this.resetDuration = Play.RESET_DURATION;
         this.isZoomed = true;
 
+        this.background = this.levelLoader.loadBackground();
+
         this.objects = this.levelLoader.loadLevel();
         this.physics.add.collider(this.player, this.levelLoader.loadGround(),
                                     (p, g) => {
@@ -65,6 +67,11 @@ class Play extends Phaser.Scene {
             else this.moveCam();
         }); 
 
+        
+        //Music control
+        // this.bg_music = this.sound.add('bg_music1');
+        // this.bg_music.play();
+
         //this.physics.add.collider(this.player, )
         //this.physics.world.setBounds(game.config.width, game.config.height);
     }
@@ -73,6 +80,7 @@ class Play extends Phaser.Scene {
     }
     
     update(time, delta){
+        console.log() 
         if (this.player.food == this.foodNum && !this.levelComplete){
             this.levelComplete = true;
             this.player.onLevelComplete();
@@ -87,16 +95,19 @@ class Play extends Phaser.Scene {
 
     moveCam() {
         this.isZoomed = true;
+        
         // startFollow(target [, roundPixels] [, lerpX] [, lerpY] [, offsetX] [, offsetY])
         this.cameras.main.startFollow(this.player, true);
         // zoom in: zoomTo(zoom [, duration] [, ease] [, force] [, callback] [, context])
         this.cameras.main.zoomTo(1, this.resetDuration, 'Sine.easeInOut', false);
+        
     }
 
     resetCam() {
         this.isZoomed  =false;
         // stop following game objects
         this.cameras.main.stopFollow();
+        this.background.setScrollFactor(1);
         // pan to center world: pan(x, y [, duration] [, ease] [, force] [, callback] [, context])
         this.cameras.main.pan(game.config.width/2, game.config.height/2, this.resetDuration, 'Sine.easeInOut');
         // Calculate the zoom factor f, g to fit map on screen

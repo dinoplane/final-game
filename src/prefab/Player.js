@@ -33,8 +33,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.cursors.up.on('down', key =>{
             if (this.jumps < Player.MAX_JUMPS){
                 this.isGrounded = false;
+                //this.body.bounce.y = 0;
                 this.anims.play("miao_hop");
-                //this.falling = false;
                 this.setVelocityY(-Player.JUMP_V);  
                 this.jumps += 1;
             }
@@ -160,8 +160,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update(){
-        if ((!this.isGrounded) && this.body.velocity.y > 0){
-            //this.falling = true;
+        //console.log(this.body.touching)
+        if ((!this.body.touching.down) && this.body.velocity.y > 0){
+            //this.body.bounce.y = 0;
             this.anims.play("miao_fall");
         }
 
@@ -191,7 +192,9 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             this.setAccelerationX(a);
         }
 
-        if (this.isGrounded) this.anims.play("miao_run")
+        if (this.isGrounded) {
+            this.anims.play("miao_run")
+        }
     }
 
 

@@ -7,7 +7,10 @@ class FallingCat extends PlatformCat { // A cat that falls
         super.onCollide(player);
 
         this.setInteractive(false);
-        this.setAccelerationY(100);
+        this.selected = false;
+        this.selectsLeft = 0;
+        this.checkSleep();
+        this.setAccelerationY(1000);
 
     }
 }

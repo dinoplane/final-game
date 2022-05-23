@@ -8,7 +8,7 @@ class PlatformCat extends Cat { // A cat that can be collided with.
     }
 
     onCollide(player){
-        if (player.body.touching.down) 
+        if (player.body.touching.down && this.body.touching.up) 
             player.onGround();
     }
 

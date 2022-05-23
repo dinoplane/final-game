@@ -9,16 +9,14 @@ class LongCat extends PlatformCat { // A cat that stretches
             duration:2000,
             repeat: -1,
             yoyo: true,
-            ease: 'Cubic.easeInOut',
+            ease: 'Sine.easeInOut',
         })
         this.stretch.play();
     }
+    onCollide(player){
+        super.onCollide(player);
+        //player.body.bounce.y = -1;
+        //this.setAccelerationY(1000);
 
-    // onCollide(player){
-    //     super.onCollide(player);
-
-    //     this.setInteractive(false);
-    //     this.setAccelerationY(100);
-
-    // }
+    }
 }
