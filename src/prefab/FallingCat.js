@@ -10,7 +10,7 @@ class FallingCat extends PlatformCat { // A cat that falls
         this.selected = false;
         this.selectsLeft = 0;
         this.checkSleep();
-        this.setAccelerationY(1000);
+        this.setAccelerationY(100);
 
     }
 }
