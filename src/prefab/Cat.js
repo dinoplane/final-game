@@ -46,6 +46,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     }
 
+    onBeforeCollide(player){
+
+    }
+
     onOverlap(player){
 
     }

@@ -29,9 +29,15 @@ class Play extends Phaser.Scene {
         });
         this.foodNum = this.objects.food.length;
 
-        Cat.P2C_COLLIDER = this.physics.add.collider(this.player, this.objects.cats.slice(), (player, cat) => {
-            cat.onCollide(player);
-        });
+        Cat.P2C_COLLIDER = this.physics.add.collider(this.player, this.objects.cats.slice(), 
+            (player, cat) => {
+                cat.onCollide(player);
+            },
+            
+            (player, cat) => {
+                cat.onBeforeCollide(player);
+            }
+        );
         Cat.P2C_OVERLAP = this.physics.add.overlap(this.player, this.objects.cats.slice(), (player, cat) => {
             cat.onOverlap(player);
         });
