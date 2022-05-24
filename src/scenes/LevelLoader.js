@@ -15,6 +15,7 @@ class LevelLoader {
     constructor(scene, i){
         this.scene = scene;
         this.map = scene.make.tilemap({key: 'level'+i});
+        console.log(this.map.originX, this.map.originY, )
         //this.dataManager = new Phaser.Data.DataManager(this);
 
         scene.physics.world.bounds.setTo(0,0, this.map.widthInPixels, this.map.heightInPixels);
@@ -32,7 +33,7 @@ class LevelLoader {
     }
 
     cleanInput(data){
-        console.log(data)
+        //console.log(data)
         let ret = {};
         for (let d of data){
             ret[d.name] = d.value;
@@ -51,7 +52,7 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1).setDepth(2));
                 } else {
-                    console.log(obj);
+                    //console.log(obj);
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
                                 this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(2));
                 }
@@ -70,7 +71,7 @@ class LevelLoader {
     }
 
     loadBackground(){
-        return this.map.createLayer("Background", "ground_tileset",0,0).setScrollFactor(0.5);
+        return this.map.createLayer("Background", "ground_tileset",-200, 0).setScale(1.5);
     }
 
     getMapWidth(){

@@ -25,28 +25,33 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.scene.input.keyboard.enabled = true;
 
         this.cursors = this.scene.input.keyboard.addKeys({ 
+            'left': Phaser.Input.Keyboard.KeyCodes.LEFT, 
+            'right': Phaser.Input.Keyboard.KeyCodes.RIGHT, 
+            up: Phaser.Input.Keyboard.KeyCodes.UP, 
+        });
+        
+        this.wasd = this.scene.input.keyboard.addKeys({ 
             'left': Phaser.Input.Keyboard.KeyCodes.A, 
             'right': Phaser.Input.Keyboard.KeyCodes.D, 
             up: Phaser.Input.Keyboard.KeyCodes.W, 
         });
 
-        this.cursors.up.on('down', key =>{
-            if (this.jumps < Player.MAX_JUMPS){
-                this.isGrounded = false;
-                //this.body.bounce.y = 0;
-                this.anims.play("miao_hop");
-                this.setVelocityY(-Player.JUMP_V);  
-                this.jumps += 1;
-            }
-        });
+        let controls = [this.cursors, this.wasd]
 
-        for (let c of Player.CONTROL_CONFIG){
-                this.cursors[c.name].on( 'down', (key) => {
-                    this.onXDown(c.arg)
-                });
-                this.cursors[c.name].on('up', (key) => {
-                    this.onXUp(c.arg);
-                });
+        for (let set of controls){
+
+            set.up.on('down', key =>{
+                this.onJump();
+            });
+
+            for (let c of Player.CONTROL_CONFIG){
+                    set[c.name].on( 'down', (key) => {
+                        this.onXDown(c.arg)
+                    });
+                    set[c.name].on('up', (key) => {
+                        this.onXUp(c.arg);
+                    });
+            }
         }
 
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
@@ -62,7 +67,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             defaultTextureKey: 'miao_atlas',
             frames:  this.anims.generateFrameNames('miao_atlas', { 
                 prefix: 'miao_run', 
-                start: 0, 
+                start: 1, 
                 end: 6, 
                 suffix: '',
                 zeroPad: 3,
@@ -149,6 +154,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             let keyDown = false;
             for (let c of Player.CONTROL_CONFIG){
                 keyDown |= (this.cursors[c.name].isDown)
+                keyDown |= (this.wasd[c.name].isDown)
             }
             this.anims.play( (keyDown) ? "miao_run" : "miao_idle");
             
@@ -172,16 +178,27 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
+    onJump(){
+        if (this.jumps < Player.MAX_JUMPS){
+            this.isGrounded = false;
+            //this.body.bounce.y = 0;
+            this.anims.play("miao_hop");
+            this.setVelocityY(-Player.JUMP_V);  
+            this.jumps += 1;
+        }
+    }
+
     onXUp(a){
         if (!this.gameOver && !this.levelComplete){
             let d = (a < 0) ? 'right': 'left';
             let k = this.cursors[d];
-            if (!k.isDown){
-                if (this.isGrounded) this.anims.play("miao_idle");
-                this.setAccelerationX(0);
-            } else {
+            let l = this.wasd[d]; // fix this logic
+            if (k.isDown || l.isDown){
                 this.setFlipX(-a < 0);
                 this.setAccelerationX(-a);
+            } else {
+                if (this.isGrounded) this.anims.play("miao_idle");
+                this.setAccelerationX(0);                
             }    
         }
     }
@@ -196,8 +213,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             this.anims.play("miao_run")
         }
     }
-
-
 
     onLevelComplete(){
         this.levelComplete = true;

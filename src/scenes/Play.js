@@ -1,5 +1,7 @@
 class Play extends Phaser.Scene {
     static RESET_DURATION = 500;
+    static CAMERA_TWEEN = 'Sine.easeInOut';
+
     constructor(){
         super("playScene");
         this.VELOCITY = 200;
@@ -49,6 +51,7 @@ class Play extends Phaser.Scene {
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {
             this.isZoomed = !this.isZoomed;
+            if (this.isZoomed) this.background.scrollFactorX = 0.5;
         });
         this.moveCam();
         //game.renderer.renderSession.roundPixels = true;
@@ -98,19 +101,26 @@ class Play extends Phaser.Scene {
 
     moveCam() {
         if (!this.isZoomed){
+            console.log("FLONG");
             //this.isZoomed = true;
             
             // startFollow(target [, roundPixels] [, lerpX] [, lerpY] [, offsetX] [, offsetY])
             this.cameras.main.startFollow(this.player, true);
+            
             // zoom in: zoomTo(zoom [, duration] [, ease] [, force] [, callback] [, context])
-            this.cameras.main.zoomTo(1, this.resetDuration, 'Sine.easeInOut', false);
-            this.tweens.create({
-                targets: this.background,
-                scrollFactorX: 0.5,
-                scrollFactorX: 0.5,
-                duration: this.resetDuration,
-                ease: 'Sine.easeInOut',
-            });
+            this.cameras.main.zoomTo(1, this.resetDuration, Play.CAMERA_TWEEN, false);
+            //this.background.setScale(2);
+            // this.tweens.create({
+            //     targets: this.background,
+            //     scrollFactorX: 1,
+            //     scrollFactorY: 1,
+            //     scaleX: 1,
+            //     scaleY: 1,
+                
+            //     duration: this.resetDuration,
+            //     ease: Play.CAMERA_TWEEN,
+            //     onUpdate: ()=> {console.log(this.background.scrollFactorX)}
+            // }).play();
             
         }        
     }
@@ -120,17 +130,33 @@ class Play extends Phaser.Scene {
             //this.isZoomed  = false;
             // stop following game objects
             this.cameras.main.stopFollow();
-            this.background.setScrollFactor(1);
+            
+
             // pan to center world: pan(x, y [, duration] [, ease] [, force] [, callback] [, context])
             //this.cameras.main.pan(game.config.width/2, game.config.height/2, this.resetDuration, 'Sine.easeInOut');
-            // Calculate the zoom factor f, g to fit map on screen
+            // Calculate the zoom factor f, g to fit map on scree
+            //this.cameras.main.centerOn(game.config.width/2, game.config.height/2);
             // z =  game screen size / map size . Choose more zoom (smaller z)
             let f = game.config.width / this.levelLoader.getMapWidth(); 
             let g = game.config.height / this.levelLoader.getMapHeight();
             let z = Math.min(f, g);
-            
-            // zoom out
-            this.cameras.main.zoomTo(z, this.resetDuration, 'Sine.easeInOut');
+            //this.background.setScrollFactor(1, 1);
+            //this.background.setScale(1);
+            // this.tweens.create({
+            //     targets: this.background,
+            //     scrollFactorX: 1,
+            //     scrollFactorY: 1,
+            //     scaleX: 1,
+            //     scaleY: 1,
+            //     duration: this.resetDuration,
+            //     ease: Play.CAMERA_TWEEN,
+            //     onUpdate: ()=> {console.log(this.background.scrollFactorX)}
+            // }).play();
+            //this.background.scrollFactorX = 1;
+           // this.background.setScrollFactor(1, 1)
+            console.log(this.background.scrollFactorX)
+            //zoom out
+            this.cameras.main.zoomTo(z, this.resetDuration, Play.CAMERA_TWEEN, false);
         }
     }
 
