@@ -2,11 +2,11 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     static ACCEL = 3000;
     static JUMP_V = 500;
     static FALL_V = 1000;
-    static MAX_V = 300;
+    static MAX_V = 400;
     static DRAG = 1000;
     static MAX_JUMPS = 2;
 
-    static CONTROL_CONFIG = [{name: 'left', arg: -Player.ACCEL - 500, },
+    static CONTROL_CONFIG = [{name: 'left', arg: -Player.ACCEL, },
                              {name: 'right', arg: +Player.ACCEL}]
 
     constructor(scene, x, y){
@@ -22,6 +22,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.jumps = 0;
         this.platform = null;
         this.isGrounded = false;
+        this.peakHeight = 0;
+        this.sliding = false;
 
         this.scene.input.keyboard.enabled = true;
 
@@ -104,8 +106,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             frameRate: 12
         });
 
-        this.land = this.anims.create({
-            key: 'miao_land',
+        this.slide= this.anims.create({
+            key: 'miao_slide',
             defaultTextureKey: 'miao_atlas',
             frames:  this.anims.generateFrameNames('miao_atlas', { 
                 prefix: 'miao_jump', 
@@ -146,25 +148,29 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         this.food = 0;
     }
 
-    isMidAir(){
-        return !this.body.embedded;
+    isRunning(){
+        let a = 0;
+        for (let c of Player.CONTROL_CONFIG){
+            if (this.cursors[c.name].isDown || this.wasd[c.name].isDown)
+                a = c.arg;
+        }
+        return a;
     }
 
     onGround(platform){
         //console.log(platform)
         this.platform = platform;
         if (!this.isGrounded) {// We have just fallen (this is called multple times so gatekeep)
-            let keyDown = false;
-            for (let c of Player.CONTROL_CONFIG){
-                keyDown |= (this.cursors[c.name].isDown)
-                keyDown |= (this.wasd[c.name].isDown)
-            }
-            this.anims.play( (keyDown) ? "miao_run" : "miao_idle");
-            
+            console.log("came" , this.isRunning())
+            //
+            this.anims.play( (this.isRunning() != 0) ? "miao_run" : "miao_idle");
+            this.onXDown(this.isRunning());
+
+            this.resetJumps();
         }
         this.isGrounded = true;
 
-        this.resetJumps();
+        
     }
 
 
@@ -176,6 +182,8 @@ class Player extends Phaser.Physics.Arcade.Sprite {
             this.anims.play("miao_hop");
             this.setVelocityY(-Player.JUMP_V);  
             this.jumps += 1;
+            this.sliding = false;
+            this.onXDown(this.isRunning());
         }
     }
 
@@ -186,13 +194,13 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     onXUp(a){
-        if (!this.gameOver && !this.levelComplete){
+       //console.log("stopping %d", a);
+        if (!this.gameOver && !this.levelComplete && !this.sliding){
             let d = (a < 0) ? 'right': 'left';
             let k = this.cursors[d];
             let l = this.wasd[d]; // fix this logic
             if (k.isDown || l.isDown){
-                this.setFlipX(-a < 0);
-                this.setAccelerationX(-a);
+                this.onXDown(-a);
             } else {
                 if (this.isGrounded) this.anims.play("miao_idle");
                 this.setAccelerationX(0);                
@@ -201,14 +209,19 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     onXDown(a){
-        if (!this.gameOver && !this.levelComplete){
+       //console.log("moving %d", a);
+        if (!this.gameOver && !this.levelComplete && !this.sliding && a != 0){
             this.setFlipX(a < 0);
             this.setAccelerationX(a);
+
+            if (this.isGrounded) {
+               //console.log("running")
+                this.sliding = false;
+                this.anims.play("miao_run");
+            }
         }
 
-        if (this.isGrounded) {
-            this.anims.play("miao_run")
-        }
+
     }
 
     onLevelComplete(){
@@ -232,19 +245,34 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update(){
-        console.log(this.isGrounded)
+        console.log(this.sliding)
         if (this.platform instanceof PlatformCat){
             // detect fall
             if (this.x > this.platform.x + this.platform.displayWidth || this.x + this.displayWidth < this.platform.x){
                 this.onLeavePlatform();
-                
+                console.log("called")
             }
         }
+        
+        
 
-        if (!this.isGrounded && this.body.velocity.y > 0){
-            this.anims.play("miao_fall");
-            this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
-        }            
+        if (!this.isGrounded) {
+            if (this.body.velocity.y > 0){
+                this.anims.play("miao_fall");
+                this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
+               //console.log("YO")
+            }
+        } else {
+            if (this.body.velocity.x == 0 && ["miao_idle", "miao_run"].indexOf(this.anims.getName()) == -1){
+                this.anims.play("miao_idle");
+                this.sliding = false;
+                this.onXDown(this.isRunning());
+                //this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
+            }
+            if (this.sliding && !this.isRunning()){
+                this.anims.play("miao_slide");
+            }
+        }
     }
 
 }

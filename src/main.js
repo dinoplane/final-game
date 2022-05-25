@@ -39,6 +39,6 @@ let cursors;
 let game = new Phaser.Game(config);
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
-let level = 0;
+let level =3;
 let controls;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;

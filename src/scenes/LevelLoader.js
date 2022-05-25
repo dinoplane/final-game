@@ -15,7 +15,7 @@ class LevelLoader {
     constructor(scene, i){
         this.scene = scene;
         this.map = scene.make.tilemap({key: 'level'+i});
-        console.log(this.map.originX, this.map.originY, )
+        //console.log(this.map.originX, this.map.originY, )
         //this.dataManager = new Phaser.Data.DataManager(this);
 
         scene.physics.world.bounds.setTo(0,0, this.map.widthInPixels, this.map.heightInPixels);
@@ -71,7 +71,7 @@ class LevelLoader {
     }
 
     loadBackground(){
-        return this.map.createLayer("Background", "ground_tileset",0, 0).setScale()//game.config.width);
+        return this.map.createLayer("Background", "ground_tileset",0, 0).setScrollFactor(0.5, 1);
     } 
 
     getMapWidth(){
