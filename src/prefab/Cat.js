@@ -4,6 +4,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     static C2C_OVERLAP = null;
 
     static SELECTED_CAT = null;
+    static OFFSET_FACTOR = 0.1;
     // MOMMY MOMMY MOMMY MOMMY
 
     constructor(scene, x, y, frame, data){
@@ -98,9 +99,19 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
+    getOffsetDistance(){
+        if (this.catSoul != null)
+           return Phaser.Math.Distance.Between(this.x + this.displayWidth/2, this.y - this.displayHeight/2,
+                                                this.catSoul.x + this.displayWidth/2, this.catSoul.y - this.displayHeight/2); 
+    }
+    getDiagonal(){
+        
+        return Math.sqrt(this.displayWidth**2 + this.displayHeight**2);
+    }
+
     onDragEnd(pointer){    // PUT ME DOWN PUT ME DOWN PUT ME DOWN
         if (this.selected || this.canceled){  
-            if (this.isTouching() || this.scene.physics.overlap(this, this.catSoul) || this.canceled){     // No not here!!!
+            if (this.isTouching() || this.getOffsetDistance() <   Cat.OFFSET_FACTOR* this.getDiagonal()  || this.canceled){     // No not here!!!
                 this.setPosition(this.catSoul.x, this.catSoul.y);
                 this.setTexture("cats_atlas", this.name);
             } else {
