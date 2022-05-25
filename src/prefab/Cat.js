@@ -22,6 +22,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         if (data["movesLeft"])
             this.selectsLeft = data["movesLeft"];
         else this.selectsLeft = 1;
+        this.checkSleep();
 
         this.catSoul = null;
         this.my_friend = null;

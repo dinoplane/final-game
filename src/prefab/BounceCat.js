@@ -11,8 +11,40 @@ class BounceCat extends PlatformCat { // A cat that stretches
             if ((player.body.touching[c[1]] && this.body.touching[c[2]]) || 
                (player.body.touching[c[2]] && this.body.touching[c[1]])) {
                 player.body.velocity[c[0]] = -this.pvf[c[0]] * c[3];
-                player.sliding = c[0] == "x" && player.isGrounded;
-                if (player.sliding) player.setAccelerationX(0);
+
+
+                if (c[0] == "x"){
+                    this.setOrigin(0.5, 1);
+                    this.x += this.width/2;
+                    player.sliding = player.isGrounded;
+                    this.scene.tweens.create({
+                        targets: this,
+                        scaleX : 0.9,
+                        duration: 100,
+                        ease: 'Cubic.easeInOut',
+                        //easeParams: [ 3.5 ],
+                        //delay: 1000,
+                        yoyo: true,
+                        onComplete: () => {
+                            this.setOrigin(0, 1);
+                            this.x -= this.width/2;
+                        }
+                    }).play();
+                    if (player.sliding) player.setAccelerationX(0);
+                } else {
+                    this.scene.tweens.create({
+                        targets: this,
+                        scaleY:0.9,
+                        duration: 100,
+                        ease: 'Cubic.easeInOut',
+                        //easeParams: [ 3.5 ],
+                        //delay: 1000,
+                        yoyo: true,
+                    }).play();
+                }
+                break;
+                
+                
             }        
         }        
         player.anims.play("miao_hop");
