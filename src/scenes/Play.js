@@ -9,7 +9,6 @@ class Play extends Phaser.Scene {
     }
 
     create(){
-
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
         this.levelComplete = false;

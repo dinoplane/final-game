@@ -1,6 +1,10 @@
-class Player extends Phaser.Physics.Arcade.Sprite {
+class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart 
+    // Spring Cat
+    // Wind Cat...
+    // Sound
     static ACCEL = 3000;
     static JUMP_V = 500;
+    static SPRING_V = 1000;
     static FALL_V = 1000;
     static MAX_V = 400;
     static DRAG = 1000;

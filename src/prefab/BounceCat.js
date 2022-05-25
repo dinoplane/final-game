@@ -6,22 +6,20 @@ class BounceCat extends PlatformCat { // A cat that stretches
     }
 
     onCollide(player){
-        //super.onCollide(player);
+        //super.onCollide(player); // set a bouncing thing.
         for (let c of BounceCat.BOUNCE_CASES){
             if ((player.body.touching[c[1]] && this.body.touching[c[2]]) || 
                (player.body.touching[c[2]] && this.body.touching[c[1]])) {
                 player.body.velocity[c[0]] = -this.pvf[c[0]] * c[3];
-
-
                 if (c[0] == "x"){
                     this.setOrigin(0.5, 1);
                     this.x += this.width/2;
                     player.sliding = player.isGrounded;
                     this.scene.tweens.create({
                         targets: this,
-                        scaleX : 0.9,
+                        scaleX : 0.8,
                         duration: 100,
-                        ease: 'Cubic.easeInOut',
+                        ease: 'Elastic.easeOut',
                         //easeParams: [ 3.5 ],
                         //delay: 1000,
                         yoyo: true,
