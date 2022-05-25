@@ -187,7 +187,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -223,7 +223,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -241,7 +241,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -259,7 +259,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -277,7 +277,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -295,7 +295,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -313,7 +313,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -331,7 +331,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -349,7 +349,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -367,7 +367,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -385,7 +385,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -403,7 +403,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -421,7 +421,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -439,7 +439,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -457,7 +457,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -475,7 +475,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -493,7 +493,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -511,7 +511,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"newton",
@@ -734,7 +734,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"biscuit"
                 }, 
@@ -747,7 +747,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"clyde"
                 }, 
@@ -760,7 +760,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"horton"
                 }, 
@@ -783,7 +783,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"hubert"
                 }, 
@@ -796,7 +796,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"jasmine"
                 }, 
@@ -822,7 +822,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"newton"
                 }, 
@@ -835,7 +835,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"quinn"
                 }, 
@@ -848,7 +848,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":0
                         }],
                  "type":"davinci"
                 }, 
@@ -861,7 +861,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }],
                  "type":"dreda"
                 }],
