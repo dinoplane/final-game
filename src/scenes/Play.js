@@ -69,6 +69,7 @@ class Play extends Phaser.Scene {
 
         this.keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         this.keyR.on('down', (key) => {
+            restarted = true;
             this.scene.restart();
         }); 
 
@@ -79,7 +80,11 @@ class Play extends Phaser.Scene {
             else this.moveCam();
         }); 
 
-        
+        if (restarted){
+            restarted = false;
+            this.cameras.main.flash();
+        }
+
         //Music control
         // this.bg_music = this.sound.add('bg_music1');
         // this.bg_music.play();

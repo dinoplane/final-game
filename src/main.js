@@ -42,3 +42,4 @@ let borderPadding = borderUISize / 3;
 let level =6;
 let controls;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;
+let restarted = false;
