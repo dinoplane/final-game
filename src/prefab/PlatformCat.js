@@ -11,12 +11,13 @@ class PlatformCat extends Cat { // A cat that can be collided with.
     onCollide(player){
         console.log(this.pvf)
         if (player.body.touching.down && this.body.touching.up) 
-            player.onGround();
+            player.onGround(this);
     }
 
     onBeforeCollide(player){
-        console.log(this.body.touching)
+        //console.log(this.body.touching)
         if (!player.isGrounded){
+            player.anims.play("miao_land")
             console.log(player.body.velocity.y);
             this.pvf.y = player.body.velocity.y;
         }

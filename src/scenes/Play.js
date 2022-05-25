@@ -167,9 +167,10 @@ class Play extends Phaser.Scene {
     }
 
     onGroundCollide(player, ground){
-            player.onGround();
-            player.body.touching.down = true;
-            player.body.touching.none = false;
+        player.body.touching.down = true;
+        player.body.touching.none = false;
+        player.onGround(ground);
+
     }
 
 }

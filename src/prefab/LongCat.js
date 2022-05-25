@@ -10,12 +10,20 @@ class LongCat extends PlatformCat { // A cat that stretches
             repeat: -1,
             yoyo: true,
             ease: 'Sine.easeInOut',
+            onUpdate: () => {
+                if (this.body.touching.up){
+
+                }
+            }
         })
         this.stretch.play();
     }
     onCollide(player){
+        //player.isGrounded = true;
+        //player.onLongCat = this;
+
         super.onCollide(player);
-        //player.body.bounce.y = -1;
+        
         //this.setAccelerationY(1000);
 
     }

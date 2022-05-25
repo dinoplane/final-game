@@ -71,8 +71,8 @@ class LevelLoader {
     }
 
     loadBackground(){
-        return this.map.createLayer("Background", "ground_tileset",-200, 0).setScale(1.5);
-    }
+        return this.map.createLayer("Background", "ground_tileset",0, 0).setScale()//game.config.width);
+    } 
 
     getMapWidth(){
         return this.map.widthInPixels;
