@@ -43,18 +43,15 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             up: Phaser.Input.Keyboard.KeyCodes.W, 
         });
 
-        let controls = [this.cursors, this.wasd]
+        this.controls = [this.cursors, this.wasd]
 
-        for (let set of controls){
+        for (let set of this.controls){
 
             set.up.on('down', key =>{
                 this.onJump();
             });
 
             for (let c of Player.CONTROL_CONFIG){
-                    set[c.name].on( 'down', (key) => {
-                        this.onXDown(c.arg)
-                    });
                     set[c.name].on('up', (key) => {
                         this.onXUp(c.arg);
                     });
@@ -165,7 +162,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         //console.log(platform)
         this.platform = platform;
         if (!this.isGrounded) {// We have just fallen (this is called multple times so gatekeep)
-            console.log("came" , this.isRunning())
+            //console.log("came" , this.isRunning())
             //
             this.anims.play( (this.isRunning() != 0) ? "miao_run" : "miao_idle");
             this.onXDown(this.isRunning());
@@ -221,7 +218,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             if (this.isGrounded) {
                //console.log("running")
                 this.sliding = false;
-                this.anims.play("miao_run");
+                if (this.anims.getName() == "miao_idle") this.anims.play("miao_run");
             }
         }
 
@@ -249,15 +246,22 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     update(){
-        console.log(this.sliding)
+        console.log()
         if (this.platform instanceof PlatformCat){
             // detect fall
-            if (this.x > this.platform.x + this.platform.displayWidth || this.x + this.displayWidth < this.platform.x){
+            if (this.x > this.platform.x + this.platform.displayWidth || this.x + this.dWidth < this.platform.x){
                 this.onLeavePlatform();
-                console.log("called")
+                //console.log("called")
             }
         }
-        
+        for (let set of this.controls){
+            for (let c of Player.CONTROL_CONFIG){
+                console.log("xioacioa")
+                if (set[c.name].isDown){
+                    
+                    this.onXDown(c.arg)    }
+            }
+        }
         
 
         if (!this.isGrounded) {
@@ -270,7 +274,6 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             if (this.body.velocity.x == 0 && ["miao_idle", "miao_run"].indexOf(this.anims.getName()) == -1){
                 this.anims.play("miao_idle");
                 this.sliding = false;
-                this.onXDown(this.isRunning());
                 //this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
             }
             if (this.sliding && !this.isRunning()){

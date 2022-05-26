@@ -35,7 +35,7 @@ class LevelLoader {
     }
 
     cleanInput(data){
-        console.log(data)
+        //console.log(data)
         let ret = {};
         for (let d of data){
             ret[d.name] = d.value;
@@ -54,7 +54,7 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1).setDepth(2));
                 } else {
-                    console.log(obj);
+                    //console.log(obj);
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
                                 this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(2));
                 }
