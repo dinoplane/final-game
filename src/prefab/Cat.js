@@ -14,7 +14,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
         //this.setCollideWorldBounds(true);
         this.addPointerCallbacks();
-        
+        this.zzz = null;
 
         this.name = frame;
         this.selected = false;
@@ -80,6 +80,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         return this.body.embedded || !this.body.touching.none ;
     }
 
+    isSleepy(){
+        return this.selectsLeft == 1;
+    }
+
     isSelectable(){     // Am i tired?
         return this.selectsLeft > 0;
     }
@@ -120,12 +124,18 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             //this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
             //console.log(d)
 
-            if (d > 1) {// a little offset doesn't hurt???
+            if (d > 5) {// a little offset doesn't hurt???
                // console.log("ME HERE!")
 
                 this.x = new_x - this.displayWidth/2;
-                this.y = new_y + this.displayHeight/2;}
+                this.y = new_y + this.displayHeight/2;
+        
+                if (this.zzz != null){
+                    this.zzz.x = this.x + this.displayWidth;
+                    this.zzz.y = this.y - this.displayHeight
+                }
             }
+        }
     }
 
     getOffsetDistance(){
@@ -179,8 +189,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     checkFriend(friend){ // FIX ME!!!
         if (friend != null){    // sowwy X3 me touch!
             if (!this.checkCatOverlap(friend)){ // You no touchy anymore?
-                let friend_state = (friend.isSelectable()) ? "" : "_uwu";
-                friend.setTexture("cats_atlas", friend.name + friend_state);
+                friend.checkSleep();
                 this.my_friends.splice(this.my_friends.indexOf(friend), 1);  // bye bye OwO
             }
         }            
@@ -192,9 +201,31 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     checkSleep(){   // Me nappy...
+
         if (!this.isSelectable()) // Me sleepy uwu
             this.setTexture("cats_atlas", this.name + "_uwu");
-        else this.setTexture("cats_atlas", this.name);
+        else if (this.isSleepy()){
+        
+            if (this.zzz == null){
+                this.zzz = this.scene.add.sprite(this.x + this.displayWidth, 
+                                        this.y - this.displayHeight, "zzz_atlas", "zzz000").setOrigin(0, 1).setDepth(5);
+                this.zzz.anims.create({
+                    key: 'zzz',
+                    defaultTextureKey: 'zzz_atlas',
+                    frames:  this.anims.generateFrameNames('zzz_atlas', { 
+                        prefix: 'zzz', 
+                        start: 0, 
+                        end: 5, 
+                        suffix: '',
+                        zeroPad: 3,
+                    }),
+                    frameRate: 6,
+                    repeat: -1
+                });
+                this.zzz.anims.play('zzz');
+            }   
+            this.setTexture("cats_atlas", this.name);
+        } else this.setTexture("cats_atlas", this.name);
     }
 
     update(){

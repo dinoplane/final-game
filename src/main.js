@@ -25,7 +25,7 @@ var config = {
           x: 0,
           y: 1200
            },  
-        debug: true
+        debug: false
       }
     }
   }
