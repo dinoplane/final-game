@@ -7,13 +7,16 @@ class PlatformCat extends Cat { // A cat that can be collided with.
         this.body.allowGravity = false;
         this.setImmovable(true);
         this.pvf = {x: 0, y:0};
-        this.rider = null;
+        
     }
 
     onCollide(player){
         //console.log(this.pvf)
-        if (player.body.touching.down && this.body.touching.up) 
+        if (player.body.touching.down && this.body.touching.up){
             player.onGround(this);
+            this.rider = player;
+        }
+
     }
 
     onBeforeCollide(player){

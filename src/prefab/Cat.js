@@ -19,6 +19,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.name = frame;
         this.selected = false;
         this.canceled = false; // O nwo me no use twitta
+        this.rider = null;
 
         if (data["movesLeft"])
             this.selectsLeft = data["movesLeft"];
@@ -65,7 +66,8 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     onCatOverlap(that){ // X3 sowwy me touchy
-        this.my_friends.push(that);  // Cats are friendly to each other
+        console.log(this)
+        if (this.my_friends.indexOf(that) == -1) this.my_friends.push(that);  // Cats are friendly to each other
         that.setTexture("cats_atlas", that.name+"_x3");
         this.setTexture("cats_atlas", this.name+"_x3");
     }
@@ -105,21 +107,21 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     whileDrag(dragX, dragY){    // OwO AAAAAAAA
         let new_x = dragX;
         let new_y = dragY;
-        console.log("New Coords: %d, %d", new_x, new_y);
+        //console.log("New Coords: %d, %d", new_x, new_y);
         if (this.selected && !this.canceled){
             //console.log(dragX, dragY);   
 
-            console.log("Curr Coords: %d, %d", this.x, this.y )
+            //console.log("Curr Coords: %d, %d", this.x, this.y )
             if (this.body.wasTouching && !this.isTouching()){
                 this.setTexture("cats_atlas", this.name+"_owo");
-                this.checkFriend();
+                //this.checkFriend();
             }
             let d = Math.sqrt((this.x - new_x)**2 + (this.y - new_y)**2);
             //this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
-            console.log(d)
+            //console.log(d)
 
             if (d > 1) {// a little offset doesn't hurt???
-                console.log("ME HERE!")
+               // console.log("ME HERE!")
 
                 this.x = new_x - this.displayWidth/2;
                 this.y = new_y + this.displayHeight/2;}
@@ -145,7 +147,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             } else {
                 this.decrementSelect();     // ah yea thats the spot.
             }
-            this.checkFriend();
+            //this.checkFriend();
             this.canceled = false;
             Cat.SELECTED_CAT = null;
             Cat.P2C_COLLIDER.object2.push(this);
@@ -160,11 +162,27 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
-    checkFriend(friend){
+    cx(){
+        return this.x + this.displayWidth/2;
+    }
+
+    cy(){
+        return this.y - this.displayHeight/2;
+    }
+
+    // adapted from https://gamedev.stackexchange.com/questions/586/what-is-the-fastest-way-to-work-out-2d-bounding-box-intersection
+    checkCatOverlap(friend){ 
+        return ((Math.abs(this.cx() - friend.cx())) * 2 < (this.displayWidth + friend.displayWidth)) &&
+                ((Math.abs(this.cy() - friend.cy())) * 2 < (this.displayHeight + friend.displayHeight))
+    }
+
+    checkFriend(friend){ // FIX ME!!!
         if (friend != null){    // sowwy X3 me touch!
-            let friend_state = (this.my_friend.isSelectable()) ? "" : "_uwu";
-            this.my_friend.setTexture("cats_atlas", this.my_friend.name + friend_state);
-            this.my_friend = null;  // bye bye OwO
+            if (!this.checkCatOverlap(friend)){ // You no touchy anymore?
+                let friend_state = (friend.isSelectable()) ? "" : "_uwu";
+                friend.setTexture("cats_atlas", friend.name + friend_state);
+                this.my_friends.splice(this.my_friends.indexOf(friend), 1);  // bye bye OwO
+            }
         }            
     }
 
@@ -180,8 +198,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     update(){
-        console.log(this.frame.name)
-        if (this.my_friends)
+        //console.log(this.frame.name)
+        if (this.my_friends.length > 0){
+            this.my_friends.forEach((cat) => {this.checkFriend(cat);})
+        }
     
         if (pointer.primaryDown && this.selected){
             pointer = pointer.updateWorldPoint(this.scene.cameras.main);
