@@ -190,8 +190,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
 
     onLeavePlatform(){
         this.isGrounded = false;
+        if (this.platform instanceof PlatformCat){
+            this.platform.rider = null;
+        }
+        this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.platform = null;
-
     }
 
     onXUp(a){
@@ -245,21 +248,27 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         exit.play();
     }
 
+    onPlatform(){ // accommodate for differ
+        // console.log("%d > %d == %s", this.x, this.platform.displayWidth + this.platform.x, (this.x > this.platform.x + this.platform.displayWidth))
+        // console.log("%d < %d == %s", this.x + this.displayWidth, this.platform.x, (this.x + this.displayWidth < this.platform.x))
+
+        return (this.x < this.platform.x + this.platform.displayWidth) && (this.x + this.displayWidth > this.platform.x)    ;
+    }
+
     update(){
-        console.log()
+        //console.log(this.body.velocity)
         if (this.platform instanceof PlatformCat){
             // detect fall
-            if (this.x > this.platform.x + this.platform.displayWidth || this.x + this.dWidth < this.platform.x){
+            if (!this.onPlatform()){
                 this.onLeavePlatform();
-                //console.log("called")
             }
         }
         for (let set of this.controls){
             for (let c of Player.CONTROL_CONFIG){
-                console.log("xioacioa")
                 if (set[c.name].isDown){
-                    
-                    this.onXDown(c.arg)    }
+                    //console.log("FIRING ")
+                    this.onXDown(c.arg)    
+                }
             }
         }
         

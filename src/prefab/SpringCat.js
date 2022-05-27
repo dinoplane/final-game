@@ -11,7 +11,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
             duration: 100,
             ease: 'Bounce.easeInOut',
             onComplete: () => {
-                this.player = null;
+                this.rider = null;
         
             }
             //easeParams: [ 3.5 ],
@@ -25,12 +25,19 @@ class SpringCat extends PlatformCat { // A cat that stretches
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
+            onUpdate: () => {
+                let d = (1*0.64 + 0.36*[0.92*1 + 0.08*(0.05*(9+1)+ 0.95*(107+9+1))])
+                console.log(0.92*d + 0.08*(0.05*(9+d)+0.95*(107 + 9 + d)))
+                 if (this.rider != null){
+                     this.rider.y = this.y - this.displayHeight;
+                 }
+            },
             onComplete: () => {
                 this.spring.play();
-                if (this.player.body.touching.down && this.body.touching.up && !this.compress.isPlaying() && !this.spring.isPlaying()){
-                    this.player.setVelocityY(-Player.SPRING_V);
-                    this.player.isGrounded = false;
-                    this.player.play("miao_hop");
+                if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying()){
+                    this.rider.setVelocityY(-Player.SPRING_V);
+                    this.rider.isGrounded = false;
+                    this.rider.play("miao_hop");
                 }
             }
         });
@@ -42,9 +49,17 @@ class SpringCat extends PlatformCat { // A cat that stretches
 
         if (player.body.touching.down && this.body.touching.up && !this.compress.isPlaying() && !this.spring.isPlaying()) {
             super.onCollide(player);
-            this.player = player;
+            this.rider = player;
             this.compress.play();
+        } 
+    }
+
+    onOverlap(player){
+        if (!this.selected && !this.spring.isPlaying()){
+        //if (player.y + player.height < this.y){
+            player.setVelocityY(0);
+            player.y -= player.y - this.y + this.displayHeight
+        //}
         }
-        player.anims.play("miao_hop");   
     }
 }

@@ -10,20 +10,29 @@ class LongCat extends PlatformCat { // A cat that stretches
             yoyo: true,
             ease: 'Sine.easeInOut',
             onUpdate: () => {
-                if (this.body.touching.up){
-
-                }
+                //console.log(this.rider)
+                 if (this.rider != null){
+                     this.rider.y = this.y - this.displayHeight;
+                 }
             }
         })
         this.stretch.play();
+
+        this.rider = null;
     }
     onCollide(player){
         //player.isGrounded = true;
         //player.onLongCat = this;
-
         super.onCollide(player);
-        
+        if (player.body.touching.down && this.body.touching.up && !player.isGrounded){
+            console.log("YO")
+            
+            //player.body.maxVelocity.y = PlatformCat.STICK_VELOCITY;
+            //player.setVelocityY(PlatformCat.STICK_VELOCITY)
+            this.rider = player;
+        }        
         //this.setAccelerationY(1000);
 
     }
+    // onOverlap() {};
 }

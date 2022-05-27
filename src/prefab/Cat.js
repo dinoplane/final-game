@@ -14,6 +14,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
         //this.setCollideWorldBounds(true);
         this.addPointerCallbacks();
+        
 
         this.name = frame;
         this.selected = false;
@@ -25,19 +26,26 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.checkSleep();
 
         this.catSoul = null;
-        this.my_friend = null;
+        this.my_friends = []; // FRIENDS not FRIEND (may overlap more than one)
     }
 
     addPointerCallbacks(){
+        //this.pointer = this.scene.input.pointer1;
+        // this.point = this.on('pointerm', (pointer, me) => {
+            
+        // });
+
         this.scene.input.setDraggable(this.setInteractive());
 
         this.dstart = this.on('dragstart', (pointer, dragX, dragY) => {
             this.onDragStart()
         });
 
-        this.dwhile = this.on('drag', (pointer, dragX, dragY) => {
-            this.whileDrag(dragX, dragY);
-        });
+        // this.dwhile = this.on('drag', (pointer, dragX, dragY) => {
+        //     console.log("Pointer: %d, %d", pointer.x, pointer.y)
+        //     console.log("Drag: %d, %d",dragX, dragY)
+            
+        // });
 
         this.dend = this.on('dragend', (pointer, dragX, dragY) => {
             this.onDragEnd(pointer);  
@@ -57,8 +65,12 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     onCatOverlap(that){ // X3 sowwy me touchy
-        this.my_friend = that;  // Cats are friendly to each other
+        this.my_friends.push(that);  // Cats are friendly to each other
         that.setTexture("cats_atlas", that.name+"_x3");
+        this.setTexture("cats_atlas", this.name+"_x3");
+    }
+
+    onPlayerDragOverlap(player){
         this.setTexture("cats_atlas", this.name+"_x3");
     }
 
@@ -73,10 +85,12 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     onDragStart(){  // OwO you grab me!
         if (this.isSelectable() && !this.isTouching() && !this.selected){
             let i = Cat.P2C_COLLIDER.object2.indexOf(this);
-            let j = Cat.P2C_OVERLAP.object2.indexOf(this);
+            //let j = Cat.P2C_OVERLAP.object2.indexOf(this);
                         
             Cat.P2C_COLLIDER.object2.splice(i,1);
-            Cat.P2C_OVERLAP.object2.splice(j,1);
+            Cat.P2C_OVERLAP.collideCallback = (player, cat) => {
+                cat.onPlayerDragOverlap(player);
+            };
             
             Cat.SELECTED_CAT = this;
 
@@ -89,15 +103,27 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     whileDrag(dragX, dragY){    // OwO AAAAAAAA
-        if (this.selected && !this.canceled){   
+        let new_x = dragX;
+        let new_y = dragY;
+        console.log("New Coords: %d, %d", new_x, new_y);
+        if (this.selected && !this.canceled){
+            //console.log(dragX, dragY);   
+
+            console.log("Curr Coords: %d, %d", this.x, this.y )
             if (this.body.wasTouching && !this.isTouching()){
                 this.setTexture("cats_atlas", this.name+"_owo");
                 this.checkFriend();
             }
+            let d = Math.sqrt((this.x - new_x)**2 + (this.y - new_y)**2);
             //this.debugtext.text = (this.body.embedded || !this.body.touching.none) ? "touching" : "alone"  ;
-            this.x = dragX;
-            this.y = dragY;
-        }
+            console.log(d)
+
+            if (d > 1) {// a little offset doesn't hurt???
+                console.log("ME HERE!")
+
+                this.x = new_x - this.displayWidth/2;
+                this.y = new_y + this.displayHeight/2;}
+            }
     }
 
     getOffsetDistance(){
@@ -111,6 +137,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     onDragEnd(pointer){    // PUT ME DOWN PUT ME DOWN PUT ME DOWN
+        console.log("PUT ME DOWN")
         if (this.selected || this.canceled){  
             if (this.isTouching() || this.getOffsetDistance() <   Cat.OFFSET_FACTOR* this.getDiagonal()  || this.canceled){     // No not here!!!
                 this.setPosition(this.catSoul.x, this.catSoul.y);
@@ -122,7 +149,10 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.canceled = false;
             Cat.SELECTED_CAT = null;
             Cat.P2C_COLLIDER.object2.push(this);
-            Cat.P2C_OVERLAP.object2.push(this);
+            Cat.P2C_OVERLAP.collideCallback = (player, cat) => {
+                cat.onOverlap(player);
+            };
+            //Cat.P2C_OVERLAP.object2.push(this);
             this.catSoul.destroy();
             this.selected = false;
             this.setScale(1);
@@ -130,8 +160,8 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         }
     }
 
-    checkFriend(){
-        if (this.my_friend != null){    // sowwy X3 me touch!
+    checkFriend(friend){
+        if (friend != null){    // sowwy X3 me touch!
             let friend_state = (this.my_friend.isSelectable()) ? "" : "_uwu";
             this.my_friend.setTexture("cats_atlas", this.my_friend.name + friend_state);
             this.my_friend = null;  // bye bye OwO
@@ -150,6 +180,14 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     update(){
-
+        console.log(this.frame.name)
+        if (this.my_friends)
+    
+        if (pointer.primaryDown && this.selected){
+            pointer = pointer.updateWorldPoint(this.scene.cameras.main);
+            //console.log(pointer.worldX - this.width/2, pointer.worldY+this.height/2)
+            this.whileDrag(pointer.worldX, pointer.worldY);
+        }
+        //console.log(this.texture)
     }
 }
