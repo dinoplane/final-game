@@ -41,7 +41,7 @@
                  "id":68,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":960,
@@ -53,7 +53,7 @@
                  "id":69,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":512,
@@ -65,7 +65,7 @@
                  "id":70,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":384,
@@ -87,8 +87,14 @@
                  "height":65,
                  "id":76,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"luna",
                  "visible":true,
                  "width":132,
                  "x":0,
@@ -99,8 +105,14 @@
                  "height":96,
                  "id":77,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"newton",
                  "visible":true,
                  "width":157,
                  "x":832,
@@ -111,8 +123,14 @@
                  "height":168,
                  "id":78,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"horton",
                  "visible":true,
                  "width":228,
                  "x":384,
@@ -123,8 +141,24 @@
                  "height":351,
                  "id":79,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"hubert",
                  "visible":true,
                  "width":83,
                  "x":192,
@@ -147,7 +181,7 @@
                  "id":46,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":64,
                  "x":0,

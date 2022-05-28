@@ -31,22 +31,11 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     addPointerCallbacks(){
-        //this.pointer = this.scene.input.pointer1;
-        // this.point = this.on('pointerm', (pointer, me) => {
-            
-        // });
-
         this.scene.input.setDraggable(this.setInteractive());
 
         this.dstart = this.on('dragstart', (pointer, dragX, dragY) => {
             this.onDragStart()
         });
-
-        // this.dwhile = this.on('drag', (pointer, dragX, dragY) => {
-        //     console.log("Pointer: %d, %d", pointer.x, pointer.y)
-        //     console.log("Drag: %d, %d",dragX, dragY)
-            
-        // });
 
         this.dend = this.on('dragend', (pointer, dragX, dragY) => {
             this.onDragEnd(pointer);  
@@ -63,6 +52,17 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     onOverlap(player){
 
+    }
+
+    setUpAnimations(){
+        this.drowsy = this.anims.create({
+            key: 'drowsy',
+            defaultTextureKey: 'cat_atlas',
+            frames:  [Animationthis.name+"_uwu", this.name, this.name+"_uwu", this.name],
+            frameRate: 12,
+            repeat: -1,
+            delay: 2000
+        });
     }
 
     onCatOverlap(that){ // X3 sowwy me touchy
@@ -129,11 +129,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
                 this.x = new_x - this.displayWidth/2;
                 this.y = new_y + this.displayHeight/2;
-        
-                if (this.zzz != null){
-                    this.zzz.x = this.x + this.displayWidth;
-                    this.zzz.y = this.y - this.displayHeight
-                }
+
             }
         }
     }
@@ -200,38 +196,50 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.checkSleep();
     }
 
-    checkSleep(){   // Me nappy...
-
-        if (!this.isSelectable()) // Me sleepy uwu
-            this.setTexture("cats_atlas", this.name + "_uwu");
-        else if (this.isSleepy()){
-        
-            if (this.zzz == null){
-                this.zzz = this.scene.add.sprite(this.x + this.displayWidth, 
-                                        this.y - this.displayHeight, "zzz_atlas", "zzz000").setOrigin(0, 1).setDepth(5);
-                this.zzz.anims.create({
+    startSleeping(){
+        if (this.zzz == null){
+            this.zzz = this.scene.add.sprite(this.x + this.displayWidth, 
+                            this.y - this.displayHeight, "zzz_atlas", "zzz000").setOrigin(0, 1).setDepth(5);
+            this.zzz.anims.create({
                     key: 'zzz',
                     defaultTextureKey: 'zzz_atlas',
                     frames:  this.anims.generateFrameNames('zzz_atlas', { 
-                        prefix: 'zzz', 
-                        start: 0, 
-                        end: 5, 
-                        suffix: '',
-                        zeroPad: 3,
-                    }),
-                    frameRate: 6,
-                    repeat: -1
-                });
-                this.zzz.anims.play('zzz');
-            }   
+                    prefix: 'zzz', 
+                    start: 0, 
+                    end: 5, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 6,
+                repeat: -1
+            });
+            //this.anims.play('drowsy');
+            this.zzz.anims.play('zzz');
+        }
+    }
+
+    checkSleep(){   // Me nappy...
+
+        if (!this.isSelectable()){ // Me sleepy uwu
+            this.startSleeping();
+            this.setTexture("cats_atlas", this.name + "_uwu");
+        } else if (this.isSleepy()){
+            //this.startSleeping();
             this.setTexture("cats_atlas", this.name);
         } else this.setTexture("cats_atlas", this.name);
+        
     }
 
     update(){
         //console.log(this.frame.name)
         if (this.my_friends.length > 0){
             this.my_friends.forEach((cat) => {this.checkFriend(cat);})
+        }
+
+                
+        if (this.zzz != null){
+            this.zzz.x = this.x + this.displayWidth;
+            this.zzz.y = this.y - this.displayHeight
         }
     
         if (pointer.primaryDown && this.selected){

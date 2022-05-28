@@ -61,12 +61,12 @@ class Play extends Phaser.Scene {
             }
         });
         
-        this.te = this.add.text(50, 600, 'b', { font: '16px Courier', color: '#00ff00' , backgroundColor: '#ffffff'});    
+        //this.te = this.add.text(50, 600, 'b', { font: '16px Courier', color: '#00ff00' , backgroundColor: '#ffffff'});    
 
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {
             this.isZoomed = !this.isZoomed;
-            if (this.isZoomed) this.background.scrollFactorX = 0.5;
+            //if (this.isZoomed) this.background.scrollFactorX = 0.5;
         });
         this.moveCam();
         //game.renderer.renderSession.roundPixels = true;
@@ -122,14 +122,14 @@ class Play extends Phaser.Scene {
             // zoom in: zoomTo(zoom [, duration] [, ease] [, force] [, callback] [, context])
             this.cameras.main.zoomTo(1, this.resetDuration, Play.CAMERA_TWEEN, false);
             //this.background.setScale(2);
-            // this.tweens.create({
-            //     targets: this.background,
-            //     scrollFactorX: 0.5,
-            //     x: 0,
-            //     duration: this.resetDuration,
-            //     ease: Play.CAMERA_TWEEN,
-            //     onUpdate: ()=> {console.log(this.background.scrollFactorX)}
-            // }).play();
+            this.tweens.create({
+                targets: this.background,
+                scrollFactorX: 0.5,
+                x: 0,
+                duration: this.resetDuration,
+                ease: Play.CAMERA_TWEEN,
+                onUpdate: ()=> {console.log(this.background.scrollFactorX)}
+            }).play();
             
         }        
     }
@@ -150,17 +150,17 @@ class Play extends Phaser.Scene {
             let g = game.config.height / this.levelLoader.getMapHeight();
            //console.log(f,g)
             let z = Math.min(f, g);
-            this.background.scrollFactorX = 1;
+            //this.background.scrollFactorX = 1;
            //console.log(this.background.displayOriginY)
             //this.background.setScale(1);
-            // this.tweens.create({
-            //     targets: this.background,
-            //     scrollFactorX: 0,
-            //     x: -this.background.width*(1-z)/2,
-            //     duration: this.resetDuration,
-            //     ease: Play.CAMERA_TWEEN,
-            //     onUpdate: ()=> {console.log(this.background.scrollFactorX)}
-            // }).play();
+            this.tweens.create({
+                targets: this.background,
+                scrollFactorX: 0,
+                x: -this.background.width*(1-z)/2,
+                duration: this.resetDuration,
+                ease: Play.CAMERA_TWEEN,
+                onUpdate: ()=> {console.log(this.background.scrollFactorX)}
+            }).play();
             //
            // this.background.setScrollFactor(1, 1)
            //console.log(this.background)
@@ -189,20 +189,21 @@ class Play extends Phaser.Scene {
             cat.update()
         });
 
-        this.te.setText([
-            'x: ' + pointer.x,
-            'y: ' + pointer.y,
-            'mid x: ' + pointer.midPoint.x,
-            'mid y: ' + pointer.midPoint.y,
-            'velocity x: ' + pointer.velocity.x,
-            'velocity y: ' + pointer.velocity.y,
-            'movementX: ' + pointer.movementX,
-            'movementY: ' + pointer.movementY,
-            'world x: ' + pointer.worldX,
-            'world y: ' + pointer.worldY,
-        ]);
+    //     this.te.setText([
+    //         'x: ' + pointer.x,
+    //         'y: ' + pointer.y,
+    //         'mid x: ' + pointer.midPoint.x,
+    //         'mid y: ' + pointer.midPoint.y,
+    //         'velocity x: ' + pointer.velocity.x,
+    //         'velocity y: ' + pointer.velocity.y,
+    //         'movementX: ' + pointer.movementX,
+    //         'movementY: ' + pointer.movementY,
+    //         'world x: ' + pointer.worldX,
+    //         'world y: ' + pointer.worldY,
+    //     ]);
+    // }
+
+
     }
-
-
 }
 

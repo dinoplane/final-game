@@ -41,7 +41,7 @@
                  "id":68,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1024,
@@ -53,7 +53,7 @@
                  "id":69,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":512,
@@ -65,7 +65,7 @@
                  "id":70,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":64,
@@ -87,8 +87,14 @@
                  "height":65,
                  "id":76,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"luna",
                  "visible":true,
                  "width":132,
                  "x":0,
@@ -99,8 +105,14 @@
                  "height":189,
                  "id":80,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"jasmine",
                  "visible":true,
                  "width":102,
                  "x":256,
@@ -111,8 +123,14 @@
                  "height":96,
                  "id":81,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"newton",
                  "visible":true,
                  "width":157,
                  "x":64,
@@ -123,8 +141,14 @@
                  "height":96,
                  "id":82,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"newton",
                  "visible":true,
                  "width":157,
                  "x":576,
@@ -147,7 +171,7 @@
                  "id":46,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":64,
                  "x":0,
