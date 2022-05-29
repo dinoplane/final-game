@@ -46,15 +46,14 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.controls = [this.cursors, this.wasd]
 
         for (let set of this.controls){
-
             set.up.on('down', key =>{
                 this.onJump();
             });
 
             for (let c of Player.CONTROL_CONFIG){
-                    set[c.name].on('up', (key) => {
-                        this.onXUp(c.arg);
-                    });
+                set[c.name].on('up', (key) => {
+                    this.onXUp(c.arg);
+                });
             }
         }
 
@@ -64,6 +63,9 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.body.onWorldBounds = true;   
         this.setBounce(0,0)
         this.anims.play("miao_idle");
+
+        this.jump_fx = scene.sound.add('jump');
+        this.double_jump_fx = scene.sound.add('double_jump');
     }
     
     setUpAnimations(){
@@ -183,6 +185,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             this.anims.play("miao_hop");
             this.setVelocityY(-Player.JUMP_V);  
             this.jumps += 1;
+            if (this.jumps == 2){
+                this.double_jump_fx.play();
+            } else this.jump_fx.play();
+
+
             this.sliding = false;
             this.onXDown(this.isRunning());
         }

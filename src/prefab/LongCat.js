@@ -10,7 +10,7 @@ class LongCat extends PlatformCat { // A cat that stretches
             yoyo: true,
             ease: 'Sine.easeInOut',
             onUpdate: () => {
-                //console.log(this.rider)
+                console.log(this.body.height)
                  if (this.rider != null){
                      this.rider.y = this.y - this.displayHeight;
                  }
