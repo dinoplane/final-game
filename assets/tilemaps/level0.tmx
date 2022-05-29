@@ -91,12 +91,13 @@
   </data>
  </layer>
  <objectgroup id="6" name="Displays">
-  <object id="67" gid="6" x="684" y="848" width="64" height="64">
+  <object id="67" gid="6" x="396" y="812" width="64" height="64">
    <properties>
-    <property name="oneUse" type="bool" value="true"/>
+    <property name="elements" value="'Use ', wasd, ' or ', arrow, ' to move.'"/>
+    <property name="oneUse" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="68" x="642" y="744" width="150" height="150">
+  <object id="68" x="332" y="736" width="150" height="150">
    <ellipse/>
   </object>
  </objectgroup>
@@ -110,20 +111,20 @@
   <object id="47" gid="2" x="593" y="870" width="64" height="64"/>
   <object id="49" gid="2" x="770" y="868" width="64" height="64"/>
   <object id="60" gid="2" x="1412" y="486" width="64" height="64"/>
-  <object id="61" gid="2" x="568" y="479" width="64" height="64"/>
-  <object id="62" gid="2" x="757" y="457" width="64" height="64"/>
+  <object id="61" gid="2" x="1008" y="627" width="64" height="64"/>
+  <object id="62" gid="2" x="1525" y="625" width="64" height="64"/>
   <object id="63" gid="2" x="916" y="487" width="64" height="64"/>
   <object id="64" gid="2" x="1098" y="479" width="64" height="64"/>
   <object id="65" gid="2" x="1280" y="491" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="58" gid="60" x="976" y="766" width="204" height="50">
+  <object id="58" gid="60" x="1200" y="766" width="204" height="50">
    <properties>
     <property name="movesLeft" type="int" value="3"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="Player">
-  <object id="66" gid="4" x="312" y="883" width="64" height="64"/>
+  <object id="66" gid="4" x="38" y="879" width="64" height="64"/>
  </objectgroup>
 </map>

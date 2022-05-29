@@ -59,9 +59,18 @@ class Play extends Phaser.Scene {
                 Cat.SELECTED_CAT.canceled = true;
             }
         });
+
+        // this.graphics = this.add.graphics({ x: 0, y: 0, fillStyle: { color: 0xff00ff, alpha: 1 } });
         // this.te = new Phaser.GameObjects.BitmapText(this, 100, 400, 'neptune', "hello");
         // this.add.existing(this.te);
-        //this.te = this.add.text(50, 600, 'b', { font: '16px Courier', color: '#00ff00' , backgroundColor: '#ffffff'});    
+        // this.physics.add.existing(this.te);
+        // this.te.body.allowGravity = false;
+        // this.te.body.width = this.te.width;
+        // this.te.body.height =  this.te.height;
+        // this.bounds1 = this.te.getTextBounds(true);
+        // this.graphics.clear();
+        // this.graphics.fillRect(this.bounds1.global.x, this.bounds1.global.y, this.bounds1.global.width, this.bounds1.global.height);
+
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {
             this.isZoomed = !this.isZoomed;

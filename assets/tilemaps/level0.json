@@ -30,12 +30,12 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Use ', keyboard"
+                         "value":"'Use ', wasd, ' or ', arrow, ' to move.'"
                         }, 
                         {
                          "name":"oneUse",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"rangeHeight",
@@ -61,8 +61,8 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":684,
-                 "y":848
+                 "x":396,
+                 "y":812
                 }, 
                 {
                  "ellipse":true,
@@ -73,8 +73,8 @@
                  "type":"",
                  "visible":true,
                  "width":150,
-                 "x":642,
-                 "y":744
+                 "x":332,
+                 "y":736
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -158,8 +158,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":568,
-                 "y":479
+                 "x":1008,
+                 "y":627
                 }, 
                 {
                  "gid":2,
@@ -170,8 +170,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":757,
-                 "y":457
+                 "x":1525,
+                 "y":625
                 }, 
                 {
                  "gid":2,
@@ -235,7 +235,7 @@
                  "type":"dreda",
                  "visible":true,
                  "width":204,
-                 "x":976,
+                 "x":1200,
                  "y":766
                 }],
          "opacity":1,
@@ -258,8 +258,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":312,
-                 "y":883
+                 "x":38,
+                 "y":879
                 }],
          "opacity":1,
          "type":"objectgroup",

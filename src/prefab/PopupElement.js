@@ -6,24 +6,27 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
 
     constructor(scene, x, y, data){ // data contains rangeOffsetX, rangeOffsetY, range, oneUse
         this.scene = scene;
-        //this.element = element;
         this.x = x;
         this.y = y;
-        //console.log
-        // Create a circle 
+        this.oneUse = data["oneUse"];
+        this.isUsed = false;
+
+        this.elements = [];
+        this.parseElements(this.scanElements(data["elements"]));
+        this.setUpTween();
+
+
+        // Create a ellipse
         this.range = new Phaser.GameObjects.Ellipse(scene, this.x + data["rangeOffsetX"], 
                                                     this.y+data["rangeOffsetY"], 
                                                     data["rangeWidth"], data["rangeHeight"]);
        
         this.scene.add.existing(this.range);
         this.scene.physics.add.existing(this.range);
+        
         this.range.body.immovable = true;
         this.range.body.allowGravity = false;
         this.range.visible = false;
-
-        this.elements = [];
-        this.parseElements(this.scanElements(data["elements"]));
-        this.setUpTween();
 
         this.isTouching = false;
         this.range.on("overlapstart", () => {
@@ -46,12 +49,24 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
         let curr_x = this.x;
         let curr_y = this.y;
         elements.forEach(element => {
-            //console.log(element[0]);
+            let e = null;
             if (element[0] == "'") {
                 element = element.match(/\'(.*)\'/)[1];
-                this.elements.push(this.scene.add.bitmapText(curr_x, curr_y, 'neptune', "HELLO")
-                                        .setOrigin(0, 1).setDepth(1).setAlpha(0));
-            } else ;
+                e = this.scene.add.bitmapText(curr_x, curr_y, 'neptune', element);
+            } else {
+                e = this.scene.add.image(curr_x, curr_y, 'popup_atlas', element);
+            }
+
+            e.setOrigin(0, 1).setDepth(1).setAlpha(0);
+            this.elements.push(e);
+
+            if (e != null) curr_x += e.width;
+        });
+
+        // We want to center everything so we need to calculate the center and offset
+        let offset = (curr_x - this.x) / 2;
+        this.elements.forEach(element =>{
+            element.x -= offset;
         });
         
     }
@@ -60,6 +75,7 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
         this.appear = this.scene.tweens.create({
             targets: this.elements,
             alpha: 1,
+            y: '-=20',
             duration: 250,
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
@@ -75,6 +91,7 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
         this.disappear = this.scene.tweens.create({
             targets: this.elements,
             alpha: 0,
+            y: '+=20',
             duration: 250,
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
@@ -89,11 +106,15 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
     }
 
     onOverlapStart(){
-        this.appear.play();
+        if (!(this.oneUse && this.isUsed))
+            this.appear.play();
     }
 
     onOverlapEnd(){
-        this.disappear.play();
+        if (!(this.oneUse && this.isUsed)){
+            this.isUsed = true;
+            this.disappear.play();
+        }
     }
 
     update() {
