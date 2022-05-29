@@ -23,6 +23,8 @@ class Load extends Phaser.Scene { // First time load
 
         this.load.audio('pickup_food', './assets/audio/pickup_food.wav');
         this.load.audio('bg_music1', './assets/audio/wander.mp3');
+
+        this.load.bitmapFont('neptune', './assets/fonts/neptune.png', './assets/fonts/neptune.xml');
     }
 
     create(){

@@ -12,10 +12,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
             ease: 'Bounce.easeInOut',
             onComplete: () => {
                 this.rider = null;
-        
             }
-            //easeParams: [ 3.5 ],
-            //delay: 1000,
         });
 
         this.compress = this.scene.tweens.create({
@@ -56,10 +53,8 @@ class SpringCat extends PlatformCat { // A cat that stretches
 
     onOverlap(player){
         if (!this.selected && !this.spring.isPlaying()){
-        //if (player.y + player.height < this.y){
             player.setVelocityY(0);
             player.y -= player.y - this.y + this.displayHeight
-        //}
         }
     }
 }

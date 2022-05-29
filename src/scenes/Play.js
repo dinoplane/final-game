@@ -14,7 +14,6 @@ class Play extends Phaser.Scene {
         pointer = this.input.activePointer  ;
 
         // Set up instance variables
-
         this.levelLoader = new LevelLoader(this, level);
         this.player = null;
         this.levelComplete = false;
@@ -52,17 +51,17 @@ class Play extends Phaser.Scene {
             cat1.onCatOverlap(cat2);
         });
 
-        
-        
+        PopupElement.RANGE_OVERLAP = this.physics.add.overlap(this.player, PopupElement.RANGE_BODIES);
+
         this.input.mouse.disableContextMenu();
         this.input.on("pointerdown", (pointer, obj) => {
             if (pointer.rightButtonDown() && Cat.SELECTED_CAT != null){
                 Cat.SELECTED_CAT.canceled = true;
             }
         });
-        
+        // this.te = new Phaser.GameObjects.BitmapText(this, 100, 400, 'neptune', "hello");
+        // this.add.existing(this.te);
         //this.te = this.add.text(50, 600, 'b', { font: '16px Courier', color: '#00ff00' , backgroundColor: '#ffffff'});    
-
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {
             this.isZoomed = !this.isZoomed;
@@ -187,6 +186,10 @@ class Play extends Phaser.Scene {
         this.player.update();
         this.objects.cats.forEach((cat) => {
             cat.update()
+        });
+
+        this.objects.popups.forEach((popup) => {
+            popup.update();
         });
 
     //     this.te.setText([

@@ -46,23 +46,27 @@ class LevelLoader {
     loadLevel(){
         let food_array = [];
         let cat_array = [];
+        let popup_array = [];
         this.map.objects.forEach( (objlayer) => {
             objlayer.objects.forEach((obj) => {
-                
                 let e = null;
-                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1).setDepth(3);
+                if (obj.type == "player") this.scene.player = new Player(this.scene, obj.x, obj.y).setOrigin(0,1).setDepth(2);
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1).setDepth(2));
+                } else if (obj.type == "RangeElement") {
+                    console.log(this.cleanInput(obj.properties));
+                    popup_array.push(new PopupElement(this.scene, obj.x, obj.y, this.cleanInput(obj.properties)));
+                } else if (obj.type == ""){ // pass those with no type
                 } else {
-                    //console.log(obj);
+                    console.log(obj);
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
-                                this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(2));
+                                this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(3));
                 }
                 
             })
         });
 
-        return {food: food_array, cats: cat_array};
+        return {food: food_array, cats: cat_array, popups: popup_array};
     }
 
     loadGround(){
