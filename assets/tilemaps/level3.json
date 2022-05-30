@@ -44,8 +44,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":682,
-                 "y":621
+                 "x":1044,
+                 "y":359
                 }, 
                 {
                  "gid":2,
@@ -97,8 +97,8 @@
                  "type":"horton",
                  "visible":true,
                  "width":228,
-                 "x":202,
-                 "y":831
+                 "x":1150,
+                 "y":243
                 }, 
                 {
                  "gid":55,
@@ -109,12 +109,12 @@
                         {
                          "name":"end_scale",
                          "type":"float",
-                         "value":2
+                         "value":1
                         }, 
                         {
                          "name":"init_scale",
                          "type":"float",
-                         "value":1
+                         "value":0.1
                         }, 
                         {
                          "name":"movesLeft",
@@ -125,8 +125,8 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":586,
-                 "y":831
+                 "x":256,
+                 "y":819
                 }, 
                 {
                  "gid":58,
@@ -143,8 +143,194 @@
                  "type":"newton",
                  "visible":true,
                  "width":157,
-                 "x":694,
-                 "y":829
+                 "x":1266,
+                 "y":589
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":62,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.9
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":383,
+                 "y":808
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":65,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.2
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.8
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":527,
+                 "y":818
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":66,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.3
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.7
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":671,
+                 "y":826
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":67,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.4
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.6
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":807,
+                 "y":828
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":68,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.5
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.5
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":925,
+                 "y":826
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":69,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":2.6
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":0.4
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":1063,
+                 "y":822
+                }, 
+                {
+                 "gid":57,
+                 "height":65,
+                 "id":72,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"luna",
+                 "visible":true,
+                 "width":132,
+                 "x":72,
+                 "y":651.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -166,8 +352,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":24,
-                 "y":806
+                 "x":104,
+                 "y":548
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -176,7 +362,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":46,
+ "nextobjectid":73,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

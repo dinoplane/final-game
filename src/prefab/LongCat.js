@@ -11,7 +11,7 @@ class LongCat extends PlatformCat { // A cat that stretches
             ease: 'Sine.easeInOut',
             onUpdate: () => {
                  if (this.rider != null){
-                     this.rider.y = this.y - this.displayHeight;
+                     this.rider.y = this.body.top;
                  }
             }
         })
@@ -19,18 +19,12 @@ class LongCat extends PlatformCat { // A cat that stretches
 
         this.rider = null;
     }
-    onCollide(player){
-        //player.isGrounded = true;
-        //player.onLongCat = this;
-        super.onCollide(player);
-        if (player.body.touching.down && this.body.touching.up && !player.isGrounded){
-            
-            //player.body.maxVelocity.y = PlatformCat.STICK_VELOCITY;
-            //player.setVelocityY(PlatformCat.STICK_VELOCITY)
-            this.rider = player;
-        }        
-        //this.setAccelerationY(1000);
+    // onCollide(player){
+    //     //player.isGrounded = true;
+    //     //player.onLongCat = this;
+    //     super.onCollide(player);
+    //     //console.log(player.anims.getName())
 
-    }
+    // }
     // onOverlap() {};
 }

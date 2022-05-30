@@ -99,42 +99,6 @@
                  "width":102,
                  "x":192,
                  "y":576
-                }, 
-                {
-                 "gid":56,
-                 "height":189,
-                 "id":73,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"jasmine",
-                 "visible":true,
-                 "width":102,
-                 "x":512,
-                 "y":576
-                }, 
-                {
-                 "gid":56,
-                 "height":189,
-                 "id":74,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"jasmine",
-                 "visible":true,
-                 "width":102,
-                 "x":832,
-                 "y":576
                 }],
          "opacity":1,
          "type":"objectgroup",

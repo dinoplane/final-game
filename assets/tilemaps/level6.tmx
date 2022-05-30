@@ -90,8 +90,6 @@
  </objectgroup>
  <objectgroup id="3" name="Cats">
   <object id="72" gid="56" x="192" y="576" width="102" height="189"/>
-  <object id="73" gid="56" x="512" y="576" width="102" height="189"/>
-  <object id="74" gid="56" x="832" y="576" width="102" height="189"/>
  </objectgroup>
  <objectgroup id="4" name="Player">
   <object id="46" gid="4" x="10" y="559" width="64" height="64"/>

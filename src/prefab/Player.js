@@ -1,6 +1,6 @@
 class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart 
     // Spring Cat
-    static TEXTURE_PREFIX = ["miao", "brain"];
+    static TEXTURE_PREFIX = [ "brain", "miao"];
     // Wind Cat...
     // Sound
     static ACCEL = 3000;
@@ -15,11 +15,12 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
                              {name: 'right', arg: +Player.ACCEL}]
 
     constructor(scene, x, y){
-        super(scene, x, y, "brain_atlas", "brain_idle000");
+        super(scene, x, y, "brain_atlas", "miao_idle000");
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
         this.setUpAnimations();
+        this.setUpParticles();
 
         this.gameOver = false;
         this.levelComplete = false;
@@ -30,6 +31,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.isGrounded = false;
         this.sliding = false;
 
+        // Controls
         this.scene.input.keyboard.enabled = true;
 
         this.cursors = this.scene.input.keyboard.addKeys({ 
@@ -58,6 +60,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             }
         }
 
+        // Physics and appearance
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.setDragX(Player.DRAG);
         this.setCollideWorldBounds(true);
@@ -65,10 +68,42 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.setBounce(0,0)
         this.anims.play(this.isBrain()+"_idle");
 
+        // Sounds
         this.jump_fx = scene.sound.add('jump');
         this.double_jump_fx = scene.sound.add('double_jump');
     }
     
+    setUpParticles(){
+        this.particleManager =  this.scene.add.particles('hover');
+        this.hoverFx = this.particleManager.createEmitter({
+            x: this.cx(),
+            y: this.y,
+            scale: {start: 1, end:2},
+            alpha:  {start: 1, end:0, ease: 'Sine.EaseInOut'},
+            // (p, k, t, v) => {
+            //     return 1-t;
+            // } ,
+            //delay: 1000,
+            lifespan: 500,
+            on: false,
+            
+            speedY: 100,
+            frequency: 100,
+            //maxParticles: 3
+        });
+
+        this.hoverTimer = this.scene.time.addEvent({
+            delay: 250, // ms
+            callback: () =>{ 
+                this.hoverFx.stop();
+                this.hoverTimer.paused = true;
+            },
+            paused: true,
+            callbackScope: this,
+            loop: true   
+        });
+    }
+
     setUpAnimations(){
         this.animations = [];
         for (let i = 0; i < 2; i++){
@@ -167,22 +202,18 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     onGround(platform){
-        //console.log(platform)
         this.platform = platform;
         this.brainJuicing = 0;
         if (!this.isGrounded) {// We have just fallen (this is called multple times so gatekeep)
-            //console.log("came" , this.isRunning())
+           // console.log("IM BORN")
             let a = this.isBrain();
             this.anims.play( (this.isRunning() != 0) ? a+"_run" : a+"_idle");
             this.onXDown(this.isRunning());
 
             this.resetJumps();
         }
-        console.log(this.isBrain())
         
         this.isGrounded = true;
-
-        
     }
 
 
@@ -190,15 +221,20 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         if (this.jumps < Player.MAX_JUMPS){
             this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
             this.onLeavePlatform()
-            //this.body.bounce.y = 0;
             
-            this.setVelocityY(-Player.JUMP_V);  
+            
             this.jumps += 1;
             
             if (this.jumps == 2){
                 this.brainJuicing = 1;
                 this.double_jump_fx.play();
+                
+                this.hoverFx.setPosition(this.cx(), this.y);
+                this.hoverFx.start();
+                this.hoverTimer.paused = false;
             } else this.jump_fx.play();
+
+            this.setVelocityY(-Player.JUMP_V);  
             this.anims.play(this.isBrain()+"_hop");
 
             this.sliding = false;
@@ -216,11 +252,10 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     onXUp(a){
-       //console.log("stopping %d", a);
         if (!this.gameOver && !this.levelComplete && !this.sliding){
             let d = (a < 0) ? 'right': 'left';
             let k = this.cursors[d];
-            let l = this.wasd[d]; // fix this logic
+            let l = this.wasd[d]; 
             if (k.isDown || l.isDown){
                 this.onXDown(-a);
             } else {
@@ -232,13 +267,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     onXDown(a){
-       //console.log("moving %d", a);
         if (!this.gameOver && !this.levelComplete && !this.sliding && a != 0){
             this.setFlipX(a < 0);
             this.setAccelerationX(a);
 
             if (this.isGrounded) {
-               console.log("running")
                 this.sliding = false;
                 if (this.anims.getName().slice(-4) == "idle") this.anims.play(this.isBrain()+"_run");
             }
@@ -268,14 +301,10 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     onPlatform(){ // accommodate for differ
-        // console.log("%d > %d == %s", this.x, this.platform.displayWidth + this.platform.x, (this.x > this.platform.x + this.platform.displayWidth))
-        // console.log("%d < %d == %s", this.x + this.displayWidth, this.platform.x, (this.x + this.displayWidth < this.platform.x))
-
         return (this.x < this.platform.x + this.platform.displayWidth) && (this.x + this.displayWidth > this.platform.x)    ;
     }
 
     update(){
-        //console.log(this.body.velocity)
         if (this.platform instanceof PlatformCat){
             // detect fall
             if (!this.onPlatform()){
@@ -284,25 +313,20 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         }
         for (let set of this.controls){
             for (let c of Player.CONTROL_CONFIG){
-                if (set[c.name].isDown){
-                    //console.log("FIRING ")
+                if (set[c.name].isDown)
                     this.onXDown(c.arg)    
-                }
             }
         }
         
-
         if (!this.isGrounded) {
             if (this.body.velocity.y > 0){
                 this.anims.play(this.isBrain()+"_fall");
                 this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
-               //console.log("YO")
             }
         } else {
             if (this.body.velocity.x == 0 && ["idle", "_run"].indexOf(this.anims.getName().slice(-4)) == -1){
                 this.anims.play(this.isBrain()+"_idle");
                 this.sliding = false;
-                //this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
             }
             if (this.sliding && !this.isRunning()){
                 this.anims.play(this.isBrain()+"_slide");
@@ -310,6 +334,13 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         }
     }
 
+    cx(){
+        return this.x + this.displayWidth/2;
+    }
+
+    cy(){
+        return this.y - this.displayHeight/2;
+    }
 
     isBrain() {
         return Player.TEXTURE_PREFIX[this.brainJuicing];

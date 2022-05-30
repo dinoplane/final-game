@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="28" height="14" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="46">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="28" height="14" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="73">
  <editorsettings>
   <export target="level3.json" format="json"/>
  </editorsettings>
@@ -84,21 +84,58 @@
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="682" y="621" width="64" height="64"/>
+  <object id="35" gid="2" x="1044" y="359" width="64" height="64"/>
   <object id="36" gid="2" x="192" y="576" width="64" height="64"/>
   <object id="37" gid="2" x="289" y="756" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="42" gid="54" x="202" y="831" width="228" height="168"/>
-  <object id="43" gid="55" x="586" y="831" width="83" height="351">
+  <object id="42" gid="54" x="1150" y="243" width="228" height="168"/>
+  <object id="43" gid="55" x="256" y="819" width="83" height="351">
    <properties>
-    <property name="end_scale" type="float" value="2"/>
-    <property name="init_scale" type="float" value="1"/>
+    <property name="end_scale" type="float" value="1"/>
+    <property name="init_scale" type="float" value="0.1"/>
    </properties>
   </object>
-  <object id="44" gid="58" x="694" y="829" width="157" height="96"/>
+  <object id="44" gid="58" x="1266" y="589" width="157" height="96"/>
+  <object id="62" gid="55" x="383" y="808" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.1"/>
+    <property name="init_scale" type="float" value="0.9"/>
+   </properties>
+  </object>
+  <object id="65" gid="55" x="527" y="818" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.2"/>
+    <property name="init_scale" type="float" value="0.8"/>
+   </properties>
+  </object>
+  <object id="66" gid="55" x="671" y="826" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.3"/>
+    <property name="init_scale" type="float" value="0.7"/>
+   </properties>
+  </object>
+  <object id="67" gid="55" x="807" y="828" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.4"/>
+    <property name="init_scale" type="float" value="0.6"/>
+   </properties>
+  </object>
+  <object id="68" gid="55" x="925" y="826" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.5"/>
+    <property name="init_scale" type="float" value="0.5"/>
+   </properties>
+  </object>
+  <object id="69" gid="55" x="1063" y="822" width="83" height="351">
+   <properties>
+    <property name="end_scale" type="float" value="2.6"/>
+    <property name="init_scale" type="float" value="0.4"/>
+   </properties>
+  </object>
+  <object id="72" gid="57" x="72" y="651.5" width="132" height="65"/>
  </objectgroup>
  <objectgroup id="4" name="Player">
-  <object id="45" gid="4" x="24" y="806" width="64" height="64"/>
+  <object id="45" gid="4" x="104" y="548" width="64" height="64"/>
  </objectgroup>
 </map>

@@ -17,7 +17,6 @@ class FallingCat extends PlatformCat { // A cat that falls
 
     onOverlap(player){
         if (!this.selected){
-            console.log(player.y, this.body.y, this.y - this.displayHeight);
         //if (player.y + player.height < this.y){
             //player.setVelocityY(0);
             player.y = this.body.y;

@@ -17,25 +17,14 @@ class LevelLoader {
     constructor(scene, i){
         this.scene = scene;
         this.map = scene.make.tilemap({key: 'level'+i});
-        //console.log(this.map.originX, this.map.originY, )
-        //this.dataManager = new Phaser.Data.DataManager(this);
 
         scene.physics.world.bounds.setTo(0,0, this.map.widthInPixels, this.map.heightInPixels);
         scene.cameras.main.setBounds(0,0, this.map.widthInPixels, this.map.heightInPixels);
-        //scene.cameras.main.setRoundPixels(true);
-        // this.map.tilesets.forEach(t => {
-        //     let tileset_name;
-        //     //if (t.name != "ground_tileset") tileset_name = t.name.replace(/.*\/([^/]+)\.[^/.]+$/, "$1_image");
-        //     tileset_name = t.name+"_image";
-            
-        // });
 
-        
         this.map.addTilesetImage("ground_tileset", "ground_tileset_image");
     }
 
     cleanInput(data){
-        //console.log(data)
         let ret = {};
         for (let d of data){
             ret[d.name] = d.value;
@@ -54,15 +43,12 @@ class LevelLoader {
                 else if (obj.type == "food") {
                     food_array.push(new Food(this.scene, obj.x, obj.y, obj.type).setOrigin(0,1).setDepth(2));
                 } else if (obj.type == "RangeElement") {
-                    console.log(this.cleanInput(obj.properties));
                     popup_array.push(new PopupElement(this.scene, obj.x, obj.y, this.cleanInput(obj.properties)));
                 } else if (obj.type == ""){ // pass those with no type
                 } else {
-                    console.log(obj);
                     cat_array.push(new LevelLoader.TYPE2CLASS[obj.type](
                                 this.scene, obj.x, obj.y, obj.type, this.cleanInput(obj.properties)).setOrigin(0,1).setDepth(3));
-                }
-                
+                }  
             })
         });
 
@@ -70,7 +56,6 @@ class LevelLoader {
     }
 
     loadGround(){
-        
         let ground = this.map.createLayer("Ground", 'ground_tileset',0,0);
         ground.setCollisionByExclusion(-1, true);
         return ground;
@@ -82,7 +67,6 @@ class LevelLoader {
 
     getMapWidth(){
         return this.map.widthInPixels;
-
     }
 
     getMapHeight(){

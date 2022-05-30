@@ -23,10 +23,9 @@ class SpringCat extends PlatformCat { // A cat that stretches
             //easeParams: [ 3.5 ],
             //delay: 1000,
             onUpdate: () => {
-                let d = (1*0.64 + 0.36*[0.92*1 + 0.08*(0.05*(9+1)+ 0.95*(107+9+1))])
-                console.log(0.92*d + 0.08*(0.05*(9+d)+0.95*(107 + 9 + d)))
+
                  if (this.rider != null){
-                     this.rider.y = this.y - this.displayHeight;
+                     this.rider.y = this.body.top;
                  }
             },
             onComplete: () => {
@@ -43,18 +42,25 @@ class SpringCat extends PlatformCat { // A cat that stretches
     }
 
     onCollide(player){
-
+        super.onCollide(player);
         if (player.body.touching.down && this.body.touching.up && !this.compress.isPlaying() && !this.spring.isPlaying()) {
-            super.onCollide(player);
-            this.rider = player;
+            // player.onGround();
+            // console.log(player.anims.getName());
+            
+            // this.rider = player;
             this.compress.play();
         } 
     }
 
     onOverlap(player){
         if (!this.selected && !this.spring.isPlaying()){
+            player.onGround();
+
             player.setVelocityY(0);
             player.y -= player.y - this.y + this.displayHeight
         }
     }
+    // update(){
+    //     console.log(this.rider)
+    // }
 }
