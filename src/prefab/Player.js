@@ -1,5 +1,6 @@
 class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart 
     // Spring Cat
+    static TEXTURE_PREFIX = ["miao", "brain"];
     // Wind Cat...
     // Sound
     static ACCEL = 3000;
@@ -14,7 +15,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
                              {name: 'right', arg: +Player.ACCEL}]
 
     constructor(scene, x, y){
-        super(scene, x, y, "miao_atlas", "miao_idle000");
+        super(scene, x, y, "brain_atlas", "brain_idle000");
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -24,9 +25,9 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.levelComplete = false;
         this.food = 0;
         this.jumps = 0;
+        this.brainJuicing = 0;
         this.platform = null;
         this.isGrounded = false;
-        this.peakHeight = 0;
         this.sliding = false;
 
         this.scene.input.keyboard.enabled = true;
@@ -62,85 +63,90 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.setCollideWorldBounds(true);
         this.body.onWorldBounds = true;   
         this.setBounce(0,0)
-        this.anims.play("miao_idle");
+        this.anims.play(this.isBrain()+"_idle");
 
         this.jump_fx = scene.sound.add('jump');
         this.double_jump_fx = scene.sound.add('double_jump');
     }
     
     setUpAnimations(){
-        this.run = this.anims.create({
-            key: 'miao_run',
-            defaultTextureKey: 'miao_atlas',
-            frames:  this.anims.generateFrameNames('miao_atlas', { 
-                prefix: 'miao_run', 
-                start: 1, 
-                end: 6, 
-                suffix: '',
-                zeroPad: 3,
-            }),
-            frameRate: 17,
-            repeat: -1
-        });
+        this.animations = [];
+        for (let i = 0; i < 2; i++){
+            let a = {run: null, hop: null, fall: null, slide: null, idle: null};
+            a.run = this.anims.create({
+                key: Player.TEXTURE_PREFIX[i]+'_run',
+                defaultTextureKey: Player.TEXTURE_PREFIX[i]+'_atlas',
+                frames:  this.anims.generateFrameNames(Player.TEXTURE_PREFIX[i]+'_atlas', { 
+                    prefix: 'miao_run', 
+                    start: 1, 
+                    end: 6, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 17,
+                repeat: -1
+            });
 
-        this.hop = this.anims.create({
-            key: 'miao_hop',
-            defaultTextureKey: 'miao_atlas',
-            frames:  this.anims.generateFrameNames('miao_atlas', { 
-                prefix: 'miao_jump', 
-                start: 1, 
-                end: 3, 
-                suffix: '',
-                zeroPad: 3,
-            }),
-            frameRate: 12,
-        });
+            a.hop = this.anims.create({
+                key: Player.TEXTURE_PREFIX[i]+'_hop',
+                defaultTextureKey: Player.TEXTURE_PREFIX[i]+'_atlas',
+                frames:  this.anims.generateFrameNames(Player.TEXTURE_PREFIX[i]+'_atlas', { 
+                    prefix: 'miao_jump', 
+                    start: 1, 
+                    end: 3, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 12,
+            });
 
-        this.fall = this.anims.create({
-            key: 'miao_fall',
-            defaultTextureKey: 'miao_atlas',
-            frames:  this.anims.generateFrameNames('miao_atlas', { 
-                prefix: 'miao_jump', 
-                start: 3, 
-                end: 3, 
-                suffix: '',
-                zeroPad: 3,
-            }),
-            frameRate: 12
-        });
+            a.fall = this.anims.create({
+                key: Player.TEXTURE_PREFIX[i]+'_fall',
+                defaultTextureKey: Player.TEXTURE_PREFIX[i]+'_atlas',
+                frames:  this.anims.generateFrameNames(Player.TEXTURE_PREFIX[i]+'_atlas', { 
+                    prefix: 'miao_jump', 
+                    start: 3, 
+                    end: 3, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 12
+            });
 
-        this.slide= this.anims.create({
-            key: 'miao_slide',
-            defaultTextureKey: 'miao_atlas',
-            frames:  this.anims.generateFrameNames('miao_atlas', { 
-                prefix: 'miao_jump', 
-                start: 3, 
-                end: 5, 
-                suffix: '',
-                zeroPad: 3,
-            }),
-            frameRate: 12
-        });
+            a.slide= this.anims.create({
+                key: Player.TEXTURE_PREFIX[i]+'_slide',
+                defaultTextureKey: Player.TEXTURE_PREFIX[i]+'_atlas',
+                frames:  this.anims.generateFrameNames(Player.TEXTURE_PREFIX[i]+'_atlas', { 
+                    prefix: 'miao_jump', 
+                    start: 3, 
+                    end: 5, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 12
+            });
 
-        this.idle = this.anims.create({
-            key: 'miao_idle',
-            defaultTextureKey: 'miao_atlas',
-            frames:  this.anims.generateFrameNames('miao_atlas', { 
-                prefix: 'miao_idle', 
-                start: 0, 
-                end: 2, 
-                suffix: '',
-                zeroPad: 3,
-            }),
-            frameRate: 6,
-            repeat: -1,
-            yoyo: true,
-
-        });
+            a.idle = this.anims.create({
+                key: Player.TEXTURE_PREFIX[i]+'_idle',
+                defaultTextureKey: Player.TEXTURE_PREFIX[i]+'_atlas',
+                frames:  this.anims.generateFrameNames(Player.TEXTURE_PREFIX[i]+'_atlas', { 
+                    prefix: 'miao_idle', 
+                    start: 0, 
+                    end: 2, 
+                    suffix: '',
+                    zeroPad: 3,
+                }),
+                frameRate: 6,
+                repeat: -1,
+                yoyo: true,
+            });
+            this.animations.push(a);
+        }
     }
 
     resetJumps(){
         this.jumps = 0;
+        
     }
 
     incrementFood(){
@@ -163,14 +169,17 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     onGround(platform){
         //console.log(platform)
         this.platform = platform;
+        this.brainJuicing = 0;
         if (!this.isGrounded) {// We have just fallen (this is called multple times so gatekeep)
             //console.log("came" , this.isRunning())
-            //
-            this.anims.play( (this.isRunning() != 0) ? "miao_run" : "miao_idle");
+            let a = this.isBrain();
+            this.anims.play( (this.isRunning() != 0) ? a+"_run" : a+"_idle");
             this.onXDown(this.isRunning());
 
             this.resetJumps();
         }
+        console.log(this.isBrain())
+        
         this.isGrounded = true;
 
         
@@ -182,13 +191,15 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
             this.onLeavePlatform()
             //this.body.bounce.y = 0;
-            this.anims.play("miao_hop");
+            
             this.setVelocityY(-Player.JUMP_V);  
             this.jumps += 1;
+            
             if (this.jumps == 2){
+                this.brainJuicing = 1;
                 this.double_jump_fx.play();
             } else this.jump_fx.play();
-
+            this.anims.play(this.isBrain()+"_hop");
 
             this.sliding = false;
             this.onXDown(this.isRunning());
@@ -213,7 +224,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             if (k.isDown || l.isDown){
                 this.onXDown(-a);
             } else {
-                if (this.isGrounded) this.anims.play("miao_idle");
+                let a = this.isBrain();
+                if (this.isGrounded) this.anims.play(a+"_idle");
                 this.setAccelerationX(0);                
             }    
         }
@@ -226,9 +238,9 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             this.setAccelerationX(a);
 
             if (this.isGrounded) {
-               //console.log("running")
+               console.log("running")
                 this.sliding = false;
-                if (this.anims.getName() == "miao_idle") this.anims.play("miao_run");
+                if (this.anims.getName().slice(-4) == "idle") this.anims.play(this.isBrain()+"_run");
             }
         }
 
@@ -282,20 +294,24 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
 
         if (!this.isGrounded) {
             if (this.body.velocity.y > 0){
-                this.anims.play("miao_fall");
+                this.anims.play(this.isBrain()+"_fall");
                 this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
                //console.log("YO")
             }
         } else {
-            if (this.body.velocity.x == 0 && ["miao_idle", "miao_run"].indexOf(this.anims.getName()) == -1){
-                this.anims.play("miao_idle");
+            if (this.body.velocity.x == 0 && ["idle", "_run"].indexOf(this.anims.getName().slice(-4)) == -1){
+                this.anims.play(this.isBrain()+"_idle");
                 this.sliding = false;
                 //this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
             }
             if (this.sliding && !this.isRunning()){
-                this.anims.play("miao_slide");
+                this.anims.play(this.isBrain()+"_slide");
             }
         }
     }
 
+
+    isBrain() {
+        return Player.TEXTURE_PREFIX[this.brainJuicing];
+    }
 }

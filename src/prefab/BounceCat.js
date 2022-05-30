@@ -45,6 +45,6 @@ class BounceCat extends PlatformCat { // A cat that stretches
                 
             }        
         }        
-        player.anims.play("miao_hop");
+        player.anims.play(player.isBrain()+"_hop");
     }
 }

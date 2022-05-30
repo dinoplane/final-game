@@ -132,7 +132,7 @@ class Play extends Phaser.Scene {
             //this.background.setScale(2);
             this.tweens.create({
                 targets: this.background,
-                scrollFactorX: 0.5,
+                scrollFactorX: 0.25,
                 x: 0,
                 duration: this.resetDuration,
                 ease: Play.CAMERA_TWEEN,

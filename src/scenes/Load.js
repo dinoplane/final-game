@@ -6,7 +6,8 @@ class Load extends Phaser.Scene { // First time load
 
     preload(){
         this.load.image("player", "./assets/images/player.png");
-        this.load.atlas("miao_atlas", "./assets/images/miao_atlas.png", "./assets/images/miao_atlas.json")
+        this.load.atlas("miao_atlas", "./assets/images/miao_atlas.png", "./assets/images/miao_atlas.json");
+        this.load.atlas("brain_atlas", "./assets/images/brain_atlas.png", "./assets/images/miao_atlas.json");
         this.load.image("food", "./assets/images/food.png");
 
         this.load.image("ground_tileset_image", "./assets/tilesets/ground_tileset.png" );
