@@ -11,7 +11,6 @@ class PlatformCat extends Cat { // A cat that can be collided with.
     }
 
     onCollide(player){
-        //console.log(this.pvf)
         if (player.body.touching.down && this.body.touching.up){
             player.onGround(this);
             this.rider = player;
@@ -20,21 +19,15 @@ class PlatformCat extends Cat { // A cat that can be collided with.
     }
 
     onBeforeCollide(player){
-        //console.log(this.body.touching)
-        if (!player.isGrounded){
-            //player.anims.play("miao_land")
-            //console.log(player.body.velocity.y);
+        if (!player.isGrounded)
             this.pvf.y = player.body.velocity.y;
-        }
-        // if (player.body.touching.right && this.body.touching.left ||
-        //     player.body.touching.left && this.body.touching.right)
+        
         this.pvf.x = player.body.velocity.x;
     }
 
 
     onOverlap(player){
         if (!this.selected){
-            console.log(player.y, this.body.y - this.body.height);
         //if (player.y + player.height < this.y){
             player.setVelocityY(0);
             player.y = this.body.y - this.body.height;

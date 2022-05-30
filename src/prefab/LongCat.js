@@ -10,7 +10,6 @@ class LongCat extends PlatformCat { // A cat that stretches
             yoyo: true,
             ease: 'Sine.easeInOut',
             onUpdate: () => {
-                console.log(this.body.height)
                  if (this.rider != null){
                      this.rider.y = this.y - this.displayHeight;
                  }
@@ -25,7 +24,6 @@ class LongCat extends PlatformCat { // A cat that stretches
         //player.onLongCat = this;
         super.onCollide(player);
         if (player.body.touching.down && this.body.touching.up && !player.isGrounded){
-            console.log("YO")
             
             //player.body.maxVelocity.y = PlatformCat.STICK_VELOCITY;
             //player.setVelocityY(PlatformCat.STICK_VELOCITY)
