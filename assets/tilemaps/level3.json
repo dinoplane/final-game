@@ -114,7 +114,7 @@
                         {
                          "name":"init_scale",
                          "type":"float",
-                         "value":0.1
+                         "value":1
                         }, 
                         {
                          "name":"movesLeft",

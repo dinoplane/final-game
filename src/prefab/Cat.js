@@ -21,9 +21,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.canceled = false; // O nwo me no use twitta
         this.rider = null;
 
-        if (data["movesLeft"])
-            this.selectsLeft = data["movesLeft"];
-        else this.selectsLeft = 1;
+        this.selectsLeft = data["movesLeft"];
         this.checkSleep();
 
         this.catSoul = null;
@@ -103,7 +101,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.setTexture("cats_atlas", this.name+"_owo");
             this.selected = true;
             this.setScale(1.01);
-            this.setDepth(4);
+            this.setDepth(5);
         }
     }
 
@@ -150,7 +148,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.catSoul.destroy();
             this.selected = false;
             this.setScale(1);
-            this.setDepth(0);
+            this.setDepth(3);
         }
     }
 
@@ -205,7 +203,9 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     checkSleep(){   // Me nappy...
+        console.log(this.name)
         if (!this.isSelectable()){ // Me sleepy uwu
+            
             this.startSleeping();
             this.setTexture("cats_atlas", this.name + "_uwu");
         } else if (this.isSleepy()){

@@ -65,7 +65,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.setDragX(Player.DRAG);
         this.setCollideWorldBounds(true);
         this.body.onWorldBounds = true;   
-        this.setBounce(0,0)
+        this.setBounce(0,0);
+        this.setSize(this.displayWidth - 20, this.displayHeight);
         this.anims.play(this.isBrain()+"_idle");
 
         // Sounds
@@ -74,7 +75,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
     
     setUpParticles(){
-        this.particleManager =  this.scene.add.particles('hover');
+        this.particleManager =  this.scene.add.particles('hover').setDepth(4);
         this.hoverFx = this.particleManager.createEmitter({
             x: this.cx(),
             y: this.y,
@@ -301,7 +302,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     onPlatform(){ // accommodate for differ
-        return (this.x < this.platform.x + this.platform.displayWidth) && (this.x + this.displayWidth > this.platform.x)    ;
+        return (this.body.left < this.platform.body.right) && (this.body.right > this.platform.body.left)    ;
     }
 
     update(){
@@ -335,11 +336,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     cx(){
-        return this.x + this.displayWidth/2;
+        return this.body.x;
     }
 
     cy(){
-        return this.y - this.displayHeight/2;
+        return this.body.y;
     }
 
     isBrain() {

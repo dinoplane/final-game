@@ -93,7 +93,7 @@
   <object id="43" gid="55" x="256" y="819" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="1"/>
-    <property name="init_scale" type="float" value="0.1"/>
+    <property name="init_scale" type="float" value="1"/>
    </properties>
   </object>
   <object id="44" gid="58" x="1266" y="589" width="157" height="96"/>

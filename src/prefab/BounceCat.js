@@ -3,10 +3,13 @@ class BounceCat extends PlatformCat { // A cat that stretches
 
     constructor(scene, x, y, texture, data){
         super(scene, x, y, texture, data);
+        
+        this.body.setOffset(30, 85);
+        this.setSize(this.displayWidth-30, this.displayHeight - 105, false);
     }
 
     onCollide(player){
-        //super.onCollide(player); // set a bouncing thing.
+        super.onCollide(player); // set a bouncing thing.
         for (let c of BounceCat.BOUNCE_CASES){
             if ((player.body.touching[c[1]] && this.body.touching[c[2]]) || 
                (player.body.touching[c[2]] && this.body.touching[c[1]])) {
@@ -39,6 +42,7 @@ class BounceCat extends PlatformCat { // A cat that stretches
                         //delay: 1000,
                         yoyo: true,
                     }).play();
+                    player.isGrounded = false;
                 }
                 break;
                 

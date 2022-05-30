@@ -8,6 +8,8 @@ class PlatformCat extends Cat { // A cat that can be collided with.
         this.setImmovable(true);
         this.pvf = {x: 0, y:0};
         
+        this.body.setOffset(25, 12);
+        this.setSize(this.displayWidth-30, this.displayHeight - 25, false);
     }
 
     onCollide(player){
