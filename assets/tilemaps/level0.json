@@ -36,29 +36,9 @@
                          "name":"oneUse",
                          "type":"bool",
                          "value":false
-                        }, 
-                        {
-                         "name":"rangeHeight",
-                         "type":"int",
-                         "value":150
-                        }, 
-                        {
-                         "name":"rangeOffsetX",
-                         "type":"int",
-                         "value":0
-                        }, 
-                        {
-                         "name":"rangeOffsetY",
-                         "type":"int",
-                         "value":0
-                        }, 
-                        {
-                         "name":"rangeWidth",
-                         "type":"int",
-                         "value":150
                         }],
                  "rotation":0,
-                 "type":"RangeElement",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":396,
@@ -75,6 +55,47 @@
                  "width":150,
                  "x":332,
                  "y":736
+                }, 
+                {
+                 "gid":6,
+                 "height":64,
+                 "id":75,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Collect', all',the food', to advance'"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":704,
+                 "y":780
+                }, 
+                {
+                 "ellipse":true,
+                 "height":150,
+                 "id":76,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Collect', all',the food', to advance'"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":150,
+                 "x":640,
+                 "y":704
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -107,7 +128,7 @@
                  "id":37,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":419,
@@ -119,7 +140,7 @@
                  "id":47,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":593,
@@ -131,7 +152,7 @@
                  "id":49,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":770,
@@ -143,7 +164,7 @@
                  "id":60,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":1412,
@@ -155,7 +176,7 @@
                  "id":61,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":1008,
@@ -167,7 +188,7 @@
                  "id":62,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":1525,
@@ -179,7 +200,7 @@
                  "id":63,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":916,
@@ -191,7 +212,7 @@
                  "id":64,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":1098,
@@ -203,7 +224,7 @@
                  "id":65,
                  "name":"",
                  "rotation":0,
-                 "type":"food",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":1280,
@@ -232,7 +253,7 @@
                          "value":3
                         }],
                  "rotation":0,
-                 "type":"dreda",
+                 "type":"",
                  "visible":true,
                  "width":204,
                  "x":1200,
@@ -243,14 +264,8 @@
                  "height":168,
                  "id":73,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
                  "rotation":0,
-                 "type":"horton",
+                 "type":"",
                  "visible":true,
                  "width":228,
                  "x":158,
@@ -273,7 +288,7 @@
                  "id":66,
                  "name":"",
                  "rotation":0,
-                 "type":"player",
+                 "type":"",
                  "visible":true,
                  "width":64,
                  "x":38,
@@ -286,7 +301,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":74,
+ "nextobjectid":77,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
