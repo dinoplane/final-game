@@ -6,37 +6,50 @@ class SpringCat extends PlatformCat { // A cat that stretches
 
         this.body.setOffset(10, 11);
         this.setSize(this.displayWidth-30, this.displayHeight - 20, false);
-        
         this.spring = this.scene.tweens.create({
             targets: this,
             scaleY:1,
-            duration: 100,
+            duration: 150,
             ease: 'Bounce.easeInOut',
-            onComplete: () => {
-                this.rider = null;
+            onUpdate: () => {
+
+                if (this.rider != null && this.rider.body.touching.down && this.body.touching.up && this.body.top < this.scene.levelLoader.getMapHeight() -65){
+                    this.rider.y = this.body.top;
+                }
+           },
+           onComplete: () => {
+                
+                if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
+                    this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
+                    this.rider.setVelocityY(-Player.SPRING_V);
+                    this.rider.isGrounded = false;
+                    this.rider.play(this.rider.isBrain()+"_hop");
+                }
             }
         });
 
         this.compress = this.scene.tweens.create({
             targets: this,
-            scaleY:0.5,
+            scaleY:0.3,
             duration: 1000,
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
             onUpdate: () => {
 
-                 if (this.rider != null){
+                 if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }
             },
             onComplete: () => {
+                
+                // if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying() &&  this.body.top < this.scene.levelLoader.getMapHeight() -65){
+                //     this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
+                //     this.rider.setVelocityY(-Player.SPRING_V);
+                //     this.rider.isGrounded = false;
+                //     this.rider.play(this.rider.isBrain()+"_hop");
+                // }
                 this.spring.play();
-                if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying()){
-                    this.rider.setVelocityY(-Player.SPRING_V);
-                    this.rider.isGrounded = false;
-                    this.rider.play(this.rider.isBrain()+"_hop");
-                }
             }
         });
 
@@ -55,11 +68,8 @@ class SpringCat extends PlatformCat { // A cat that stretches
     }
 
     onOverlap(player){
-        if (!this.selected && !this.spring.isPlaying()){
-            player.onGround();
-
-            player.setVelocityY(0);
-            player.y -= player.y - this.y + this.displayHeight
+        if (!this.spring.isPlaying()){
+            super.onOverlap(player);
         }
     }
     // update(){
