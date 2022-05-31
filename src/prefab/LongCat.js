@@ -14,7 +14,7 @@ class LongCat extends PlatformCat { // A cat that stretches
             yoyo: true,
             ease: 'Sine.easeInOut',
             onUpdate: () => {
-                 if (this.rider != null){
+                 if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }
             }
