@@ -146,6 +146,11 @@ class Play extends Phaser.Scene {
     loadNextLevel(){
         level = (level + 1) % gameOptions.levels;
         this.scene.restart();
+        this.cameras.main.fadeOut(1000);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+            
+        })
+        
     }
 
     moveCam() {

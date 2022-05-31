@@ -285,20 +285,20 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.levelComplete = true;
         this.setAcceleration(0,0);
         this.setVelocityX(0);
-        this.scene.input.keyboard.enabled = false;
+        //this.scene.input.keyboard.enabled = false;
        
-        let exit = this.scene.tweens.create({
-            targets: this,
-            alpha: 0,
-            duration: 1000,
-            ease: 'Cubic.easeInOut',
-            //easeParams: [ 3.5 ],
-            //delay: 1000,
-            onComplete: () => {  
-                this.scene.loadNextLevel();
-            },
-        });
-        exit.play();
+        // let exit = this.scene.tweens.create({
+        //     targets: this,
+        //     alpha: 0,
+        //     duration: 1000,
+        //     ease: 'Cubic.easeInOut',
+        //     //easeParams: [ 3.5 ],
+        //     //delay: 1000,
+        //     onComplete: () => {  
+        //         this.scene.loadNextLevel();
+        //     },
+        // });
+        // exit.play();
     }
 
     onPlatform(){ // accommodate for differ
