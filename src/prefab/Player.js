@@ -80,11 +80,12 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
     
     setUpParticles(){
-        this.particleManager =  this.scene.add.particles('vfx_atlas', 'hover').setDepth(4);
+        this.particleManager =  this.scene.add.particles('vfx_atlas').setDepth(4);
         this.hoverFx = this.particleManager.createEmitter({
             x: this.cx(),
             y: this.y,
-            scale: {start: 1, end:2},
+            frame: 'hover',
+            scale: {start: 1, end:2}, 
             alpha:  {start: 1, end:0, ease: 'Sine.EaseInOut'},
             // (p, k, t, v) => {
             //     return 1-t;
@@ -108,6 +109,73 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             callbackScope: this,
             loop: true   
         });
+        var shape2 = new Phaser.Geom.Ellipse(this.cx()- 11,0, this.body.width*0.5, this.displayHeight*0.1);
+        // this.particleManager.createEmitter({
+        //     frame: 'dirt0',
+        //     x: 400, y: 300,
+        //     lifespan: 2000,
+        //     quantity: 4,
+            
+        //     alpha: { start: 1, end: 0 },
+        //     blendMode: 'ADD',
+        //     emitZone: { type: 'random', source: shape2 }
+        // });
+    
+        this.cloudFx = this.particleManager.createEmitter({
+            frame: ['dirt2', 'dirt1', 'dirt0'],
+            x: this.cx(),
+            y: this.body.bottom,
+            //y: this.body.bottom,
+            // follow: this,
+            // followOffset:{
+            //     x:15, 
+            //     y:0
+            // },
+            lifespan: 500,
+            quantity: 1,
+            scale: { start: 1, end: 2 },
+            alpha:  {start: 1, end:0, ease: 'Sine.EaseInOut'},
+
+            blendMode: 'ADD',
+            emitZone: { type: 'random', source: shape2, quantity: 5 },
+            frequency: 100,
+            speedX: 2,
+            speedY: -10,
+            on: false,
+        });
+
+        this.cloudTimer = this.scene.time.addEvent({
+            delay: 250, // ms
+            callback: () =>{ 
+                this.cloudFx.stop();
+                this.cloudTimer.paused = true;
+            },
+            paused: true,
+            callbackScope: this,
+            loop: true   
+        });
+       // this.land_ellipse = new Phaser.Geom.Ellipse(400,400, 200, 200);
+        // this.cloudFx = this.particleManager.createEmitter({
+        //     x:400,
+        //     y:400,
+        //     frame: 'hover',
+        //     scale: {start: 1, end:2},
+        //     alpha:  {start: 1, end:0, ease: 'Sine.EaseInOut'},
+
+        //     emitZone: {
+        //         type: 'random',
+        //         source: this.land_ellipse,
+        //         quantity: 100
+        //     },
+        //     blendMode: 'ADD',
+        //     //scale: {start: 1, end: 0},
+        //     lifespan: 2000,
+
+        //     frequency: 100,
+        //     on: false,
+
+        // });
+
     }
 
     setUpAnimations(){
@@ -215,7 +283,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             let a = this.isBrain();
             this.anims.play( (this.isRunning() != 0) ? a+"_run" : a+"_idle");
             this.onXDown(this.isRunning());
-
+            this.cloudFx.setPosition(this.cx(), this.body.bottom);
+            console.log(this.cx())
+            this.cloudFx.start();
+            this.cloudTimer.paused = false; 
+            console.log(this.cloudFx.on)
             this.resetJumps();
         }
         
