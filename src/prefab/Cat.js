@@ -229,7 +229,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     startThinking(){
-        if (!this.over && Cat.SELECTED_CAT == null && !this.selected){
+        if (!this.over && Cat.SELECTED_CAT == null && !this.selected && this.isSelectable()){
             this.over = true;
             Cat.THOUGHTS.setActive(true);
             Cat.THOUGHTS.setVisible(true);

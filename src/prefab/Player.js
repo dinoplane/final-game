@@ -248,6 +248,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         if (this.platform instanceof PlatformCat){
             this.platform.rider = null;
         }
+
+        
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.platform = null;
     }
@@ -306,9 +308,11 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     update(){
+        console.log(this.jumps)
         if (this.platform instanceof PlatformCat){
             // detect fall
             if (!this.onPlatform()){
+                this.jumps += 1;
                 this.onLeavePlatform();
             }
         }
