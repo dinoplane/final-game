@@ -17,7 +17,7 @@ class Load extends Phaser.Scene { // First time load
         this.load.atlas("cats_atlas", "./assets/images/cats_atlas.png", "./assets/images/cats_atlas.json");
         this.load.atlas("zzz_atlas", "./assets/images/zzz_atlas.png", "./assets/images/zzz_atlas.json");
         this.load.atlas("popup_atlas", "./assets/images/popup_atlas.png", "./assets/images/popup_atlas.json");
-        
+        this.load.atlas("vfx_atlas", "./assets/images/vfx_atlas.png", "./assets/images/vfx_atlas.json");
         
         for (let i = 0; i < gameOptions.levels; i++)
             this.load.tilemapTiledJSON('level'+i, './assets/tilemaps/level'+i+'.json');

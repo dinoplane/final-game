@@ -80,7 +80,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
     
     setUpParticles(){
-        this.particleManager =  this.scene.add.particles('hover').setDepth(4);
+        this.particleManager =  this.scene.add.particles('vfx_atlas', 'hover').setDepth(4);
         this.hoverFx = this.particleManager.createEmitter({
             x: this.cx(),
             y: this.y,
@@ -235,7 +235,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
                 this.brainJuicing = 1;
                 this.double_jump_fx.play();
                 
-                this.hoverFx.setPosition(this.cx(), this.y);
+                this.hoverFx.setPosition(this.cx() + 11, this.y);
                 this.hoverFx.start();
                 this.hoverTimer.paused = false;
             } else this.jump_fx.play();
