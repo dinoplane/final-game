@@ -9,6 +9,8 @@ class Load extends Phaser.Scene { // First time load
         this.load.atlas("miao_atlas", "./assets/images/miao_atlas.png", "./assets/images/miao_atlas.json");
         this.load.atlas("brain_atlas", "./assets/images/brain_atlas.png", "./assets/images/miao_atlas.json");
         this.load.image("food", "./assets/images/food.png");
+        this.load.image("title", "./assets/images/startmenu.png");
+        this.load.image('credits', './assets/images/credits.png');
 
         this.load.image("ground_tileset_image", "./assets/tilesets/ground_tileset.png" );
         // Load.CAT_NAMES.forEach(cat => { 
@@ -39,7 +41,7 @@ class Load extends Phaser.Scene { // First time load
     }
 
     create(){
-        this.scene.start("playScene")
+        this.scene.start("menuScene")
     }
 
 }

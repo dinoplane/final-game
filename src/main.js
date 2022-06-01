@@ -13,7 +13,7 @@ var config = {
     type: Phaser.CANVAS ,
     width: 1280,
     height: 640,
-    scene: [Load, Play],
+    scene: [Load, Menu, Play],
    roundPixels: true,
     render: {
       pixelArt: true

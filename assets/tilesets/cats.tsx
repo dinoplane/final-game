@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.8" tiledversion="1.8.4" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
+<tileset version="1.8" tiledversion="1.8.4" name="cats" tilewidth="256" tileheight="256" tilecount="11" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0" type="biscuit">
   <properties>
@@ -17,7 +17,7 @@
   <properties>
    <property name="movesLeft" type="int" value="2"/>
   </properties>
-  <image width="228" height="168" source="cats_tileset/horton.png"/>
+  <image width="256" height="256" source="cats_tileset/horton.png"/>
  </tile>
  <tile id="4" type="hubert">
   <properties>
@@ -25,25 +25,25 @@
    <property name="init_scale" type="float" value="1"/>
    <property name="movesLeft" type="int" value="2"/>
   </properties>
-  <image width="83" height="351" source="cats_tileset/hubert.png"/>
+  <image width="75" height="204" source="cats_tileset/hubert.png"/>
  </tile>
  <tile id="5" type="jasmine">
   <properties>
    <property name="movesLeft" type="int" value="2"/>
   </properties>
-  <image width="102" height="189" source="cats_tileset/jasmine.png"/>
+  <image width="75" height="204" source="cats_tileset/jasmine.png"/>
  </tile>
  <tile id="6" type="luna">
   <properties>
    <property name="movesLeft" type="int" value="0"/>
   </properties>
-  <image width="132" height="65" source="cats_tileset/luna.png"/>
+  <image width="128" height="64" source="cats_tileset/luna.png"/>
  </tile>
  <tile id="7" type="newton">
   <properties>
    <property name="movesLeft" type="int" value="2"/>
   </properties>
-  <image width="157" height="96" source="cats_tileset/newton.png"/>
+  <image width="128" height="64" source="cats_tileset/newton.png"/>
  </tile>
  <tile id="8" type="quinn">
   <properties>
@@ -62,5 +62,8 @@
    <property name="movesLeft" type="int" value="2"/>
   </properties>
   <image width="204" height="50" source="cats_tileset/dreda.png"/>
+ </tile>
+ <tile id="10" type="tigra">
+  <image width="128" height="64" source="cats_tileset/tigra.png"/>
  </tile>
 </tileset>

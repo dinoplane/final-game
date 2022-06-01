@@ -85,7 +85,7 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Collect', 'all', 'the food', 'to advance'"
+                         "value":"'Collect all the ', ' to advance.'"
                         }, 
                         {
                          "name":"oneUse",
@@ -139,7 +139,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -152,7 +152,7 @@
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":30,
          "x":0,
          "y":0
@@ -280,46 +280,10 @@
          "draworder":"topdown",
          "id":3,
          "name":"Cats",
-         "objects":[
-                {
-                 "gid":60,
-                 "height":50,
-                 "id":58,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":3
-                        }],
-                 "rotation":0,
-                 "type":"dreda",
-                 "visible":true,
-                 "width":204,
-                 "x":1200,
-                 "y":766
-                }, 
-                {
-                 "gid":54,
-                 "height":168,
-                 "id":73,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"horton",
-                 "visible":true,
-                 "width":228,
-                 "x":158,
-                 "y":964
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 

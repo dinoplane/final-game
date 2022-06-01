@@ -102,7 +102,7 @@
   </object>
   <object id="75" gid="6" x="704" y="780" width="64" height="64">
    <properties>
-    <property name="elements" value="'Collect', 'all', 'the food', 'to advance'"/>
+    <property name="elements" value="'Collect all the ', food ,' to advance.'"/>
     <property name="oneUse" type="bool" value="false"/>
    </properties>
   </object>
