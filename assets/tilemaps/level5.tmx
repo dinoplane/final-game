@@ -8,7 +8,7 @@
   <tile id="1" type="food"/>
   <tile id="3" type="player"/>
  </tileset>
- <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
+ <tileset firstgid="51" name="cats" tilewidth="256" tileheight="351" tilecount="10" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0" type="biscuit">
    <properties>
@@ -26,7 +26,7 @@
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
+   <image width="256" height="256" source="../tilesets/cats_tileset/horton.png"/>
   </tile>
   <tile id="4" type="hubert">
    <properties>
@@ -34,25 +34,25 @@
     <property name="init_scale" type="float" value="1"/>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
+   <image width="75" height="204" source="../tilesets/cats_tileset/hubert.png"/>
   </tile>
   <tile id="5" type="jasmine">
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="102" height="189" source="../tilesets/cats_tileset/jasmine.png"/>
+   <image width="75" height="204" source="../tilesets/cats_tileset/jasmine.png"/>
   </tile>
   <tile id="6" type="luna">
    <properties>
     <property name="movesLeft" type="int" value="0"/>
    </properties>
-   <image width="132" height="65" source="../tilesets/cats_tileset/luna.png"/>
+   <image width="128" height="64" source="../tilesets/cats_tileset/luna.png"/>
   </tile>
   <tile id="7" type="newton">
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="157" height="96" source="../tilesets/cats_tileset/newton.png"/>
+   <image width="128" height="64" source="../tilesets/cats_tileset/newton.png"/>
   </tile>
   <tile id="8" type="quinn">
    <properties>
@@ -129,7 +129,7 @@
   <object id="89" gid="58" x="1917" y="263" width="157" height="96"/>
   <object id="112" gid="58" x="595" y="1045" width="157" height="96"/>
  </objectgroup>
- <objectgroup id="4" name="Player" visible="0">
-  <object id="46" gid="4" x="104" y="1233" width="64" height="64"/>
+ <objectgroup id="4" name="Player">
+  <object id="46" gid="4" x="65.3333" y="1239.67" width="64" height="64"/>
  </objectgroup>
 </map>

@@ -72,36 +72,6 @@
                  "y":640
                 }, 
                 {
-                 "gid":4,
-                 "height":64,
-                 "id":38,
-                 "name":"",
-                 "rotation":0,
-                 "type":"player",
-                 "visible":true,
-                 "width":64,
-                 "x":98,
-                 "y":732
-                }, 
-                {
-                 "gid":57,
-                 "height":65,
-                 "id":56,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":0
-                        }],
-                 "rotation":0,
-                 "type":"luna",
-                 "visible":true,
-                 "width":132,
-                 "x":51,
-                 "y":816
-                }, 
-                {
                  "gid":2,
                  "height":64,
                  "id":57,
@@ -205,6 +175,24 @@
                  "width":157,
                  "x":1093,
                  "y":502
+                }, 
+                {
+                 "gid":57,
+                 "height":65,
+                 "id":59,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"luna",
+                 "visible":true,
+                 "width":132,
+                 "x":82.4848484848485,
+                 "y":846.287878787879
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -216,7 +204,19 @@
          "draworder":"topdown",
          "id":4,
          "name":"Player",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":4,
+                 "height":64,
+                 "id":58,
+                 "name":"",
+                 "rotation":0,
+                 "type":"player",
+                 "visible":true,
+                 "width":64,
+                 "x":104.363636363636,
+                 "y":731.636363636364
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -224,7 +224,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":58,
+ "nextobjectid":60,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
@@ -296,8 +296,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -309,8 +309,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -332,8 +332,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -345,8 +345,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -358,8 +358,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -407,7 +407,7 @@
                         }],
                  "type":"dreda"
                 }],
-         "tilewidth":228
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",

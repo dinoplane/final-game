@@ -234,7 +234,6 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             Cat.THOUGHTS.setActive(true);
             Cat.THOUGHTS.setVisible(true);
             Cat.THOUGHTS.getAt(1).text = this.selectsLeft;
-            console.log(Cat.THOUGHTS.getAt(0).displayWidth);
             Cat.THOUGHTS.x = this.body.right + Cat.THOUGHTS.getAt(0).displayWidth/2;
             Cat.THOUGHTS.y = this.body.top;
         }
@@ -249,7 +248,6 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     }
 
     checkSleep(){   // Me nappy...
-        console.log(this.name)
         if (!this.isSelectable()){ // Me sleepy uwu
             
             this.startSleeping();

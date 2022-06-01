@@ -434,8 +434,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -447,8 +447,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -470,8 +470,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -483,8 +483,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -496,8 +496,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -545,7 +545,7 @@
                         }],
                  "type":"dreda"
                 }],
-         "tilewidth":228
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",

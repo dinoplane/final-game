@@ -35,12 +35,12 @@ var config = {
 let gameOptions = {
   levels:8,
 }
-
+let bg_music = null;
 let cursors;
 let game = new Phaser.Game(config);
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
-let level = 1;
+let level = 0;
 let controls;
 let pointer;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;

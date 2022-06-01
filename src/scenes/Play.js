@@ -9,6 +9,7 @@ class Play extends Phaser.Scene {
     }
 
     create(){
+        
         // Set up global variables
         this.input.setPollAlways(true);
         pointer = this.input.activePointer  ;
@@ -93,11 +94,13 @@ class Play extends Phaser.Scene {
         }
 
         //Music control
-        // this.bg_music = this.sound.add('bg_music1');
-        // this.bg_music.play();
-
-        //this.physics.add.collider(this.player, )
-        //this.physics.world.setBounds(game.config.width, game.config.height);
+        if (bg_music == null){
+            bg_music = this.sound.add('bg_music1', {
+                loop: true,
+                volume: 1,
+            });
+            bg_music.play()
+        }
     }
 
     onGameOver(){

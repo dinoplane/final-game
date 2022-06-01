@@ -61,10 +61,6 @@ class SpringCat extends PlatformCat { // A cat that stretches
     onCollide(player){
         super.onCollide(player);
         if (player.body.touching.down && this.body.touching.up && !this.compress.isPlaying() && !this.spring.isPlaying()) {
-            // player.onGround();
-            // console.log(player.anims.getName());
-            
-            // this.rider = player;
             this.compress.play();
         } 
     }
@@ -74,7 +70,4 @@ class SpringCat extends PlatformCat { // A cat that stretches
             super.onOverlap(player);
         }
     }
-    // update(){
-    //     console.log(this.rider)
-    // }
 }

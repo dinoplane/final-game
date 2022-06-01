@@ -25,12 +25,4 @@ class LongCat extends PlatformCat { // A cat that stretches
         })
         this.stretch.play();
     }
-    // onCollide(player){
-    //     //player.isGrounded = true;
-    //     //player.onLongCat = this;
-    //     super.onCollide(player);
-    //     //console.log(player.anims.getName())
-
-    // }
-    // onOverlap() {};
 }
