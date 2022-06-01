@@ -7,22 +7,25 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     static OFFSET_FACTOR = 0.1;
     // MOMMY MOMMY MOMMY MOMMY
 
+    static THOUGHTS = null;
+
     constructor(scene, x, y, frame, data){
         super(scene, x, y, "cats_atlas", frame);
         
         scene.add.existing(this);
         scene.physics.add.existing(this);
-        //this.setCollideWorldBounds(true);
         this.addPointerCallbacks();
         this.zzz = null;
 
         this.name = frame;
         this.selected = false;
+        this.over = false;
         this.canceled = false; // O nwo me no use twitta
         this.rider = null;
 
         this.selectsLeft = data["movesLeft"];
         this.checkSleep();
+        
 
         this.catSoul = null;
         this.my_friends = []; // FRIENDS not FRIEND (may overlap more than one)
@@ -30,6 +33,16 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     addPointerCallbacks(){
         this.scene.input.setDraggable(this.setInteractive());
+        this.setInteractive();
+
+        this.pover = this.on("pointerover", (pointer) => {
+            this.startThinking();
+        });
+
+        this.pover = this.on("pointerout", (pointer) => {
+            this.stopThinking();
+        });
+        
 
         this.dstart = this.on('dragstart', (pointer, dragX, dragY) => {
             this.onDragStart()
@@ -38,6 +51,16 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
         this.dend = this.on('dragend', (pointer, dragX, dragY) => {
             this.onDragEnd(pointer);  
         });
+
+    }
+
+    static createThoughts(scene){
+        let thought_pic = scene.add.image(0,0, 'thought').setOrigin(0.5, 0.5).setScale(1.5);
+        let moves = scene.add.bitmapText(thought_pic.x+7, thought_pic.y-1, 'lavender', "4567").setOrigin(0.5, 0.5);
+        Cat.THOUGHTS = scene.add.container(400,400, [thought_pic, moves]).setDepth(6);
+        Cat.THOUGHTS.setActive(false);
+        Cat.THOUGHTS.setVisible(false);
+        
     }
 
     onCollide(player){
@@ -100,6 +123,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.catSoul = new CatSoul(this).setOrigin(0,1);
             this.setTexture("cats_atlas", this.name+"_owo");
             this.selected = true;
+            this.stopThinking();
             this.setScale(1.01);
             this.setDepth(5);
         }
@@ -149,6 +173,8 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.selected = false;
             this.setScale(1);
             this.setDepth(3);
+            this.startThinking();
+
         }
     }
 
@@ -199,6 +225,26 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             });
             //this.anims.play('drowsy');
             this.zzz.anims.play('zzz');
+        }
+    }
+
+    startThinking(){
+        if (!this.over && Cat.SELECTED_CAT == null && !this.selected){
+            this.over = true;
+            Cat.THOUGHTS.setActive(true);
+            Cat.THOUGHTS.setVisible(true);
+            Cat.THOUGHTS.getAt(1).text = this.selectsLeft;
+            console.log(Cat.THOUGHTS.getAt(0).displayWidth);
+            Cat.THOUGHTS.x = this.body.right + Cat.THOUGHTS.getAt(0).displayWidth/2;
+            Cat.THOUGHTS.y = this.body.top;
+        }
+    }
+
+    stopThinking(){
+        if (this.over || this.selected){
+            this.over = false;
+            Cat.THOUGHTS.setActive(false);
+            Cat.THOUGHTS.setVisible(false);
         }
     }
 

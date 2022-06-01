@@ -50,6 +50,7 @@ class Play extends Phaser.Scene {
         Cat.C2C_OVERLAP = this.physics.add.collider(this.objects.cats.slice(), this.objects.cats.slice(), (cat1, cat2) => {
             cat1.onCatOverlap(cat2);
         });
+        Cat.createThoughts(this);
 
         PopupElement.RANGE_OVERLAP = this.physics.add.overlap(this.player, PopupElement.RANGE_BODIES);
 
@@ -59,46 +60,6 @@ class Play extends Phaser.Scene {
                 Cat.SELECTED_CAT.canceled = true;
             }
         });
-        // this.te =  this.add.particles('hover');
-        // this.em = this.te.createEmitter({
-        //     x: 100,
-        //     y: 400,
-        //     scale: {start: 1, end:2},
-        //     alpha:  {start: 1, end:0, ease: 'Sine.EaseInOut'},
-        //     // (p, k, t, v) => {
-        //     //     return 1-t;
-        //     // } ,
-        //     //delay: 1000,
-        //     lifespan: 500,
-            
-        //     speedY: 100,
-        //     frequency: 100,
-        //     //quantity: 3
-        //     //maxParticles: 3
-        // }).start();
-
-        // this.pm = this.time.addEvent({
-        //     delay: 250, // ms
-        //     callback: () =>{
-        //         console.log(this.em.on)
-        //         if (this.em.on)
-        //             this.em.stop();
-        //         else
-        //             this.em.start();
-        //     },
-        //     callbackScope: this,
-        //     loop: true
-        // });
-        // this.graphics = this.add.graphics({ x: 0, y: 0, fillStyle: { color: 0xff00ff, alpha: 1 } });
-        // this.te = new Phaser.GameObjects.BitmapText(this, 100, 400, 'neptune', "hello");
-        // this.add.existing(this.te);
-        // this.physics.add.existing(this.te);
-        // this.te.body.allowGravity = false;
-        // this.te.body.width = this.te.width;
-        // this.te.body.height =  this.te.height;
-        // this.bounds1 = this.te.getTextBounds(true);
-        // this.graphics.clear();
-        // this.graphics.fillRect(this.bounds1.global.x, this.bounds1.global.y, this.bounds1.global.width, this.bounds1.global.height);
 
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {

@@ -29,9 +29,13 @@ class Load extends Phaser.Scene { // First time load
         this.load.audio('bg_music1', './assets/audio/wander.mp3');
 
         this.load.bitmapFont('neptune', './assets/fonts/neptune.png', './assets/fonts/neptune.xml');
+        this.load.bitmapFont('lavender', './assets/fonts/numbers.png', './assets/fonts/numbers.xml');
+
 
         // Loadin particles
         this.load.image('hover', './assets/images/hover.png');
+        this.load.image('thought', './assets/images/think.png');
+        
     }
 
     create(){

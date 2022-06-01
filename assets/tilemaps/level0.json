@@ -36,9 +36,29 @@
                          "name":"oneUse",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"RangeElement",
                  "visible":true,
                  "width":64,
                  "x":396,
@@ -65,15 +85,35 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Collect', all',the food', to advance'"
+                         "value":"'Collect', 'all', 'the food', 'to advance'"
                         }, 
                         {
                          "name":"oneUse",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"RangeElement",
                  "visible":true,
                  "width":64,
                  "x":704,
@@ -128,7 +168,7 @@
                  "id":37,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":419,
@@ -140,7 +180,7 @@
                  "id":47,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":593,
@@ -152,7 +192,7 @@
                  "id":49,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":770,
@@ -164,7 +204,7 @@
                  "id":60,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1412,
@@ -176,7 +216,7 @@
                  "id":61,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1008,
@@ -188,7 +228,7 @@
                  "id":62,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1525,
@@ -200,7 +240,7 @@
                  "id":63,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":916,
@@ -212,7 +252,7 @@
                  "id":64,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1098,
@@ -224,7 +264,7 @@
                  "id":65,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1280,
@@ -253,7 +293,7 @@
                          "value":3
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"dreda",
                  "visible":true,
                  "width":204,
                  "x":1200,
@@ -264,8 +304,14 @@
                  "height":168,
                  "id":73,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"horton",
                  "visible":true,
                  "width":228,
                  "x":158,
@@ -288,7 +334,7 @@
                  "id":66,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":64,
                  "x":38,
@@ -416,8 +462,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -429,8 +475,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -452,8 +498,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -465,8 +511,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -478,8 +524,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -527,7 +573,7 @@
                         }],
                  "type":"dreda"
                 }],
-         "tilewidth":228
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",

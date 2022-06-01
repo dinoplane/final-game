@@ -17,6 +17,10 @@ class LongCat extends PlatformCat { // A cat that stretches
                  if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }
+                 if (this.over && Cat.THOUGHTS.active){
+                    Cat.THOUGHTS.x = this.body.right + Cat.THOUGHTS.getAt(0).displayWidth/2;
+                    Cat.THOUGHTS.y = this.body.top;
+                 }
             }
         })
         this.stretch.play();

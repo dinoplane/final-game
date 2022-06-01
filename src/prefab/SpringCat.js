@@ -16,16 +16,13 @@ class SpringCat extends PlatformCat { // A cat that stretches
                 if (this.rider != null && this.rider.body.touching.down && this.body.touching.up && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                     this.rider.y = this.body.top;
                 }
-           },
-           onComplete: () => {
                 
-                if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
-                    this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
-                    this.rider.setVelocityY(-Player.SPRING_V);
-                    this.rider.isGrounded = false;
-                    this.rider.play(this.rider.isBrain()+"_hop");
-                }
-            }
+                if (this.over && Cat.THOUGHTS.active){
+                    Cat.THOUGHTS.x = this.body.right + Cat.THOUGHTS.getAt(0).displayWidth/2;
+                    Cat.THOUGHTS.y = this.body.top;
+                 }
+           },
+
         });
 
         this.compress = this.scene.tweens.create({
@@ -40,15 +37,20 @@ class SpringCat extends PlatformCat { // A cat that stretches
                  if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }
+
+                 if (this.over && Cat.THOUGHTS.active){
+                    Cat.THOUGHTS.x = this.body.right;
+                    Cat.THOUGHTS.y = this.body.top;
+                 }
             },
             onComplete: () => {
                 
-                // if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying() &&  this.body.top < this.scene.levelLoader.getMapHeight() -65){
-                //     this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
-                //     this.rider.setVelocityY(-Player.SPRING_V);
-                //     this.rider.isGrounded = false;
-                //     this.rider.play(this.rider.isBrain()+"_hop");
-                // }
+                if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying() &&  this.body.top < this.scene.levelLoader.getMapHeight() -65){
+                    this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
+                    this.rider.setVelocityY(-Player.SPRING_V);
+                    this.rider.isGrounded = false;
+                    this.rider.play(this.rider.isBrain()+"_hop");
+                }
                 this.spring.play();
             }
         });

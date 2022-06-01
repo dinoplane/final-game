@@ -30,7 +30,7 @@ class PlatformCat extends Cat { // A cat that can be collided with.
 
     onOverlap(player){
         if (!this.selected){
-            player.onGround();
+            //player.onGround();
         //if (player.y + player.height < this.y){
             player.setVelocityY(0);
             player.y = this.body.top;
