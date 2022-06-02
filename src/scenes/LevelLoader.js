@@ -32,6 +32,10 @@ class LevelLoader {
         return ret;
     }
 
+    getLevelName(){
+        return this.cleanInput(this.map.properties)["name"];
+    }
+
     loadLevel(){
         let food_array = [];
         let cat_array = [];

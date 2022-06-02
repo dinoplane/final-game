@@ -17,6 +17,60 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":6,
+         "name":"Displays",
+         "objects":[
+                {
+                 "gid":6,
+                 "height":64,
+                 "id":83,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Moving cats make them... zzz. '"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":-150
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":300
+                        }],
+                 "rotation":0,
+                 "type":"RangeElement",
+                 "visible":true,
+                 "width":64,
+                 "x":388,
+                 "y":448
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "compression":"",
          "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=",
          "encoding":"base64",
@@ -44,8 +98,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1044,
-                 "y":359
+                 "x":936,
+                 "y":423
                 }, 
                 {
                  "gid":2,
@@ -56,8 +110,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":192,
-                 "y":576
+                 "x":124,
+                 "y":760
                 }, 
                 {
                  "gid":2,
@@ -68,8 +122,50 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":289,
-                 "y":756
+                 "x":401,
+                 "y":324
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":79,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":1538,
+                 "y":108
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":80,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Act 3: The Cloning Incident..."
+                        }],
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":1544,
+                 "y":804
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":87,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":676,
+                 "y":322
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -83,24 +179,6 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":54,
-                 "height":168,
-                 "id":42,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"horton",
-                 "visible":true,
-                 "width":228,
-                 "x":1150,
-                 "y":243
-                }, 
-                {
                  "gid":55,
                  "height":351,
                  "id":43,
@@ -109,7 +187,7 @@
                         {
                          "name":"end_scale",
                          "type":"float",
-                         "value":1
+                         "value":2
                         }, 
                         {
                          "name":"init_scale",
@@ -126,25 +204,7 @@
                  "visible":true,
                  "width":83,
                  "x":256,
-                 "y":819
-                }, 
-                {
-                 "gid":58,
-                 "height":96,
-                 "id":44,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"newton",
-                 "visible":true,
-                 "width":157,
-                 "x":1266,
-                 "y":589
+                 "y":847
                 }, 
                 {
                  "gid":55,
@@ -171,8 +231,8 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":383,
-                 "y":808
+                 "x":391,
+                 "y":846
                 }, 
                 {
                  "gid":55,
@@ -199,8 +259,8 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":527,
-                 "y":818
+                 "x":525,
+                 "y":848
                 }, 
                 {
                  "gid":55,
@@ -228,7 +288,7 @@
                  "visible":true,
                  "width":83,
                  "x":671,
-                 "y":826
+                 "y":848
                 }, 
                 {
                  "gid":55,
@@ -256,7 +316,7 @@
                  "visible":true,
                  "width":83,
                  "x":807,
-                 "y":828
+                 "y":848
                 }, 
                 {
                  "gid":55,
@@ -283,8 +343,8 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":925,
-                 "y":826
+                 "x":927,
+                 "y":848
                 }, 
                 {
                  "gid":55,
@@ -311,8 +371,8 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":1063,
-                 "y":822
+                 "x":1057,
+                 "y":848
                 }, 
                 {
                  "gid":57,
@@ -331,6 +391,24 @@
                  "width":132,
                  "x":72,
                  "y":651.5
+                }, 
+                {
+                 "gid":61,
+                 "height":64,
+                 "id":73,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "rotation":0,
+                 "type":"tigra",
+                 "visible":true,
+                 "width":128,
+                 "x":1202,
+                 "y":514
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -361,9 +439,15 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":73,
+ "nextlayerid":7,
+ "nextobjectid":88,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 3: The Cloning Incident"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,
@@ -387,6 +471,49 @@
                 {
                  "id":3,
                  "type":"player"
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Use ', keyboard"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
+                        }],
+                 "type":"RangeElement"
+                }, 
+                {
+                 "id":10,
+                 "probability":0.1
+                }, 
+                {
+                 "id":14,
+                 "probability":0.1
                 }],
          "tilewidth":64
         }, 
@@ -402,8 +529,8 @@
          "margin":0,
          "name":"cats",
          "spacing":0,
-         "tilecount":10,
-         "tileheight":351,
+         "tilecount":11,
+         "tileheight":256,
          "tiles":[
                 {
                  "id":0,
@@ -544,6 +671,19 @@
                          "value":2
                         }],
                  "type":"dreda"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/tilesets\/cats_tileset\/tigra.png",
+                 "imageheight":64,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "type":"tigra"
                 }],
          "tilewidth":256
         }],

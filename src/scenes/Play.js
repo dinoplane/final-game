@@ -21,10 +21,12 @@ class Play extends Phaser.Scene {
         this.resetDuration = Play.RESET_DURATION;
         this.isZoomed = false;
 
+        // Load Level
         this.background = this.levelLoader.loadBackground();
         this.ground = this.levelLoader.loadGround();
-
         this.objects = this.levelLoader.loadLevel();
+
+        // Add Colliders
         this.physics.add.collider(this.player, this.ground,
                                     (p, g) => {
                                         this.onGroundCollide(p, g);
@@ -65,22 +67,17 @@ class Play extends Phaser.Scene {
         // Cameras and camera callbacks
         this.cameras.main.on(Phaser.Cameras.Scene2D.Events.ZOOM_COMPLETE, () => {
             this.isZoomed = !this.isZoomed;
-            //if (this.isZoomed) this.background.scrollFactorX = 0.5;
         });
         this.moveCam();
-        //game.renderer.renderSession.roundPixels = true;
-        // this.cameras.main.roundPixels = true;
-        // this.cameras.main.startFollow(this.player, true, );
-        // set camera dead zone
-//        this.cameras.main.setDeadzone(200, 200);
-        //this.cameras.main.setName("center");
 
+        // Restart
         this.keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         this.keyR.on('down', (key) => {
             restarted = true;
             this.scene.restart();
         }); 
 
+        // Toggle zoom
         this.keyQ = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
         this.keyQ.on('down', (key) => {
             if (this.isZoomed)
@@ -88,24 +85,27 @@ class Play extends Phaser.Scene {
             else this.moveCam();
         }); 
 
+        // 
         this.keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
         this.keyP.on('down', (key) => {
             this.loadNextLevel();
         }); 
 
+        // restart control
         if (restarted){
             restarted = false;
             this.cameras.main.flash();
+            this.input.keyboard.enabled = true;
+            this.input.mouse.enabled = true;
+        } else {
+            // Disable all input until transition finishes
+            this.input.keyboard.enabled = false;
+            this.input.mouse.enabled = false;
         }
 
-        //Music control
-        if (bg_music == null){
-            bg_music = this.sound.add('bg_music1', {
-                loop: true,
-                volume: 1,
-            });
-            bg_music.play()
-        }
+
+
+
     }
 
     onGameOver(){
@@ -115,8 +115,8 @@ class Play extends Phaser.Scene {
 
     loadNextLevel(){
         level = (level + 1) % gameOptions.levels;
-        this.cameras.main.flash();
-        this.scene.restart();
+        
+        this.scene.get('transitionScene').transition();
         // var timer = this.time.delayedCall(500,  () => {
         //     this.scene.restart();
         // });

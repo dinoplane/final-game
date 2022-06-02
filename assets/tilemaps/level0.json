@@ -61,8 +61,8 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":341.454545454545,
-                 "y":815.030303030303
+                 "x":341.455,
+                 "y":815.03
                 }, 
                 {
                  "ellipse":true,
@@ -73,8 +73,8 @@
                  "type":"",
                  "visible":true,
                  "width":150,
-                 "x":201.69696969697,
-                 "y":742.060606060606
+                 "x":201.697,
+                 "y":742.061
                 }, 
                 {
                  "gid":6,
@@ -159,8 +159,8 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":1228.60606060606,
-                 "y":701.333333333333
+                 "x":1222.55,
+                 "y":746.788
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -232,8 +232,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1456.48484848485,
-                 "y":836.090909090909
+                 "x":1456.48,
+                 "y":836.091
                 }, 
                 {
                  "gid":2,
@@ -244,8 +244,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1197.81818181818,
-                 "y":783.969696969697
+                 "x":1197.82,
+                 "y":826.394
                 }, 
                 {
                  "gid":2,
@@ -256,8 +256,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1725.57575757576,
-                 "y":756.242424242424
+                 "x":1725.58,
+                 "y":756.242
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -285,8 +285,8 @@
                  "type":"tigra",
                  "visible":true,
                  "width":128,
-                 "x":1157.21212121212,
-                 "y":883.515151515152
+                 "x":1160.24,
+                 "y":907.757
                 }, 
                 {
                  "gid":61,
@@ -303,8 +303,8 @@
                  "type":"tigra",
                  "visible":true,
                  "width":128,
-                 "x":1414.78560606061,
-                 "y":890.727287878788
+                 "x":1411.76,
+                 "y":905.879
                 }, 
                 {
                  "gid":61,
@@ -321,8 +321,26 @@
                  "type":"tigra",
                  "visible":true,
                  "width":128,
-                 "x":1672.36136363636,
-                 "y":836.181621212121
+                 "x":1684.48,
+                 "y":833.152
+                }, 
+                {
+                 "gid":57,
+                 "height":64,
+                 "id":91,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"luna",
+                 "visible":true,
+                 "width":128,
+                 "x":102.667,
+                 "y":904.364
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -344,8 +362,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":165.272727272727,
-                 "y":869.909090909091
+                 "x":156.182,
+                 "y":788.091
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -354,8 +372,14 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":88,
+ "nextobjectid":92,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 0: Sleeping Luna and Lazy Tigra "
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,

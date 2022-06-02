@@ -31,7 +31,7 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.sliding = false;
 
         // Controls
-        this.scene.input.keyboard.enabled = true;
+
 
         this.keySPACE =this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.keySPACE.on('down', key =>{

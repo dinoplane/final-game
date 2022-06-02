@@ -11,11 +11,10 @@ class Load extends Phaser.Scene { // First time load
         this.load.image("food", "./assets/images/food.png");
         this.load.image("title", "./assets/images/startmenu.png");
         this.load.image('credits', './assets/images/credits.png');
+        this.load.image('loading', './assets/images/loading.png');
 
         this.load.image("ground_tileset_image", "./assets/tilesets/ground_tileset.png" );
-        // Load.CAT_NAMES.forEach(cat => { 
-        //     this.load.image(cat+"_image", "./assets/tilesets/cats_tileset/"+cat+".png");
-        // });
+
         this.load.atlas("cats_atlas", "./assets/images/cats_atlas.png", "./assets/images/cats_atlas.json");
         this.load.atlas("zzz_atlas", "./assets/images/zzz_atlas.png", "./assets/images/zzz_atlas.json");
         this.load.atlas("popup_atlas", "./assets/images/popup_atlas.png", "./assets/images/popup_atlas.json");
@@ -33,14 +32,13 @@ class Load extends Phaser.Scene { // First time load
         this.load.bitmapFont('neptune', './assets/fonts/neptune.png', './assets/fonts/neptune.xml');
         this.load.bitmapFont('lavender', './assets/fonts/numbers.png', './assets/fonts/numbers.xml');
 
-
-        // Loadin particles
         this.load.image('thought', './assets/images/think.png');
+        this.load.image('levelhead', './assets/images/levelhead.png');
         
     }
 
     create(){
-        this.scene.start("menuScene")
+        this.scene.launch("menuScene").launch("transitionScene");
     }
 
 }

@@ -127,7 +127,7 @@
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":20,
          "x":0,
          "y":0
@@ -216,6 +216,12 @@
  "nextlayerid":8,
  "nextobjectid":95,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 1: Tigra's Leap of Fate"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,

@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="28" height="14" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="73">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="28" height="14" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="88">
  <editorsettings>
   <export target="level3.json" format="json"/>
  </editorsettings>
+ <properties>
+  <property name="name" value="Act 3: The Cloning Incident"/>
+ </properties>
  <tileset firstgid="1" name="ground_tileset" tilewidth="64" tileheight="64" tilecount="50" columns="10">
   <image source="../tilesets/ground_tileset.png" width="640" height="320"/>
   <tile id="1" type="food"/>
   <tile id="3" type="player"/>
+  <tile id="5" type="RangeElement">
+   <properties>
+    <property name="elements" value="'Use ', keyboard"/>
+    <property name="oneUse" type="bool" value="false"/>
+    <property name="rangeHeight" type="int" value="150"/>
+    <property name="rangeOffsetX" type="int" value="0"/>
+    <property name="rangeOffsetY" type="int" value="0"/>
+    <property name="rangeWidth" type="int" value="150"/>
+   </properties>
+  </tile>
+  <tile id="10" probability="0.1"/>
+  <tile id="14" probability="0.1"/>
  </tileset>
- <tileset firstgid="51" name="cats" tilewidth="256" tileheight="351" tilecount="10" columns="0">
+ <tileset firstgid="51" name="cats" tilewidth="256" tileheight="256" tilecount="11" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0" type="biscuit">
    <properties>
@@ -72,68 +87,90 @@
    </properties>
    <image width="204" height="50" source="../tilesets/cats_tileset/dreda.png"/>
   </tile>
+  <tile id="10" type="tigra">
+   <properties>
+    <property name="movesLeft" value="2"/>
+   </properties>
+   <image width="128" height="64" source="../tilesets/cats_tileset/tigra.png"/>
+  </tile>
  </tileset>
  <layer id="5" name="Background" width="28" height="14" visible="0">
   <data encoding="base64">
    DgAAAA0AAAANAAAADQAAAAwAAAANAAAADAAAAAwAAAAOAAAADQAAAA0AAAAOAAAADgAAAAwAAAAOAAAADQAAAAwAAAANAAAADQAAAA0AAAAMAAAADgAAAAwAAAAOAAAADQAAAAwAAAAOAAAADQAAAA0AAAANAAAADQAAAA0AAAAPAAAADAAAAA0AAAANAAAADQAAAAwAAAAOAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADAAAAA0AAAAPAAAADgAAAA0AAAAMAAAADgAAAAwAAAANAAAADgAAAAwAAAAOAAAADQAAAAwAAAANAAAADQAAAAwAAAAOAAAADAAAAA4AAAAOAAAADgAAAA8AAAANAAAADQAAAAsAAAANAAAADgAAAA4AAAANAAAADAAAAAwAAAAMAAAADgAAAA0AAAAMAAAACwAAAA4AAAANAAAADAAAAA0AAAAMAAAACwAAAA0AAAANAAAADAAAAA0AAAAMAAAADQAAAA4AAAAOAAAADgAAAA4AAAAMAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADAAAAAwAAAANAAAADAAAAAwAAAAOAAAADgAAAA4AAAAMAAAADgAAAA4AAAAMAAAADgAAAA4AAAAOAAAADAAAAA4AAAAOAAAADQAAAAwAAAANAAAADgAAAAwAAAANAAAADgAAAA4AAAANAAAADAAAAAwAAAAMAAAADgAAAAwAAAAOAAAADgAAAAwAAAAOAAAADwAAAA0AAAAMAAAADQAAAA0AAAAMAAAADAAAAAwAAAAMAAAADAAAAA0AAAANAAAADgAAAAwAAAAMAAAADAAAAA0AAAAMAAAADgAAAA0AAAAOAAAADQAAAA4AAAAMAAAADgAAAAwAAAAOAAAADgAAAA4AAAANAAAADgAAAA0AAAANAAAADQAAAAwAAAANAAAADQAAAA0AAAAMAAAADgAAAA0AAAAMAAAADQAAAA0AAAAMAAAADQAAAA0AAAAMAAAACwAAAA0AAAAOAAAADQAAAA4AAAANAAAADAAAAA0AAAAOAAAADAAAAA0AAAANAAAADQAAAA4AAAAMAAAADgAAAAwAAAAMAAAADQAAAA0AAAANAAAADgAAAA0AAAAOAAAADAAAAA4AAAANAAAADgAAAAwAAAANAAAADgAAAAwAAAAMAAAADQAAAAwAAAANAAAADgAAAAwAAAANAAAADQAAAA0AAAAMAAAADQAAAA0AAAANAAAADQAAAA4AAAAMAAAADwAAAA4AAAANAAAADgAAAA4AAAANAAAADAAAAA0AAAAOAAAADQAAAA0AAAANAAAADQAAAA0AAAAMAAAADAAAAA0AAAAOAAAADAAAAAwAAAAOAAAADQAAAAwAAAAMAAAADAAAAAwAAAAOAAAADQAAAA0AAAAMAAAADgAAAA0AAAAOAAAADgAAAA0AAAANAAAADAAAAAwAAAAMAAAADgAAAA4AAAAMAAAADAAAAA0AAAAOAAAADgAAAA4AAAAOAAAADAAAAA0AAAAMAAAADQAAAA0AAAAOAAAADgAAAA4AAAAOAAAADAAAAAwAAAAOAAAACwAAAA4AAAAOAAAADQAAAAwAAAANAAAADAAAAA4AAAAPAAAADQAAAA4AAAANAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADAAAAA4AAAANAAAADgAAAAwAAAANAAAADgAAAA0AAAAMAAAADAAAAA0AAAAMAAAADQAAAAwAAAAOAAAADAAAAA0AAAAMAAAADQAAAA4AAAAOAAAADgAAAA4AAAANAAAADAAAAAwAAAAMAAAADQAAAA0AAAAOAAAADQAAAA0AAAAMAAAADgAAAA0AAAAOAAAADQAAAAwAAAAMAAAADgAAAA4AAAAMAAAADAAAAA4AAAAMAAAADgAAAAwAAAANAAAADAAAAA0AAAAMAAAADQAAAAwAAAANAAAADQAAAA4AAAAOAAAADQAAAAwAAAANAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADgAAAA4AAAANAAAADQAAAA0AAAANAAAADAAAAAwAAAAMAAAADgAAAA4AAAA=
   </data>
  </layer>
+ <objectgroup id="6" name="Displays">
+  <object id="83" gid="6" x="388" y="448" width="64" height="64">
+   <properties>
+    <property name="elements" value="'Moving cats make them... zzz. '"/>
+    <property name="rangeOffsetX" type="int" value="-150"/>
+    <property name="rangeOffsetY" type="int" value="150"/>
+    <property name="rangeWidth" type="int" value="300"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer id="1" name="Ground" width="28" height="14">
   <data encoding="base64">
    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="1044" y="359" width="64" height="64"/>
-  <object id="36" gid="2" x="192" y="576" width="64" height="64"/>
-  <object id="37" gid="2" x="289" y="756" width="64" height="64"/>
+  <object id="35" gid="2" x="936" y="423" width="64" height="64"/>
+  <object id="36" gid="2" x="124" y="760" width="64" height="64"/>
+  <object id="37" gid="2" x="401" y="324" width="64" height="64"/>
+  <object id="79" gid="2" x="1538" y="108" width="64" height="64"/>
+  <object id="80" gid="2" x="1544" y="804" width="64" height="64">
+   <properties>
+    <property name="name" value="Act 3: The Cloning Incident..."/>
+   </properties>
+  </object>
+  <object id="87" gid="2" x="676" y="322" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Cats">
-  <object id="42" gid="54" x="1150" y="243" width="228" height="168"/>
-  <object id="43" gid="55" x="256" y="819" width="83" height="351">
+  <object id="43" gid="55" x="256" y="847" width="83" height="351">
    <properties>
-    <property name="end_scale" type="float" value="1"/>
+    <property name="end_scale" type="float" value="2"/>
     <property name="init_scale" type="float" value="1"/>
    </properties>
   </object>
-  <object id="44" gid="58" x="1266" y="589" width="157" height="96"/>
-  <object id="62" gid="55" x="383" y="808" width="83" height="351">
+  <object id="62" gid="55" x="391" y="846" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.1"/>
     <property name="init_scale" type="float" value="0.9"/>
    </properties>
   </object>
-  <object id="65" gid="55" x="527" y="818" width="83" height="351">
+  <object id="65" gid="55" x="525" y="848" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.2"/>
     <property name="init_scale" type="float" value="0.8"/>
    </properties>
   </object>
-  <object id="66" gid="55" x="671" y="826" width="83" height="351">
+  <object id="66" gid="55" x="671" y="848" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.3"/>
     <property name="init_scale" type="float" value="0.7"/>
    </properties>
   </object>
-  <object id="67" gid="55" x="807" y="828" width="83" height="351">
+  <object id="67" gid="55" x="807" y="848" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.4"/>
     <property name="init_scale" type="float" value="0.6"/>
    </properties>
   </object>
-  <object id="68" gid="55" x="925" y="826" width="83" height="351">
+  <object id="68" gid="55" x="927" y="848" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.5"/>
     <property name="init_scale" type="float" value="0.5"/>
    </properties>
   </object>
-  <object id="69" gid="55" x="1063" y="822" width="83" height="351">
+  <object id="69" gid="55" x="1057" y="848" width="83" height="351">
    <properties>
     <property name="end_scale" type="float" value="2.6"/>
     <property name="init_scale" type="float" value="0.4"/>
    </properties>
   </object>
   <object id="72" gid="57" x="72" y="651.5" width="132" height="65"/>
+  <object id="73" gid="61" x="1202" y="514" width="128" height="64"/>
  </objectgroup>
  <objectgroup id="4" name="Player">
   <object id="45" gid="4" x="104" y="548" width="64" height="64"/>

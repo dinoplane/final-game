@@ -31,7 +31,7 @@
                  "visible":true,
                  "width":150,
                  "x":128,
-                 "y":435.515151515152
+                 "y":435.515
                 }, 
                 {
                  "gid":6,
@@ -73,8 +73,8 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":346.787878787879,
-                 "y":459.272727272727
+                 "x":346.788,
+                 "y":459.273
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -91,7 +91,7 @@
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":20,
          "x":0,
          "y":0
@@ -110,8 +110,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":763.515151515152,
-                 "y":527.151515151515
+                 "x":763.515,
+                 "y":527.152
                 }, 
                 {
                  "gid":2,
@@ -179,7 +179,7 @@
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":690.060606060606,
+                 "x":690.061,
                  "y":576
                 }, 
                 {
@@ -197,8 +197,8 @@
                  "type":"tigra",
                  "visible":true,
                  "width":128,
-                 "x":923.878787878788,
-                 "y":274.424242424242
+                 "x":923.879,
+                 "y":274.424
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -232,6 +232,12 @@
  "nextlayerid":8,
  "nextobjectid":88,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 2: Huuuuuuuuuubert"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,
