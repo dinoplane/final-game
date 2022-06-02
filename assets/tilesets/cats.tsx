@@ -64,6 +64,9 @@
   <image width="204" height="50" source="cats_tileset/dreda.png"/>
  </tile>
  <tile id="10" type="tigra">
+  <properties>
+   <property name="movesLeft" value="2"/>
+  </properties>
   <image width="128" height="64" source="cats_tileset/tigra.png"/>
  </tile>
 </tileset>

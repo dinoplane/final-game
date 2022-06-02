@@ -30,7 +30,7 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Use ', wasd, ' or ', arrow, ' to move.'"
+                         "value":"'Use ', left, ' ', right, ' or ', A, ' ', D, ' to move.'"
                         }, 
                         {
                          "name":"oneUse",
@@ -45,7 +45,7 @@
                         {
                          "name":"rangeOffsetX",
                          "type":"int",
-                         "value":0
+                         "value":-100
                         }, 
                         {
                          "name":"rangeOffsetY",
@@ -61,8 +61,8 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":396,
-                 "y":812
+                 "x":341.454545454545,
+                 "y":815.030303030303
                 }, 
                 {
                  "ellipse":true,
@@ -73,8 +73,8 @@
                  "type":"",
                  "visible":true,
                  "width":150,
-                 "x":332,
-                 "y":736
+                 "x":201.69696969697,
+                 "y":742.060606060606
                 }, 
                 {
                  "gid":6,
@@ -85,7 +85,7 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Collect all the ', ' to advance.'"
+                         "value":"'Use ', up, ' ', W, ' or ', space, ' to jump!'"
                         }, 
                         {
                          "name":"oneUse",
@@ -120,22 +120,47 @@
                  "y":780
                 }, 
                 {
-                 "ellipse":true,
-                 "height":150,
-                 "id":76,
+                 "gid":6,
+                 "height":64,
+                 "id":83,
                  "name":"",
                  "properties":[
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Collect', all',the food', to advance'"
+                         "value":"'Collect all the ', food ,' to complete the level!'"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"RangeElement",
                  "visible":true,
-                 "width":150,
-                 "x":640,
-                 "y":704
+                 "width":64,
+                 "x":1228.60606060606,
+                 "y":701.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -201,38 +226,14 @@
                 {
                  "gid":2,
                  "height":64,
-                 "id":60,
-                 "name":"",
-                 "rotation":0,
-                 "type":"food",
-                 "visible":true,
-                 "width":64,
-                 "x":1412,
-                 "y":486
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
                  "id":61,
                  "name":"",
                  "rotation":0,
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1008,
-                 "y":627
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
-                 "id":62,
-                 "name":"",
-                 "rotation":0,
-                 "type":"food",
-                 "visible":true,
-                 "width":64,
-                 "x":1525,
-                 "y":625
+                 "x":1456.48484848485,
+                 "y":836.090909090909
                 }, 
                 {
                  "gid":2,
@@ -243,36 +244,24 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":916,
-                 "y":487
+                 "x":1197.81818181818,
+                 "y":783.969696969697
                 }, 
                 {
                  "gid":2,
                  "height":64,
-                 "id":64,
+                 "id":87,
                  "name":"",
                  "rotation":0,
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1098,
-                 "y":479
-                }, 
-                {
-                 "gid":2,
-                 "height":64,
-                 "id":65,
-                 "name":"",
-                 "rotation":0,
-                 "type":"food",
-                 "visible":true,
-                 "width":64,
-                 "x":1280,
-                 "y":491
+                 "x":1725.57575757576,
+                 "y":756.242424242424
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -280,7 +269,61 @@
          "draworder":"topdown",
          "id":3,
          "name":"Cats",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":61,
+                 "height":64,
+                 "id":77,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "rotation":0,
+                 "type":"tigra",
+                 "visible":true,
+                 "width":128,
+                 "x":1157.21212121212,
+                 "y":883.515151515152
+                }, 
+                {
+                 "gid":61,
+                 "height":64,
+                 "id":85,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "rotation":0,
+                 "type":"tigra",
+                 "visible":true,
+                 "width":128,
+                 "x":1414.78560606061,
+                 "y":890.727287878788
+                }, 
+                {
+                 "gid":61,
+                 "height":64,
+                 "id":86,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "rotation":0,
+                 "type":"tigra",
+                 "visible":true,
+                 "width":128,
+                 "x":1672.36136363636,
+                 "y":836.181621212121
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -301,17 +344,17 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":38,
-                 "y":879
+                 "x":165.272727272727,
+                 "y":869.909090909091
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":77,
+ "nextobjectid":88,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
@@ -394,8 +437,8 @@
          "margin":0,
          "name":"cats",
          "spacing":0,
-         "tilecount":10,
-         "tileheight":351,
+         "tilecount":11,
+         "tileheight":256,
          "tiles":[
                 {
                  "id":0,
@@ -536,6 +579,19 @@
                          "value":2
                         }],
                  "type":"dreda"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/tilesets\/cats_tileset\/tigra.png",
+                 "imageheight":64,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "type":"tigra"
                 }],
          "tilewidth":256
         }],

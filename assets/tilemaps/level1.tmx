@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="54">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="8" nextobjectid="95">
  <editorsettings>
   <export target="level1.json" format="json"/>
  </editorsettings>
- <tileset firstgid="1" name="ground_tileset" tilewidth="64" tileheight="64" tilecount="50" columns="10">
-  <image source="../tilesets/ground_tileset.png" width="640" height="320"/>
-  <tile id="1" type="food"/>
-  <tile id="3" type="player"/>
-  <tile id="10" probability="0.1"/>
-  <tile id="14" probability="0.1"/>
- </tileset>
- <tileset firstgid="51" name="cats" tilewidth="228" tileheight="351" tilecount="10" columns="0">
+ <tileset firstgid="1" name="cats" tilewidth="256" tileheight="256" tilecount="11" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0" type="biscuit">
    <properties>
@@ -28,7 +21,7 @@
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="228" height="168" source="../tilesets/cats_tileset/horton.png"/>
+   <image width="256" height="256" source="../tilesets/cats_tileset/horton.png"/>
   </tile>
   <tile id="4" type="hubert">
    <properties>
@@ -36,25 +29,25 @@
     <property name="init_scale" type="float" value="1"/>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="83" height="351" source="../tilesets/cats_tileset/hubert.png"/>
+   <image width="75" height="204" source="../tilesets/cats_tileset/hubert.png"/>
   </tile>
   <tile id="5" type="jasmine">
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="102" height="189" source="../tilesets/cats_tileset/jasmine.png"/>
+   <image width="75" height="204" source="../tilesets/cats_tileset/jasmine.png"/>
   </tile>
   <tile id="6" type="luna">
    <properties>
     <property name="movesLeft" type="int" value="0"/>
    </properties>
-   <image width="132" height="65" source="../tilesets/cats_tileset/luna.png"/>
+   <image width="128" height="64" source="../tilesets/cats_tileset/luna.png"/>
   </tile>
   <tile id="7" type="newton">
    <properties>
     <property name="movesLeft" type="int" value="2"/>
    </properties>
-   <image width="157" height="96" source="../tilesets/cats_tileset/newton.png"/>
+   <image width="128" height="64" source="../tilesets/cats_tileset/newton.png"/>
   </tile>
   <tile id="8" type="quinn">
    <properties>
@@ -74,29 +67,60 @@
    </properties>
    <image width="204" height="50" source="../tilesets/cats_tileset/dreda.png"/>
   </tile>
+  <tile id="10" type="tigra">
+   <properties>
+    <property name="movesLeft" value="2"/>
+   </properties>
+   <image width="128" height="64" source="../tilesets/cats_tileset/tigra.png"/>
+  </tile>
  </tileset>
- <layer id="5" name="Background" width="20" height="10" visible="0">
+ <tileset firstgid="12" name="ground_tileset" tilewidth="64" tileheight="64" tilecount="50" columns="10">
+  <image source="../tilesets/ground_tileset.png" width="640" height="320"/>
+  <tile id="1" type="food"/>
+  <tile id="3" type="player"/>
+  <tile id="5" type="RangeElement">
+   <properties>
+    <property name="elements" value="'Use ', keyboard"/>
+    <property name="oneUse" type="bool" value="false"/>
+    <property name="rangeHeight" type="int" value="150"/>
+    <property name="rangeOffsetX" type="int" value="0"/>
+    <property name="rangeOffsetY" type="int" value="0"/>
+    <property name="rangeWidth" type="int" value="150"/>
+   </properties>
+  </tile>
+  <tile id="10" probability="0.1"/>
+  <tile id="14" probability="0.1"/>
+ </tileset>
+ <layer id="5" name="Background" width="20" height="10">
   <data encoding="base64">
-   DgAAAA4AAAAMAAAADQAAAA0AAAAOAAAADAAAAA4AAAAMAAAADgAAAAwAAAANAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADwAAAA4AAAAMAAAADgAAAA4AAAALAAAADgAAAA0AAAAOAAAADgAAAAwAAAAOAAAADQAAAA0AAAANAAAADQAAAA4AAAANAAAADQAAAA4AAAAOAAAADQAAAAwAAAAOAAAADQAAAAwAAAAOAAAADgAAAA0AAAAMAAAADgAAAA4AAAAOAAAADQAAAA4AAAAMAAAADAAAAAwAAAANAAAADgAAAA4AAAAMAAAADAAAAA0AAAAMAAAADAAAAA0AAAAOAAAADAAAAA4AAAAOAAAADgAAAA0AAAAMAAAADQAAAA4AAAANAAAADwAAAA0AAAAMAAAADgAAAAwAAAANAAAADAAAAAwAAAAMAAAADgAAAAwAAAAMAAAADQAAAA0AAAAMAAAADAAAAA0AAAAMAAAADAAAAAwAAAANAAAADAAAAA0AAAANAAAADQAAAA0AAAAMAAAADgAAAA0AAAAOAAAADQAAAA0AAAAMAAAADAAAAA4AAAAMAAAADAAAAA0AAAANAAAADgAAAA0AAAANAAAADgAAAA0AAAAMAAAADQAAAAwAAAAMAAAADgAAAA4AAAAMAAAADQAAAAwAAAAMAAAADgAAAAwAAAAMAAAADQAAAAwAAAAOAAAADAAAAA0AAAAOAAAADQAAAA4AAAAOAAAADAAAAAwAAAAOAAAADQAAAA0AAAAPAAAADgAAAA4AAAAMAAAADgAAAA0AAAAMAAAADgAAAAwAAAAOAAAACwAAAA4AAAAMAAAADgAAAAwAAAAOAAAADQAAAAwAAAAOAAAADQAAAAwAAAAOAAAADAAAAA4AAAAMAAAADAAAAA0AAAANAAAADAAAAA4AAAAMAAAADQAAAA0AAAANAAAADQAAAA0AAAAMAAAADgAAAAwAAAAMAAAADgAAAA0AAAANAAAADgAAAA4AAAANAAAADAAAAA4AAAAMAAAADQAAAAwAAAAOAAAADQAAAA0AAAA=
+   GAAAACoAAAAiAAAAKwAAABkAAAAYAAAAIwAAAC0AAAAYAAAALQAAACoAAAAsAAAAKwAAACsAAAAZAAAAIwAAABgAAAAZAAAALAAAACsAAAAsAAAAIAAAACoAAAAjAAAAIQAAACsAAAAtAAAAJAAAAC0AAAAjAAAAJAAAABkAAAAkAAAAGAAAABcAAAArAAAAJAAAABkAAAAgAAAAGAAAAC0AAAAqAAAAIQAAACQAAAAtAAAAGQAAAC0AAAAtAAAAKgAAACQAAAAsAAAAGQAAABcAAAAZAAAAJAAAABgAAAAsAAAAGAAAABgAAAAYAAAAKwAAAC0AAAAiAAAALQAAABkAAAAgAAAALAAAACsAAAAiAAAAKgAAACMAAAAjAAAAKgAAACAAAAAjAAAAJAAAACoAAAAYAAAAIwAAABgAAAAZAAAAKwAAACIAAAAsAAAAIwAAAC0AAAAYAAAAGAAAACEAAAAtAAAAKgAAACsAAAAhAAAALAAAABkAAAAkAAAAKwAAACIAAAAiAAAAFwAAAC0AAAAqAAAAFwAAACIAAAArAAAAIgAAABkAAAAtAAAAKgAAACAAAAAqAAAAIwAAACsAAAAZAAAAIQAAACsAAAAXAAAALAAAACoAAAAiAAAAFwAAACQAAAAqAAAALQAAACsAAAAXAAAAJAAAACwAAAAhAAAAKgAAACEAAAAqAAAAIgAAACwAAAArAAAAIgAAACMAAAAYAAAALQAAABkAAAAtAAAAIgAAACEAAAAtAAAAGQAAABcAAAAXAAAAGAAAACEAAAAiAAAAIgAAACwAAAAjAAAAIAAAACIAAAAYAAAAGAAAABkAAAAtAAAAIAAAACsAAAAgAAAAJAAAABkAAAArAAAAGAAAACEAAAAjAAAAIAAAACMAAAAXAAAAIQAAACsAAAAiAAAAGAAAABcAAAAYAAAAKwAAACEAAAAYAAAAIQAAAC0AAAAYAAAAIwAAACIAAAArAAAAIgAAACAAAAAYAAAAKgAAACsAAAAjAAAAGQAAACsAAAAjAAAAFwAAACIAAAAhAAAAIwAAABgAAAA=
   </data>
  </layer>
- <layer id="1" name="Ground" width="20" height="10">
+ <objectgroup id="7" name="Display">
+  <object id="90" x="87" y="423" width="150" height="150">
+   <ellipse/>
+  </object>
+  <object id="91" gid="17" x="378" y="492" width="64" height="64">
+   <properties>
+    <property name="elements" value="'Jump in mid-air to double jump!'"/>
+    <property name="rangeOffsetX" type="int" value="-200"/>
+   </properties>
+  </object>
+  <object id="92" gid="11" x="460" y="438" width="128" height="64"/>
+  <object id="93" gid="11" x="1002" y="432" width="128" height="64"/>
+ </objectgroup>
+ <layer id="1" name="Ground" width="20" height="10" visible="0">
   <data encoding="base64">
-   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAA=
   </data>
  </layer>
  <objectgroup id="2" name="Food">
-  <object id="35" gid="2" x="456.311" y="382.906" width="64" height="64"/>
-  <object id="36" gid="2" x="139.623" y="378.251" width="64" height="64"/>
-  <object id="37" gid="2" x="776.337" y="380.423" width="64" height="64"/>
+  <object id="87" gid="13" x="502" y="348" width="64" height="64"/>
+  <object id="88" gid="13" x="758" y="348" width="64" height="64"/>
+  <object id="94" gid="13" x="1048" y="350" width="64" height="64"/>
  </objectgroup>
- <objectgroup id="3" name="Cats">
-  <object id="49" gid="60" x="85.6302" y="322.746" width="204" height="50"/>
-  <object id="50" gid="60" x="389.049" y="330.057" width="204" height="50"/>
-  <object id="51" gid="60" x="703.435" y="326.401" width="204" height="50"/>
-  <object id="52" gid="57" x="15" y="565" width="132" height="65"/>
- </objectgroup>
+ <objectgroup id="3" name="Cats"/>
  <objectgroup id="4" name="Player">
-  <object id="53" gid="4" x="47" y="482" width="64" height="64"/>
+  <object id="86" gid="15" x="109" y="567.5" width="64" height="64"/>
  </objectgroup>
 </map>

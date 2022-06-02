@@ -35,7 +35,6 @@ class Load extends Phaser.Scene { // First time load
 
 
         // Loadin particles
-        this.load.image('hover', './assets/images/hover.png');
         this.load.image('thought', './assets/images/think.png');
         
     }

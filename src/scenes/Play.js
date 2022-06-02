@@ -88,6 +88,11 @@ class Play extends Phaser.Scene {
             else this.moveCam();
         }); 
 
+        this.keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+        this.keyP.on('down', (key) => {
+            this.loadNextLevel();
+        }); 
+
         if (restarted){
             restarted = false;
             this.cameras.main.flash();
@@ -107,13 +112,16 @@ class Play extends Phaser.Scene {
     }
     
 
+
     loadNextLevel(){
         level = (level + 1) % gameOptions.levels;
+        this.cameras.main.flash();
         this.scene.restart();
-        this.cameras.main.fadeOut(1000);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-            
-        })
+        // var timer = this.time.delayedCall(500,  () => {
+        //     this.scene.restart();
+        // });
+
+        // })
         
     }
 
