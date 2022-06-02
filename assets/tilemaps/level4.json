@@ -1,32 +1,86 @@
 { "compressionlevel":-1,
- "height":11,
+ "height":15,
  "infinite":false,
  "layers":[
         {
          "compression":"",
-         "data":"DAAAAAwAAAANAAAADgAAAAwAAAAOAAAADAAAAA0AAAAOAAAADQAAAA4AAAAOAAAADAAAAA0AAAAMAAAADQAAAA4AAAAMAAAADQAAAA0AAAAOAAAADQAAAA0AAAAMAAAADQAAAAsAAAANAAAADAAAAAwAAAAPAAAADAAAAA4AAAAMAAAADgAAAA0AAAANAAAADAAAAA8AAAANAAAADgAAAA0AAAANAAAADAAAAA0AAAANAAAADgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADQAAAA4AAAAMAAAADAAAAA0AAAAOAAAADQAAAA0AAAANAAAADAAAAA0AAAANAAAADAAAAAwAAAAOAAAADAAAAA0AAAAPAAAADQAAAA4AAAAOAAAADgAAAA4AAAAMAAAADgAAAA0AAAAMAAAADAAAAA4AAAAMAAAADQAAAA4AAAANAAAACwAAAAwAAAANAAAADQAAAA4AAAAOAAAADgAAAA4AAAAOAAAADQAAAA0AAAANAAAADgAAAA4AAAAMAAAADAAAAAwAAAANAAAADAAAAA4AAAANAAAADQAAAA4AAAANAAAADQAAAA4AAAAMAAAADgAAAA4AAAANAAAADgAAAAwAAAAMAAAADQAAAAwAAAAOAAAADQAAAA0AAAAOAAAADgAAAA0AAAAMAAAADAAAAAwAAAAOAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADQAAAA4AAAANAAAADAAAAA0AAAANAAAADgAAAAwAAAAOAAAADQAAAAwAAAANAAAADgAAAAwAAAANAAAADAAAAA4AAAAMAAAADAAAAA0AAAAMAAAADgAAAAwAAAANAAAADgAAAA8AAAANAAAADQAAAA0AAAANAAAADQAAAAwAAAAMAAAADgAAAAwAAAANAAAADAAAAA4AAAANAAAADQAAAAwAAAAOAAAADQAAAA0AAAANAAAADgAAAAsAAAAMAAAADQAAAA4AAAANAAAADgAAAA0AAAAMAAAADAAAAA4AAAALAAAADgAAAA8AAAANAAAADgAAAA0AAAANAAAADgAAAAwAAAAMAAAADgAAAAwAAAAOAAAADgAAAA4AAAAOAAAADQAAAA0AAAAOAAAADgAAAAwAAAAOAAAADgAAAA4AAAAMAAAADgAAAA4AAAAMAAAADQAAAA0AAAAOAAAADgAAAAwAAAANAAAADAAAAAwAAAAMAAAADQAAAA0AAAAOAAAADgAAAA0AAAAOAAAADQAAAA4AAAAMAAAADAAAAAwAAAAOAAAADAAAAA0AAAA=",
+         "data":"DAAAAA0AAAANAAAADgAAAA4AAAANAAAADQAAAA4AAAANAAAADAAAAAwAAAAMAAAADQAAAAwAAAANAAAADAAAAAwAAAAOAAAADQAAAA4AAAAMAAAADQAAAA4AAAANAAAADAAAAAwAAAAOAAAADQAAAA0AAAAMAAAADAAAAA0AAAANAAAADQAAAA4AAAANAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADQAAAA0AAAANAAAADAAAAA4AAAAMAAAADQAAAA0AAAAMAAAADQAAAA0AAAANAAAADQAAAAwAAAANAAAADQAAAAwAAAANAAAADAAAAA0AAAAOAAAADQAAAA4AAAAMAAAADAAAAA4AAAANAAAADAAAAAwAAAAMAAAADgAAAA8AAAANAAAADAAAAAsAAAANAAAADQAAAA4AAAAOAAAADAAAAA4AAAAOAAAADgAAAAwAAAANAAAADQAAAA4AAAALAAAADAAAAA0AAAANAAAADQAAAA4AAAANAAAADgAAAA0AAAAOAAAADgAAAAwAAAAMAAAADAAAAA0AAAAMAAAADAAAAA0AAAAMAAAADQAAAAwAAAAOAAAADQAAAA0AAAAPAAAADQAAAA0AAAANAAAADQAAAAwAAAAMAAAADAAAAA0AAAAOAAAADQAAAAsAAAAMAAAADgAAAAwAAAAMAAAADgAAAA4AAAAMAAAADgAAAAwAAAAOAAAADAAAAAwAAAAMAAAADAAAAAwAAAAOAAAADgAAAA0AAAAOAAAADgAAAA0AAAAMAAAADAAAAA4AAAAOAAAADAAAAA0AAAAOAAAADgAAAAwAAAANAAAADAAAAA4AAAAMAAAADgAAAA4AAAAMAAAADAAAAA0AAAAMAAAADgAAAA4AAAAMAAAADQAAAA0AAAAMAAAADgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADQAAAA0AAAANAAAADAAAAA0AAAAOAAAADQAAAA0AAAAMAAAADQAAAA4AAAAMAAAADgAAAA0AAAAPAAAADQAAAAwAAAAOAAAADAAAAAwAAAAOAAAADgAAAAwAAAANAAAADgAAAA0AAAANAAAADgAAAA4AAAAMAAAADAAAAAwAAAAMAAAADAAAAA0AAAAMAAAADQAAAA0AAAANAAAADQAAAA4AAAANAAAADAAAAAwAAAANAAAADQAAAA4AAAAMAAAADQAAAAwAAAAMAAAADgAAAA0AAAANAAAADAAAAAwAAAAOAAAADAAAAA4AAAAOAAAADAAAAAwAAAANAAAADAAAAA0AAAAMAAAADQAAAA4AAAAOAAAADQAAAA4AAAANAAAADAAAAA4AAAAMAAAADQAAAA4AAAAOAAAADgAAAA4AAAANAAAADgAAAA0AAAAMAAAADgAAAA4AAAAOAAAADAAAAA4AAAANAAAADAAAAA4AAAAMAAAADAAAAA0AAAAOAAAADQAAAA4AAAAMAAAADAAAAA0AAAAOAAAADAAAAAwAAAAMAAAADQAAAAwAAAANAAAADQAAAA0AAAAMAAAACwAAAA0AAAANAAAADQAAAA4AAAAOAAAADgAAAA0AAAANAAAADAAAAA0AAAAOAAAADAAAAA0AAAANAAAADQAAAA4AAAAOAAAADgAAAAwAAAANAAAADAAAAAwAAAAOAAAADAAAAA4AAAAOAAAADQAAAA0AAAANAAAADAAAAA4AAAAMAAAADgAAAAwAAAAOAAAADAAAAAwAAAAPAAAADAAAAAwAAAAMAAAADAAAAA0AAAANAAAADgAAAA4AAAANAAAADAAAAA4AAAAOAAAADgAAAAwAAAAMAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADQAAAA0AAAAOAAAADAAAAA0AAAAOAAAADAAAAAwAAAAOAAAADAAAAA4AAAAOAAAADAAAAA0AAAAOAAAADAAAAA0AAAAMAAAADAAAAA4AAAAMAAAADgAAAAwAAAALAAAADgAAAAwAAAAOAAAADAAAAA0AAAAMAAAADAAAAA0AAAAOAAAADAAAAA0AAAAMAAAADAAAAAwAAAANAAAADQAAAA4AAAANAAAADAAAAA0AAAANAAAADgAAAA4AAAAMAAAADAAAAA4AAAAMAAAADgAAAA4AAAANAAAADAAAAAwAAAAOAAAADgAAAA0AAAAMAAAADgAAAA0AAAAMAAAADgAAAAwAAAAMAAAADQAAAA4AAAAOAAAADgAAAA0AAAAMAAAADAAAAA0AAAANAAAADQAAAA4AAAANAAAADgAAAA0AAAAMAAAADAAAAA0AAAANAAAADAAAAAwAAAAOAAAADAAAAAwAAAANAAAADgAAAA0AAAAMAAAADQAAAA4AAAAMAAAADQAAAA4AAAAMAAAADQAAAA4AAAAMAAAA",
          "encoding":"base64",
-         "height":11,
+         "height":15,
          "id":5,
          "name":"Background",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
-         "width":22,
+         "visible":true,
+         "width":30,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"Displays",
+         "objects":[
+                {
+                 "gid":6,
+                 "height":64,
+                 "id":71,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Press ', Q, '  to toggle zoom.'"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":-130
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
+                        }],
+                 "rotation":0,
+                 "type":"RangeElement",
+                 "visible":true,
+                 "width":64,
+                 "x":323.263780984092,
+                 "y":607.136514983352
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
          "x":0,
          "y":0
         }, 
         {
          "compression":"",
-         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=",
+         "data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAA",
          "encoding":"base64",
-         "height":11,
+         "height":15,
          "id":1,
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
-         "width":22,
+         "visible":true,
+         "width":30,
          "x":0,
          "y":0
         }, 
@@ -44,8 +98,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":704,
-                 "y":384
+                 "x":305.944506104328,
+                 "y":706.592674805771
                 }, 
                 {
                  "gid":2,
@@ -56,8 +110,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":256,
-                 "y":320
+                 "x":611.889012208657,
+                 "y":549.359970403256
                 }, 
                 {
                  "gid":2,
@@ -68,8 +122,50 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":512,
-                 "y":384
+                 "x":864.189419163892,
+                 "y":471.668516463189
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":57,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":1132,
+                 "y":374
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":66,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":1433.03884572697,
+                 "y":364.963374028857
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":67,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"Act 4: Newton Drops (Asleep)"
+                        }],
+                 "rotation":0,
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":1730.85608583056,
+                 "y":363.113577506474
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -83,27 +179,37 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":58,
-                 "height":96,
-                 "id":47,
+                 "gid":55,
+                 "height":351,
+                 "id":39,
                  "name":"",
                  "properties":[
                         {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":2
+                        }, 
+                        {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":2
+                         "value":0
                         }],
                  "rotation":0,
-                 "type":"newton",
+                 "type":"hubert",
                  "visible":true,
-                 "width":157,
-                 "x":93,
-                 "y":643
+                 "width":83,
+                 "x":435.79837217906,
+                 "y":907.596744358121
                 }, 
                 {
                  "gid":57,
                  "height":65,
-                 "id":48,
+                 "id":59,
                  "name":"",
                  "properties":[
                         {
@@ -115,13 +221,31 @@
                  "type":"luna",
                  "visible":true,
                  "width":132,
-                 "x":29,
-                 "y":515
+                 "x":82.4848,
+                 "y":846.288
+                }, 
+                {
+                 "gid":61,
+                 "height":64,
+                 "id":60,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"0"
+                        }],
+                 "rotation":0,
+                 "type":"tigra",
+                 "visible":true,
+                 "width":128,
+                 "x":840.550499445061,
+                 "y":562.891601923788
                 }, 
                 {
                  "gid":58,
-                 "height":96,
-                 "id":49,
+                 "height":64,
+                 "id":62,
                  "name":"",
                  "properties":[
                         {
@@ -132,14 +256,68 @@
                  "rotation":0,
                  "type":"newton",
                  "visible":true,
-                 "width":157,
-                 "x":733,
-                 "y":643
+                 "width":128,
+                 "x":1103.22160562338,
+                 "y":453.753607103219
+                }, 
+                {
+                 "gid":58,
+                 "height":64,
+                 "id":63,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":128,
+                 "x":570.480207177211,
+                 "y":638.733259341472
+                }, 
+                {
+                 "gid":58,
+                 "height":64,
+                 "id":64,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":128,
+                 "x":1402.88864224935,
+                 "y":446.354421013689
+                }, 
+                {
+                 "gid":58,
+                 "height":64,
+                 "id":65,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"newton",
+                 "visible":true,
+                 "width":128,
+                 "x":1700.70588235294,
+                 "y":450.054014058454
                 }, 
                 {
                  "gid":55,
                  "height":351,
-                 "id":50,
+                 "id":69,
                  "name":"",
                  "properties":[
                         {
@@ -150,24 +328,52 @@
                         {
                          "name":"init_scale",
                          "type":"float",
-                         "value":1
+                         "value":4
                         }, 
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":2
+                         "value":0
                         }],
                  "rotation":0,
                  "type":"hubert",
                  "visible":true,
                  "width":83,
-                 "x":477,
-                 "y":643
+                 "x":1275.55512393637,
+                 "y":902.93137254902
+                }, 
+                {
+                 "gid":55,
+                 "height":351,
+                 "id":70,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"end_scale",
+                         "type":"float",
+                         "value":4
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"hubert",
+                 "visible":true,
+                 "width":83,
+                 "x":1599.26951535331,
+                 "y":906.630965593785
                 }, 
                 {
                  "gid":58,
-                 "height":96,
-                 "id":51,
+                 "height":64,
+                 "id":72,
                  "name":"",
                  "properties":[
                         {
@@ -178,27 +384,9 @@
                  "rotation":0,
                  "type":"newton",
                  "visible":true,
-                 "width":157,
-                 "x":949,
-                 "y":483
-                }, 
-                {
-                 "gid":58,
-                 "height":96,
-                 "id":52,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"newton",
-                 "visible":true,
-                 "width":157,
-                 "x":743,
-                 "y":249
+                 "width":128,
+                 "x":276.362560118387,
+                 "y":770.068812430633
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -214,14 +402,14 @@
                 {
                  "gid":4,
                  "height":64,
-                 "id":46,
+                 "id":58,
                  "name":"",
                  "rotation":0,
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":10,
-                 "y":649
+                 "x":104.364,
+                 "y":731.636
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -229,9 +417,15 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":53,
+ "nextlayerid":7,
+ "nextobjectid":73,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 4: Newton Falls (Asleep)"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,
@@ -255,6 +449,49 @@
                 {
                  "id":3,
                  "type":"player"
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Use ', keyboard"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
+                        }],
+                 "type":"RangeElement"
+                }, 
+                {
+                 "id":10,
+                 "probability":0.1
+                }, 
+                {
+                 "id":14,
+                 "probability":0.1
                 }],
          "tilewidth":64
         }, 
@@ -270,8 +507,8 @@
          "margin":0,
          "name":"cats",
          "spacing":0,
-         "tilecount":10,
-         "tileheight":351,
+         "tilecount":11,
+         "tileheight":256,
          "tiles":[
                 {
                  "id":0,
@@ -302,8 +539,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -315,8 +552,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -338,8 +575,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -351,8 +588,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -364,8 +601,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -412,11 +649,24 @@
                          "value":2
                         }],
                  "type":"dreda"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/tilesets\/cats_tileset\/tigra.png",
+                 "imageheight":64,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "type":"tigra"
                 }],
-         "tilewidth":228
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",
  "version":"1.8",
- "width":22
+ "width":30
 }

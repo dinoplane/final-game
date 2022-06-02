@@ -25,7 +25,7 @@ var config = {
           x: 0,
           y: 1200
            },  
-        debug: false
+        debug: true
       }
     }
   }
@@ -43,7 +43,7 @@ let cursors;
 let game = new Phaser.Game(config);
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
-let level = 3;
+let level = 4;
 let controls;
 let pointer;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;

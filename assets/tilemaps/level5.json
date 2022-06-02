@@ -683,8 +683,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":65.3333333333333,
-                 "y":1239.66666666667
+                 "x":65.3333,
+                 "y":1239.67
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -695,6 +695,12 @@
  "nextlayerid":7,
  "nextobjectid":114,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 5: \"Get Rekt Scrubs\" - Newton"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,

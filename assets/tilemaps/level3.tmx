@@ -103,6 +103,7 @@
   <object id="83" gid="6" x="388" y="448" width="64" height="64">
    <properties>
     <property name="elements" value="'Moving cats make them... zzz. '"/>
+    <property name="oneUse" type="bool" value="true"/>
     <property name="rangeOffsetX" type="int" value="-150"/>
     <property name="rangeOffsetY" type="int" value="150"/>
     <property name="rangeWidth" type="int" value="300"/>
@@ -118,7 +119,7 @@
   <object id="35" gid="2" x="936" y="423" width="64" height="64"/>
   <object id="36" gid="2" x="124" y="760" width="64" height="64"/>
   <object id="37" gid="2" x="401" y="324" width="64" height="64"/>
-  <object id="79" gid="2" x="1538" y="108" width="64" height="64"/>
+  <object id="79" gid="2" x="1542" y="190" width="64" height="64"/>
   <object id="80" gid="2" x="1544" y="804" width="64" height="64">
    <properties>
     <property name="name" value="Act 3: The Cloning Incident..."/>

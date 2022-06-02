@@ -35,7 +35,7 @@
                         {
                          "name":"oneUse",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }, 
                         {
                          "name":"rangeHeight",
