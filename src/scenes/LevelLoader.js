@@ -33,7 +33,9 @@ class LevelLoader {
     }
 
     getLevelName(){
-        return this.cleanInput(this.map.properties)["name"];
+        if (typeof this.map.properties[Symbol.iterator] === 'function')
+            return this.cleanInput(this.map.properties)["name"];
+            return "";
     }
 
     loadLevel(){
