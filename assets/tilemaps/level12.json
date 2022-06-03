@@ -52,7 +52,7 @@
                  "id":124,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1024,
@@ -64,7 +64,7 @@
                  "id":125,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":1664,
@@ -76,7 +76,7 @@
                  "id":126,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":2304,
@@ -88,7 +88,7 @@
                  "id":127,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":320,
@@ -110,75 +110,111 @@
                  "height":65,
                  "id":48,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"luna",
                  "visible":true,
                  "width":132,
                  "x":37,
                  "y":1309
                 }, 
                 {
-                 "gid":66,
+                 "gid":56,
                  "height":204,
                  "id":114,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"jasmine",
                  "visible":true,
                  "width":75,
                  "x":832,
                  "y":1344
                 }, 
                 {
-                 "gid":71,
+                 "gid":61,
                  "height":64,
                  "id":115,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tigra",
                  "visible":true,
                  "width":128,
                  "x":448,
                  "y":960
                 }, 
                 {
-                 "gid":71,
+                 "gid":61,
                  "height":64,
                  "id":116,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tigra",
                  "visible":true,
                  "width":128,
                  "x":320,
                  "y":960
                 }, 
                 {
-                 "gid":71,
+                 "gid":61,
                  "height":64,
                  "id":117,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tigra",
                  "visible":true,
                  "width":128,
                  "x":192,
                  "y":960
                 }, 
                 {
-                 "gid":71,
+                 "gid":61,
                  "height":64,
                  "id":118,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tigra",
                  "visible":true,
                  "width":128,
                  "x":64,
                  "y":960
                 }, 
                 {
-                 "gid":65,
+                 "gid":55,
                  "height":204,
                  "id":119,
                  "name":"",
@@ -187,57 +223,91 @@
                          "name":"end_scale",
                          "type":"float",
                          "value":3
+                        }, 
+                        {
+                         "name":"init_scale",
+                         "type":"float",
+                         "value":1
+                        }, 
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"hubert",
                  "visible":true,
                  "width":75,
                  "x":64,
                  "y":896
                 }, 
                 {
-                 "gid":64,
+                 "gid":54,
                  "height":256,
                  "id":120,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"horton",
                  "visible":true,
                  "width":256,
                  "x":896,
                  "y":1024
                 }, 
                 {
-                 "gid":64,
+                 "gid":54,
                  "height":256,
                  "id":121,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"horton",
                  "visible":true,
                  "width":256,
                  "x":1536,
                  "y":1024
                 }, 
                 {
-                 "gid":64,
+                 "gid":54,
                  "height":256,
                  "id":122,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"horton",
                  "visible":true,
                  "width":256,
                  "x":2176,
                  "y":1024
                 }, 
                 {
-                 "gid":71,
+                 "gid":61,
                  "height":64,
                  "id":123,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
                  "rotation":0,
-                 "type":"",
+                 "type":"tigra",
                  "visible":true,
                  "width":128,
                  "x":256,
@@ -260,7 +330,7 @@
                  "id":46,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":64,
                  "x":65.3333,
@@ -279,7 +349,7 @@
         {
          "name":"name",
          "type":"string",
-         "value":"Act 5: \"Get Rekt Scrubs\" - Newton"
+         "value":"Act 12: Bounce me to the Moon"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
@@ -319,8 +389,8 @@
          "margin":0,
          "name":"cats",
          "spacing":0,
-         "tilecount":10,
-         "tileheight":351,
+         "tilecount":11,
+         "tileheight":256,
          "tiles":[
                 {
                  "id":0,
@@ -461,12 +531,21 @@
                          "value":2
                         }],
                  "type":"dreda"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/tilesets\/cats_tileset\/tigra.png",
+                 "imageheight":64,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "type":"tigra"
                 }],
          "tilewidth":256
-        }, 
-        {
-         "firstgid":61,
-         "source":"..\/tilesets\/cats.tsx"
         }],
  "tilewidth":64,
  "type":"map",

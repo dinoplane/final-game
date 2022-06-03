@@ -98,6 +98,7 @@ class Play extends Phaser.Scene {
         if (restarted && !new_play){
             restarted = false;
             new_play = false;
+            console.log("I came here")
             this.cameras.main.flash();
             this.restartSfx.play();
             this.input.keyboard.enabled = true;

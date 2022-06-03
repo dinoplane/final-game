@@ -75,7 +75,7 @@ class Transition extends Phaser.Scene {
                     bg_music.stop()
                     bg_music = null;
                 } else if (this.scene.isActive('menuScene')) { // Menu to play
-                    level = 7;
+                    level = 0;
                     if (this.scene.isSleeping('playScene')) {
                         new_play = true;
                         this.scene.get('menuScene').scene.switch('playScene').restart();
@@ -90,7 +90,7 @@ class Transition extends Phaser.Scene {
                 this.open.play();
             }
         });
-        
+
         this.close.play();
     }
 

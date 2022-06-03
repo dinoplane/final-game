@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"",
-         "data":"DgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADQAAAA0AAAAOAAAADgAAAA0AAAAMAAAADgAAAA0AAAANAAAADQAAAAwAAAANAAAADAAAAA4AAAAMAAAADAAAAA0AAAAOAAAADgAAAA0AAAAMAAAADAAAAAsAAAAMAAAADgAAAA0AAAAMAAAADAAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAANAAAADgAAAA0AAAAOAAAADAAAAA8AAAAOAAAADQAAAA4AAAANAAAADgAAAA4AAAAMAAAADQAAAAwAAAAMAAAADQAAAA4AAAAMAAAADAAAAA4AAAANAAAADQAAAAwAAAANAAAADAAAAA0AAAANAAAADQAAAA4AAAANAAAADAAAAA0AAAANAAAADQAAAA0AAAANAAAADwAAAAwAAAAMAAAADAAAAA0AAAANAAAADQAAAA0AAAAMAAAADQAAAA0AAAANAAAADQAAAA0AAAANAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADAAAAA0AAAAOAAAADgAAAA0AAAAOAAAADgAAAA4AAAAMAAAADgAAAA0AAAAMAAAADgAAAA0AAAAMAAAADAAAAA4AAAAPAAAADgAAAAwAAAANAAAADAAAAAwAAAAOAAAADAAAAA4AAAANAAAADQAAAA0AAAAOAAAADAAAAA4AAAANAAAADQAAAAwAAAAOAAAACwAAAA0AAAANAAAADgAAAA4AAAAMAAAADgAAAA4AAAANAAAADwAAAA4AAAAOAAAADQAAAAwAAAAMAAAADQAAAA4AAAAOAAAADAAAAA4AAAANAAAADAAAAA0AAAAMAAAADgAAAA4AAAAMAAAADAAAAAwAAABKAAAADAAAAAwAAAAMAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADAAAAAwAAAAMAAAADAAAAA0AAAAOAAAADAAAAA4AAAAOAAAADAAAAA0AAAAOAAAADQAAAA0AAAANAAAADgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADgAAAAwAAAANAAAADAAAAA4AAAA=",
+         "data":"DgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADQAAAA0AAAAOAAAADgAAAA0AAAAMAAAADgAAAA0AAAANAAAADQAAAAwAAAANAAAADAAAAA4AAAAMAAAADAAAAA0AAAAOAAAADgAAAA0AAAAMAAAADAAAAAsAAAAMAAAADgAAAA0AAAAMAAAADAAAAA4AAAAOAAAADgAAAA4AAAAOAAAADgAAAA4AAAANAAAADgAAAA0AAAAOAAAADAAAAA8AAAAOAAAADQAAAA4AAAANAAAADgAAAA4AAAAMAAAADQAAAAwAAAAMAAAADQAAAA4AAAAMAAAADAAAAA4AAAANAAAADQAAAAwAAAANAAAADAAAAA0AAAAFAAAADQAAAA4AAAANAAAADAAAAA0AAAANAAAADQAAAA0AAAANAAAADwAAAAwAAAAMAAAADAAAAA0AAAANAAAADQAAAA0AAAAMAAAADQAAAA0AAAANAAAADQAAAA0AAAANAAAADQAAAAwAAAAOAAAADgAAAA4AAAANAAAADAAAAA0AAAAOAAAADgAAAA0AAAAOAAAADgAAAA4AAAAMAAAADgAAAA0AAAAMAAAADgAAAA0AAAAMAAAADAAAAA4AAAAPAAAADgAAAAwAAAANAAAADAAAAAwAAAAOAAAADAAAAA4AAAANAAAADQAAAA0AAAAOAAAADAAAAA4AAAANAAAADQAAAAwAAAAOAAAACwAAAA0AAAANAAAADgAAAA4AAAAMAAAADgAAAA4AAAANAAAADwAAAA4AAAAOAAAADQAAAAwAAAAMAAAADQAAAA4AAAAOAAAADAAAAA4AAAANAAAADAAAAA0AAAAMAAAADgAAAA4AAAAMAAAADAAAAAwAAAAOAAAADAAAAAwAAAAMAAAADQAAAAwAAAANAAAADgAAAA0AAAAMAAAADAAAAAwAAAAMAAAADAAAAA0AAAAOAAAADAAAAA4AAAAOAAAADAAAAA0AAAAOAAAADQAAAA0AAAANAAAADgAAAAwAAAAMAAAADQAAAAwAAAAMAAAADgAAAAwAAAANAAAADAAAAA4AAAA=",
          "encoding":"base64",
          "height":10,
          "id":5,
@@ -13,47 +13,6 @@
          "type":"tilelayer",
          "visible":true,
          "width":20,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":7,
-         "name":"Display",
-         "objects":[
-                {
-                 "gid":66,
-                 "height":64,
-                 "id":79,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"elements",
-                         "type":"string",
-                         "value":"'Press', jump', in', the', air', to', Double-Jump'"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":64,
-                 "x":256,
-                 "y":448
-                }, 
-                {
-                 "ellipse":true,
-                 "height":150,
-                 "id":80,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":150,
-                 "x":192,
-                 "y":384
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -82,11 +41,23 @@
                  "id":68,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
+                 "visible":true,
+                 "width":64,
+                 "x":704,
+                 "y":192
+                }, 
+                {
+                 "gid":2,
+                 "height":64,
+                 "id":69,
+                 "name":"",
+                 "rotation":0,
+                 "type":"food",
                  "visible":true,
                  "width":64,
                  "x":512,
-                 "y":320
+                 "y":64
                 }, 
                 {
                  "gid":2,
@@ -94,11 +65,11 @@
                  "id":70,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":768,
-                 "y":320
+                 "x":384,
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -110,7 +81,61 @@
          "draworder":"topdown",
          "id":3,
          "name":"Cats",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":56,
+                 "height":189,
+                 "id":72,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"jasmine",
+                 "visible":true,
+                 "width":102,
+                 "x":576,
+                 "y":576
+                }, 
+                {
+                 "gid":56,
+                 "height":189,
+                 "id":73,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"jasmine",
+                 "visible":true,
+                 "width":102,
+                 "x":448,
+                 "y":576
+                }, 
+                {
+                 "gid":54,
+                 "height":168,
+                 "id":75,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"horton",
+                 "visible":true,
+                 "width":228,
+                 "x":448,
+                 "y":320
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -128,7 +153,7 @@
                  "id":46,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":64,
                  "x":10,
@@ -140,9 +165,15 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":8,
- "nextobjectid":82,
+ "nextlayerid":6,
+ "nextobjectid":76,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 10: Spring and Bounce"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,
@@ -213,8 +244,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -226,8 +257,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -249,8 +280,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -262,8 +293,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -275,8 +306,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -324,11 +355,7 @@
                         }],
                  "type":"dreda"
                 }],
-         "tilewidth":228
-        }, 
-        {
-         "firstgid":61,
-         "source":"..\/tilesets\/ground_tileset.tsx"
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",

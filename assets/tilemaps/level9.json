@@ -83,7 +83,7 @@
          "name":"Cats",
          "objects":[
                 {
-                 "gid":67,
+                 "gid":57,
                  "height":65,
                  "id":76,
                  "name":"",
@@ -101,7 +101,7 @@
                  "y":576
                 }, 
                 {
-                 "gid":66,
+                 "gid":56,
                  "height":189,
                  "id":80,
                  "name":"",
@@ -119,7 +119,7 @@
                  "y":576
                 }, 
                 {
-                 "gid":68,
+                 "gid":58,
                  "height":96,
                  "id":81,
                  "name":"",
@@ -137,7 +137,7 @@
                  "y":256
                 }, 
                 {
-                 "gid":68,
+                 "gid":58,
                  "height":96,
                  "id":82,
                  "name":"",
@@ -186,6 +186,12 @@
  "nextlayerid":6,
  "nextobjectid":83,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"name",
+         "type":"string",
+         "value":"Act 9: \"Ya Like Jazz?\""
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":64,
@@ -224,8 +230,8 @@
          "margin":0,
          "name":"cats",
          "spacing":0,
-         "tilecount":10,
-         "tileheight":351,
+         "tilecount":11,
+         "tileheight":256,
          "tiles":[
                 {
                  "id":0,
@@ -256,8 +262,8 @@
                 {
                  "id":3,
                  "image":"..\/tilesets\/cats_tileset\/horton.png",
-                 "imageheight":168,
-                 "imagewidth":228,
+                 "imageheight":256,
+                 "imagewidth":256,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -269,8 +275,8 @@
                 {
                  "id":4,
                  "image":"..\/tilesets\/cats_tileset\/hubert.png",
-                 "imageheight":351,
-                 "imagewidth":83,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"end_scale",
@@ -292,8 +298,8 @@
                 {
                  "id":5,
                  "image":"..\/tilesets\/cats_tileset\/jasmine.png",
-                 "imageheight":189,
-                 "imagewidth":102,
+                 "imageheight":204,
+                 "imagewidth":75,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -305,8 +311,8 @@
                 {
                  "id":6,
                  "image":"..\/tilesets\/cats_tileset\/luna.png",
-                 "imageheight":65,
-                 "imagewidth":132,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -318,8 +324,8 @@
                 {
                  "id":7,
                  "image":"..\/tilesets\/cats_tileset\/newton.png",
-                 "imageheight":96,
-                 "imagewidth":157,
+                 "imageheight":64,
+                 "imagewidth":128,
                  "properties":[
                         {
                          "name":"movesLeft",
@@ -366,12 +372,21 @@
                          "value":2
                         }],
                  "type":"dreda"
+                }, 
+                {
+                 "id":10,
+                 "image":"..\/tilesets\/cats_tileset\/tigra.png",
+                 "imageheight":64,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"movesLeft",
+                         "type":"string",
+                         "value":"2"
+                        }],
+                 "type":"tigra"
                 }],
-         "tilewidth":228
-        }, 
-        {
-         "firstgid":61,
-         "source":"..\/tilesets\/cats.tsx"
+         "tilewidth":256
         }],
  "tilewidth":64,
  "type":"map",

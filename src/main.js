@@ -25,7 +25,7 @@ var config = {
           x: 0,
           y: 1200
            },  
-        debug: true
+        debug: false
       }
     }
   }
@@ -33,7 +33,7 @@ var config = {
 
   // global game options  
 let gameOptions = {
-  levels:8,
+  levels:15,
 }
 
 let loading_screen = null;
@@ -41,8 +41,8 @@ let loading_screen = null;
 let bg_music = null;
 let cursors;
 let game = new Phaser.Game(config);
-let new_play = true;
-let level = 7;
+let new_play = false;
+let level = 0;
 let controls;
 let pointer;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;
