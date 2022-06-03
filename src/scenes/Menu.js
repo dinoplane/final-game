@@ -14,6 +14,7 @@ class Menu extends Phaser.Scene {
 
 
         this.keySPACE.on('down', () => {
+            console.log("Hello")
             this.scene.get('transitionScene').transition();
             //this.scene.switch("playScene");
         });

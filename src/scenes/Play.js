@@ -21,6 +21,9 @@ class Play extends Phaser.Scene {
         this.resetDuration = Play.RESET_DURATION;
         this.isZoomed = false;
 
+        // Sounds
+        this.restartSfx = this.sound.add('restart');
+
         // Load Level
         this.background = this.levelLoader.loadBackground();
         this.ground = this.levelLoader.loadGround();
@@ -92,9 +95,11 @@ class Play extends Phaser.Scene {
         }); 
 
         // restart control
-        if (restarted){
+        if (restarted && !new_play){
             restarted = false;
+            new_play = false;
             this.cameras.main.flash();
+            this.restartSfx.play();
             this.input.keyboard.enabled = true;
             this.input.mouse.enabled = true;
         } else {
@@ -114,7 +119,7 @@ class Play extends Phaser.Scene {
 
 
     loadNextLevel(){
-        level = (level + 1) % gameOptions.levels;
+        level += 1;
         
         this.scene.get('transitionScene').transition();
         // var timer = this.time.delayedCall(500,  () => {

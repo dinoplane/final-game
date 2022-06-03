@@ -8,6 +8,7 @@ class Transition extends Phaser.Scene {
         let front = this.add.bitmapText(game.config.width/2, -back.height/2,'neptune', 'ploop').setOrigin(0.5,0.5)
         this.levelhead = this.add.container(0, 0, [back, front]).setActive(true).setVisible(true);
         this.loading_screen = this.add.image(game.config.width, 0, 'loading').setOrigin(0,0);
+        this.startSfx = this.sound.add('start');
         this.setUpTweens();
     };
 
@@ -29,15 +30,17 @@ class Transition extends Phaser.Scene {
             ease: 'Bounce.easeIn',
 
             onComplete: ()=> {
-                //Music control
-                if (bg_music == null){
-                    bg_music = this.sound.add('bg_music1', {
-                        loop: true,
-                        volume: 1,
-                    });
-                    bg_music.play()
-                }
+
                 if (this.scene.isActive('playScene')) {
+                    //Music control
+                    if (bg_music == null){
+                        bg_music = this.sound.add('bg_music1', {
+                            loop: true,
+                            volume: 1,
+                        });
+                        bg_music.play()
+                    }
+
                     let playscene = this.scene.get('playScene');
                     playscene.input.keyboard.enabled = true;
                     playscene.input.mouse.enabled = true;
@@ -49,25 +52,45 @@ class Transition extends Phaser.Scene {
             }
         });
 
+
+    }
+
+    transition(){
+
         this.close = this.tweens.create({
             targets: this.loading_screen,
             x: 0,
             duration: 1000,
             ease: 'Bounce.easeOut',
+            onStart: () => {
+                if (this.scene.isActive('menuScene')) {
+                    this.startSfx.play();
+                }
+            },
 
             onComplete: ()=> {
-                if (this.scene.isActive('menuScene')) {
-                    //this.scene.sleep('menuScene');
+
+                if (level == gameOptions.levels){ // No more levels.. end
+                    this.scene.get('playScene').scene.switch('endScene');
+                    bg_music.stop()
+                    bg_music = null;
+                } else if (this.scene.isActive('menuScene')) { // Menu to play
+                    level = 7;
+                    if (this.scene.isSleeping('playScene')) {
+                        new_play = true;
+                        this.scene.get('menuScene').scene.switch('playScene').restart();
+                    }
                     this.scene.get('menuScene').scene.switch('playScene');
+                    
+                } else if (this.scene.isActive('endScene')) { // end to menu
+                    this.scene.get('endScene').scene.switch('menuScene');
                 }
-                if (this.scene.isActive('playScene')) 
-                    this.scene.get('playScene').scene.restart();
+                else this.scene.get('playScene').scene.restart(); // play restart
+                 
                 this.open.play();
             }
         });
-    }
-
-    transition(){
+        
         this.close.play();
     }
 

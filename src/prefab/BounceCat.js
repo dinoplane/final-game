@@ -6,10 +6,13 @@ class BounceCat extends PlatformCat { // A cat that stretches
         
         this.body.setOffset(30, 85);
         this.setSize(this.displayWidth-30, this.displayHeight - 105, false);
+
+        this.bounceSfx = scene.sound.add('bounce');
     }
 
     onCollide(player){
         super.onCollide(player); // set a bouncing thing.
+        this.bounceSfx.play();
         for (let c of BounceCat.BOUNCE_CASES){
             if ((player.body.touching[c[1]] && this.body.touching[c[2]]) || 
                (player.body.touching[c[2]] && this.body.touching[c[1]])) {

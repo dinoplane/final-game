@@ -31,8 +31,6 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         this.sliding = false;
 
         // Controls
-
-
         this.keySPACE =this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.keySPACE.on('down', key =>{
             this.onJump();
@@ -78,6 +76,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         // Sounds
         this.jump_fx = scene.sound.add('jump');
         this.double_jump_fx = scene.sound.add('double_jump');
+        this.winSfx = scene.sound.add('win');
+
     }
     
     setUpParticles(){
@@ -133,6 +133,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             loop: true   
         });
     }
+
+
 
     setUpAnimations(){
         this.animations = [];
@@ -207,6 +209,54 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             });
             this.animations.push(a);
         }
+
+        let victoryFrames = [];
+        this.anims.generateFrameNames('miao_atlas', { 
+            prefix: 'miao_jump', 
+            start: 0, 
+            end: 3, 
+            suffix: '',
+            zeroPad: 3,
+            outputArray: victoryFrames
+        });
+        this.anims.generateFrameNames('miao_atlas', { 
+            prefix: 'miao_jump', 
+            start: 3, 
+            end: 4, 
+            suffix: '',
+            zeroPad: 3,
+            outputArray: victoryFrames
+        });
+        this.anims.generateFrameNames('miao_atlas', { 
+            prefix: 'miao_jump', 
+            start: 1, 
+            end: 3, 
+            suffix: '',
+            zeroPad: 3,
+            outputArray: victoryFrames
+        });
+        this.anims.generateFrameNames('miao_atlas', { 
+            prefix: 'miao_jump', 
+            start: 3, 
+            end: 5, 
+            suffix: '',
+            zeroPad: 3,
+            outputArray: victoryFrames
+        });
+        this.victory = this.anims.create({
+            key: 'miao_victory',
+            defaultTextureKey: 'miao__atlas',
+            frames: victoryFrames,
+            frameRate: 17,
+            // onComplete: () => {
+            //     console.log("Hello")
+            // }
+        });
+
+    }
+
+    victoryAnimation(){
+        
     }
 
     resetJumps(){
@@ -316,9 +366,31 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     onLevelComplete(){
         this.levelComplete = true;
         this.setAcceleration(0,0);
-        this.setVelocityX(0);
+        this.setVelocity(0);
+        this.isGrounded = true;
+        this.body.allowGravity = false;
         this.scene.input.keyboard.enabled = false;
-        this.scene.loadNextLevel();
+        this.scene.input.mouse.enabled = false;
+        this.winSfx.play();
+        this.on('animationupdate', (animation, frame) => {
+            let a  = (frame.index - 1);
+            if (a % 5 == 0){
+                this.setFlipX(a == 5);
+            }
+        });
+
+        this.on('animationcomplete', () => {
+            this.setTexture("miao_win");
+            this.scene.time.delayedCall(500, () => {
+                this.scene.loadNextLevel();
+            });
+        });
+        
+        this.play('miao_victory');
+
+        
+        
+        //this.scene.loadNextLevel();
        
         // let exit = this.scene.tweens.create({
         //     targets: this,
@@ -339,32 +411,34 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
     }
 
     update(){
-        if (this.platform instanceof PlatformCat){
-            // detect fall
-            if (!this.onPlatform()){
-                this.jumps += 1;
-                this.onLeavePlatform();
+        if (!this.levelComplete){
+            if (this.platform instanceof PlatformCat){
+                // detect fall
+                if (!this.onPlatform()){
+                    this.jumps += 1;
+                    this.onLeavePlatform();
+                }
             }
-        }
-        for (let set of this.controls){
-            for (let c of Player.CONTROL_CONFIG){
-                if (set[c.name].isDown)
-                    this.onXDown(c.arg)    
+            for (let set of this.controls){
+                for (let c of Player.CONTROL_CONFIG){
+                    if (set[c.name].isDown)
+                        this.onXDown(c.arg)    
+                }
             }
-        }
-        
-        if (!this.isGrounded) {
-            if (this.body.velocity.y > 0){
-                this.anims.play(this.isBrain()+"_fall");
-                this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
-            }
-        } else {
-            if (this.body.velocity.x == 0 && ["idle", "_run"].indexOf(this.anims.getName().slice(-4)) == -1){
-                this.anims.play(this.isBrain()+"_idle");
-                this.sliding = false;
-            }
-            if (this.sliding && !this.isRunning()){
-                this.anims.play(this.isBrain()+"_slide");
+            
+            if (!this.isGrounded) {
+                if (this.body.velocity.y > 0){
+                    this.anims.play(this.isBrain()+"_fall");
+                    this.setMaxVelocity(Player.MAX_V, Player.FALL_V);
+                }
+            } else {
+                if (this.body.velocity.x == 0 && ["idle", "_run"].indexOf(this.anims.getName().slice(-4)) == -1){
+                    this.anims.play(this.isBrain()+"_idle");
+                    this.sliding = false;
+                }
+                if (this.sliding && !this.isRunning()){
+                    this.anims.play(this.isBrain()+"_slide");
+                }
             }
         }
     }

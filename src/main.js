@@ -13,7 +13,7 @@ var config = {
     type: Phaser.CANVAS ,
     width: 1280,
     height: 640,
-    scene: [Load, Menu,  Play, Transition],
+    scene: [Load, Menu, Play, End, Transition],
    roundPixels: true,
     render: {
       pixelArt: true
@@ -25,7 +25,7 @@ var config = {
           x: 0,
           y: 1200
            },  
-        debug: false
+        debug: true
       }
     }
   }
@@ -41,9 +41,8 @@ let loading_screen = null;
 let bg_music = null;
 let cursors;
 let game = new Phaser.Game(config);
-let borderUISize = game.config.height / 15;
-let borderPadding = borderUISize / 3;
-let level = 0;
+let new_play = true;
+let level = 7;
 let controls;
 let pointer;
 let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;
