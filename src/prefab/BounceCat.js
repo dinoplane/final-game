@@ -5,7 +5,7 @@ class BounceCat extends PlatformCat { // A cat that stretches
         super(scene, x, y, texture, data);
         
         this.body.setOffset(30, 85);
-        this.setSize(this.displayWidth-30, this.displayHeight - 105, false).setDepth();
+        this.setSize(this.displayWidth-30, this.displayHeight - 105, false);
 
         this.bounceSfx = scene.sound.add('bounce');
     }

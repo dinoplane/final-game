@@ -57,6 +57,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
                     this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
                     this.rider.setVelocityY(-Player.SPRING_V);
                     this.rider.isGrounded = false;
+                    this.rider.jumps = 1;
                     this.rider.play(this.rider.isBrain()+"_hop");
                 }
                 this.spring.play();
