@@ -10,6 +10,15 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
         this.y = y;
         this.oneUse = data["oneUse"];
         this.isUsed = false;
+        if (this.oneUse > 0){
+            this.useTimer = this.scene.time.addEvent({
+                delay: 500,                // ms
+                callback: this.reset,
+                //args: [],
+                callbackScope: this,
+                loop: true
+            });
+        }
 
         this.elements = [];
         this.parseElements(this.scanElements(data["elements"]));
@@ -80,12 +89,6 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
-            onUpdate: () => {
-
-            },
-            onComplete: () => {
-
-            }
         });
 
         this.disappear = this.scene.tweens.create({
@@ -96,31 +99,37 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
-            onUpdate: () => {
-
-            },
-            onComplete: () => {
-
-            }
         });
     }
 
+    reset(){
+        this.isUsed = false;
+        this.disappear.play();
+        this.useTimer.paused = true;
+    }
+
     onOverlapStart(){
-        if (!(this.oneUse && this.isUsed))
+        if (!(this.oneUse == 0 && this.isUsed))
             this.appear.play();
+            if (this.oneUse > 0) {
+                this.useTimer.paused = true
+                this.useTimer.delay = this.oneUse;
+            };
     }
 
     onOverlapEnd(){
-        if (!(this.oneUse && this.isUsed)){
+        if (!(this.oneUse == 0 && this.isUsed)){
             this.isUsed = true;
-            this.disappear.play();
+
+            if (this.oneUse > 0) this.useTimer.paused = false;
+            else this.disappear.play();
         }
     }
 
     update() {
         var touching =  !this.range.body.touching.none || this.range.body.embedded;
         var wasTouching = !this.range.body.wasTouching.none;
-
+        if (this.oneUse > 0) console.log(this.useTimer.delay);
         if (touching && !wasTouching && !this.isTouching) this.range.emit("overlapstart");
         else if (!touching && wasTouching && this.isTouching) this.range.emit("overlapend");
     }

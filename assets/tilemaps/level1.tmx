@@ -84,7 +84,7 @@
   <tile id="5" type="RangeElement">
    <properties>
     <property name="elements" value="'Use ', keyboard"/>
-    <property name="oneUse" type="bool" value="false"/>
+    <property name="oneUse" type="int" value="-1"/>
     <property name="rangeHeight" type="int" value="150"/>
     <property name="rangeOffsetX" type="int" value="0"/>
     <property name="rangeOffsetY" type="int" value="0"/>

@@ -225,6 +225,49 @@
                 {
                  "id":3,
                  "type":"player"
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Use ', keyboard"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"int",
+                         "value":-1
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
+                        }],
+                 "type":"RangeElement"
+                }, 
+                {
+                 "id":10,
+                 "probability":0.1
+                }, 
+                {
+                 "id":14,
+                 "probability":0.1
                 }],
          "tilewidth":64
         }, 

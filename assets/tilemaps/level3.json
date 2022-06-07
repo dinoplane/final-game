@@ -34,8 +34,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":true
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",
@@ -134,8 +134,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":1538,
-                 "y":108
+                 "x":1542,
+                 "y":190
                 }, 
                 {
                  "gid":2,
@@ -482,8 +482,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",
