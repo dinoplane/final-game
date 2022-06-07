@@ -7,6 +7,7 @@ class Load extends Phaser.Scene { // First time load
     preload(){
         this.load.image("player", "./assets/images/player.png");
         this.load.image("food", "./assets/images/food.png");
+        this.load.image("token", "./assets/images/token.png");
         this.load.image("title", "./assets/images/startmenu.png");
         this.load.image('end', './assets/images/end.png');
         this.load.image('credits', './assets/images/credits.png');

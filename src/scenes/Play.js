@@ -98,7 +98,6 @@ class Play extends Phaser.Scene {
         if (restarted && !new_play){
             restarted = false;
             new_play = false;
-            console.log("I came here")
             this.cameras.main.flash();
             this.restartSfx.play();
             this.input.keyboard.enabled = true;
@@ -109,9 +108,8 @@ class Play extends Phaser.Scene {
             this.input.mouse.enabled = false;
         }
 
-
-
-
+        this.scene.get('transitionScene').updateFood(this.objects.food.length);
+        
     }
 
     onGameOver(){

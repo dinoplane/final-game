@@ -16,7 +16,8 @@ class Food extends Phaser.Physics.Arcade.Sprite {
             this.visible = false;
             this.body.checkCollision.none = true;
             player.incrementFood(); 
-            this.pickup.play();   
+            this.pickup.play();
+            this.scene.events.emit('food_pickup');
         }
     }
 

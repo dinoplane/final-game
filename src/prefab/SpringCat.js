@@ -41,9 +41,6 @@ class SpringCat extends PlatformCat { // A cat that stretches
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
-            onStart: () => {
-                console.log("HELLO")
-            },
             onUpdate: () => {
                  if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;

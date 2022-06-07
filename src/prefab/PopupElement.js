@@ -129,7 +129,7 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
     update() {
         var touching =  !this.range.body.touching.none || this.range.body.embedded;
         var wasTouching = !this.range.body.wasTouching.none;
-        if (this.oneUse > 0) console.log(this.useTimer.delay);
+        //if (this.oneUse > 0) console.log(this.useTimer.delay);
         if (touching && !wasTouching && !this.isTouching) this.range.emit("overlapstart");
         else if (!touching && wasTouching && this.isTouching) this.range.emit("overlapend");
     }

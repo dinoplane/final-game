@@ -44,8 +44,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":456.311,
-                 "y":382.906
+                 "x":1147.18103222342,
+                 "y":125.118674543502
                 }, 
                 {
                  "gid":2,
@@ -56,8 +56,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":227.270690655209,
-                 "y":374.81383566058
+                 "x":76.0357690655209,
+                 "y":130.775331901182
                 }, 
                 {
                  "gid":2,
@@ -68,8 +68,8 @@
                  "type":"food",
                  "visible":true,
                  "width":64,
-                 "x":776.337,
-                 "y":380.423
+                 "x":575.262886143931,
+                 "y":143.258660580021
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -91,7 +91,7 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":0
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"luna",
@@ -109,68 +109,14 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":2
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"dreda",
                  "visible":true,
                  "width":204,
-                 "x":171.254564983888,
-                 "y":269.038668098818
-                }, 
-                {
-                 "gid":60,
-                 "height":50,
-                 "id":55,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"dreda",
-                 "visible":true,
-                 "width":204,
-                 "x":353.424274973147,
-                 "y":444.334049409237
-                }, 
-                {
-                 "gid":60,
-                 "height":50,
-                 "id":56,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"dreda",
-                 "visible":true,
-                 "width":204,
-                 "x":594.025778732546,
-                 "y":564.634801288937
-                }, 
-                {
-                 "gid":51,
-                 "height":53,
-                 "id":57,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"biscuit",
-                 "visible":true,
-                 "width":215,
-                 "x":487.629430719656,
-                 "y":212.606874328679
+                 "x":415.293668098818,
+                 "y":492.454682062299
                 }, 
                 {
                  "gid":51,
@@ -181,32 +127,14 @@
                         {
                          "name":"movesLeft",
                          "type":"int",
-                         "value":2
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"biscuit",
                  "visible":true,
                  "width":215,
-                 "x":958.520945220193,
-                 "y":336.344790547798
-                }, 
-                {
-                 "gid":59,
-                 "height":85,
-                 "id":59,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"movesLeft",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"quinn",
-                 "visible":true,
-                 "width":127,
-                 "x":189.631578947368,
-                 "y":570.604726100967
+                 "x":917.27502792696,
+                 "y":461.801498388829
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -244,7 +172,7 @@
         {
          "name":"name",
          "type":"string",
-         "value":"t 11: Dreda, Quinn, and Biscuit"
+         "value":"Act 11: The Beta Cats"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",

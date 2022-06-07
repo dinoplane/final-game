@@ -21,6 +21,7 @@ var config = {
     physics: {
       default: 'arcade',
       arcade: {
+        tileBias: 32,
         gravity: {
           x: 0,
           y: 1200

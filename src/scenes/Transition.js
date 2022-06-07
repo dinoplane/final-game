@@ -4,12 +4,22 @@ class Transition extends Phaser.Scene {
     }
 
     create(){
+        this.token = this.add.image(16, 16, 'token').setOrigin(0,0).setVisible(false);
+        this.foodsLeft = 0;
+        this.tokentext = this.add.bitmapText(this.token.x+this.token.width, this.token.y, 'neptune', 'x4', 48)
+                                                .setOrigin(0,0).setVisible(false);
+
         let back = this.add.image(0,0, 'levelhead').setOrigin(0,1);
         let front = this.add.bitmapText(game.config.width/2, -back.height/2,'neptune', 'ploop').setOrigin(0.5,0.5)
         this.levelhead = this.add.container(0, 0, [back, front]).setActive(true).setVisible(true);
         this.loading_screen = this.add.image(game.config.width, 0, 'loading').setOrigin(0,0);
         this.startSfx = this.sound.add('start');
         this.setUpTweens();
+
+        this.scene.get('playScene').events.on("food_pickup", () => {
+            this.updateFood();
+        });
+
     };
 
     setUpTweens(){
@@ -17,7 +27,7 @@ class Transition extends Phaser.Scene {
             targets: this.levelhead,
             y: this.levelhead.getAt(0).height  ,
             duration: 500,
-            hold: 2000,
+            hold: 3000,
             ease: 'Sine.easeInOut',
             yoyo: true
         });
@@ -74,8 +84,12 @@ class Transition extends Phaser.Scene {
                     this.scene.get('playScene').scene.switch('endScene');
                     bg_music.stop()
                     bg_music = null;
+                    this.token.setVisible(false);
+                    this.tokentext.setVisible(false);
                 } else if (this.scene.isActive('menuScene')) { // Menu to play
                     level = 0;
+                    this.token.setVisible(true);
+                    this.tokentext.setVisible(true);
                     if (this.scene.isSleeping('playScene')) {
                         new_play = true;
                         this.scene.get('menuScene').scene.switch('playScene').restart();
@@ -84,9 +98,10 @@ class Transition extends Phaser.Scene {
                     
                 } else if (this.scene.isActive('endScene')) { // end to menu
                     this.scene.get('endScene').scene.switch('menuScene');
+                } else { // play restart
+                    this.scene.get('playScene').scene.restart();
                 }
-                else this.scene.get('playScene').scene.restart(); // play restart
-                 
+
                 this.open.play();
             }
         });
@@ -94,7 +109,12 @@ class Transition extends Phaser.Scene {
         this.close.play();
     }
 
-    
+    updateFood(food){
 
-    
+        if (arguments.length == 0) this.foodsLeft -= 1;
+        else if (arguments.length == 1) this.foodsLeft = food;
+
+        this.tokentext.text = "x"+this.foodsLeft;
+        console.log(this.foodsLeft)
+    }
 }
