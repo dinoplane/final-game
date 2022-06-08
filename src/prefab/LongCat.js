@@ -6,7 +6,7 @@ class LongCat extends PlatformCat { // A cat that stretches
         this.setSize(this.displayWidth-30, this.displayHeight - 20, false);
 
         this.scaleY = data["init_scale"]; // initial scale
-        this.stretch = this.scene.tweens.create({
+        this.stretch = this.scene.tweens.create({ // Stretching is repeated with hold
             targets: this,
             scaleY: data["end_scale"], // target scale
             duration:2000,
@@ -16,7 +16,7 @@ class LongCat extends PlatformCat { // A cat that stretches
             yoyo: true,
             ease: 'Sine.easeInOut',
             
-            onUpdate: () => {
+            onUpdate: () => { // Player stay on the cat!
                  if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }

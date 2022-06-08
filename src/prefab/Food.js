@@ -11,7 +11,7 @@ class Food extends Phaser.Physics.Arcade.Sprite {
         this.pickup = scene.sound.add('pickup_food');
     }
 
-    onCollide(player){
+    onCollide(player){  // Player collects
         if (this.visible){
             this.visible = false;
             this.body.checkCollision.none = true;

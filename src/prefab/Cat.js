@@ -54,7 +54,7 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
 
     }
 
-    static createThoughts(scene){
+    static createThoughts(scene){   // Show me the number of moves left!
         let thought_pic = scene.add.image(0,0, 'thought').setOrigin(0.5, 0.5).setScale(1.5);
         let moves = scene.add.bitmapText(thought_pic.x+7, thought_pic.y-1, 'lavender', "4567").setOrigin(0.5, 0.5);
         Cat.THOUGHTS = scene.add.container(400,400, [thought_pic, moves]).setDepth(6);
@@ -111,7 +111,6 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
     onDragStart(){  // OwO you grab me!
         if (this.isSelectable() && !this.isTouching() && !this.selected){
             let i = Cat.P2C_COLLIDER.object2.indexOf(this);
-            //let j = Cat.P2C_OVERLAP.object2.indexOf(this);
                         
             Cat.P2C_COLLIDER.object2.splice(i,1);
             Cat.P2C_OVERLAP.collideCallback = (player, cat) => {
@@ -253,22 +252,21 @@ class Cat extends Phaser.Physics.Arcade.Sprite {
             this.startSleeping();
             this.setTexture("cats_atlas", this.name + "_uwu");
         } else if (this.isSleepy()){
-            //this.startSleeping();
             this.setTexture("cats_atlas", this.name);
         } else this.setTexture("cats_atlas", this.name);  
     }
 
     update(){
-        if (this.my_friends.length > 0){
+        if (this.my_friends.length > 0){ // Check each friend!
             this.my_friends.forEach((cat) => {this.checkFriend(cat);})
         }
 
-        if (this.zzz != null){
+        if (this.zzz != null){  // sleepy moves
             this.zzz.x = this.x + this.displayWidth;
             this.zzz.y = this.y - this.displayHeight
         }
     
-        if (pointer.primaryDown && this.selected){
+        if (pointer.primaryDown && this.selected){ // Start dragging. Cat will move while camera is moving!!!
             pointer = pointer.updateWorldPoint(this.scene.cameras.main);
             this.whileDrag(pointer.worldX, pointer.worldY);
         }

@@ -1,4 +1,4 @@
-class End extends Phaser.Scene {
+class End extends Phaser.Scene { // Ending Screen
     constructor() {
         super("endScene");
     }
@@ -12,14 +12,9 @@ class End extends Phaser.Scene {
         
         this.keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-
-        this.keySPACE.on('down', () => {
+        this.keySPACE.on('down', () => { // Click space to go back to menu
             level += 1;
             this.scene.get('transitionScene').transition();
-            //this.scene.switch("playScene");
         });
-
-    
-
     }
 }

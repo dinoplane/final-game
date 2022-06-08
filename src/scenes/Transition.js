@@ -79,7 +79,6 @@ class Transition extends Phaser.Scene {
             },
 
             onComplete: ()=> {
-
                 if (level == gameOptions.levels){ // No more levels.. end
                     this.scene.get('playScene').scene.switch('endScene');
                     bg_music.stop()
@@ -87,7 +86,7 @@ class Transition extends Phaser.Scene {
                     this.token.setVisible(false);
                     this.tokentext.setVisible(false);
                 } else if (this.scene.isActive('menuScene')) { // Menu to play
-                    level = 6;
+                    level = 0;
                     this.token.setVisible(true);
                     this.tokentext.setVisible(true);
                     if (this.scene.isSleeping('playScene')) {
@@ -110,7 +109,6 @@ class Transition extends Phaser.Scene {
     }
 
     updateFood(food){
-
         if (arguments.length == 0) this.foodsLeft -= 1;
         else if (arguments.length == 1) this.foodsLeft = food;
 

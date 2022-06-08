@@ -3,8 +3,8 @@
 // Arrian Chi
 
 // Final Game
-// Completed: 
-// Time taken: 
+// Completed: 6/7/2022
+// Time taken: LOTS
 
 'use strict';
 
@@ -46,5 +46,4 @@ let new_play = false;
 let level = 0;
 let controls;
 let pointer;
-let keyF, keyR, keyLEFT, keyRIGHT, keySPACE, keyUP, keyENTER;
 let restarted = false;

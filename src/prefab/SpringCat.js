@@ -7,8 +7,8 @@ class SpringCat extends PlatformCat { // A cat that stretches
         this.body.setOffset(10, 11);
         this.setSize(this.displayWidth-30, this.displayHeight - 20, false);
 
-        this.springSfx = scene.sound.add('spring');
-        this.compressSfx = scene.sound.add('compress');
+        this.springSfx = scene.sound.add('spring', {volume: 0.5});
+        this.compressSfx = scene.sound.add('compress', {volume: 0.5});
         this.spring = this.scene.tweens.create({
             targets: this,
             scaleY:1,
@@ -41,7 +41,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
             ease: 'Sine.easeInOut',
             //easeParams: [ 3.5 ],
             //delay: 1000,
-            onUpdate: () => {
+            onUpdate: () => {   // Make the player stay on the cat!
                  if (this.rider != null && this.body.top < this.scene.levelLoader.getMapHeight() -65){
                      this.rider.y = this.body.top;
                  }
@@ -51,7 +51,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
                     Cat.THOUGHTS.y = this.body.top;
                  }
             },
-            onComplete: () => {
+            onComplete: () => { // Fling the player if they are on
                 
                 if (this.rider != null && !this.compress.isPlaying() && !this.spring.isPlaying() &&  this.body.top < this.scene.levelLoader.getMapHeight() -65){
                     this.setMaxVelocity(Player.MAX_V, Player.SPRING_V);
@@ -67,7 +67,7 @@ class SpringCat extends PlatformCat { // A cat that stretches
 
     }
 
-    onCollide(player){
+    onCollide(player){  // Start to compress
         super.onCollide(player);
         if (player.body.touching.down && this.body.touching.up && !this.compress.isPlaying() && !this.spring.isPlaying()) {
             this.compressSfx.play();

@@ -1,4 +1,4 @@
-class CatSoul extends Phaser.Physics.Arcade.Sprite {
+class CatSoul extends Phaser.Physics.Arcade.Sprite { // Used for the cat's before image
     constructor(cat){
         super(cat.scene, cat.x, cat.y, "cats_atlas", cat.name+"_owo");
         
@@ -7,10 +7,7 @@ class CatSoul extends Phaser.Physics.Arcade.Sprite {
         this.body.allowGravity = false;
         this.setImmovable(true);
 
-
         this.name = cat.name;
         this.alpha = 0.25;
-
-
     }
 }

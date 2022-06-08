@@ -134,8 +134,6 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         });
     }
 
-
-
     setUpAnimations(){
         this.animations = [];
         for (let i = 0; i < 2; i++){
@@ -255,13 +253,8 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
 
     }
 
-    victoryAnimation(){
-        
-    }
-
     resetJumps(){
         this.jumps = 0;
-        
     }
 
     incrementFood(){
@@ -328,7 +321,6 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
             this.platform.rider = null;
         }
 
-        
         this.setMaxVelocity(Player.MAX_V, Player.JUMP_V);
         this.platform = null;
     }
@@ -358,11 +350,9 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
                 if (this.anims.getName().slice(-4) == "idle") this.anims.play(this.isBrain()+"_run");
             }
         }
-
-
     }
 
-    onLevelComplete(){
+    onLevelComplete(){ // Dance!
         this.levelComplete = true;
         this.setAcceleration(0,0);
         this.setVelocity(0);
@@ -386,23 +376,6 @@ class Player extends Phaser.Physics.Arcade.Sprite { // Camera flash on restart
         });
         
         this.play('miao_victory');
-
-        
-        
-        //this.scene.loadNextLevel();
-       
-        // let exit = this.scene.tweens.create({
-        //     targets: this,
-        //     alpha: 0,
-        //     duration: 1000,
-        //     ease: 'Cubic.easeInOut',
-        //     //easeParams: [ 3.5 ],
-        //     //delay: 1000,
-        //     onComplete: () => {  
-                
-        //     },
-        // });
-        // exit.play();
     }
 
     onPlatform(){ // accommodate for differ

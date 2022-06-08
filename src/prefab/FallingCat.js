@@ -1,10 +1,9 @@
 class FallingCat extends PlatformCat { // A cat that falls
     constructor(scene, x, y, texture, data){
         super(scene, x, y, texture, data);
-
     }
 
-    onCollide(player){
+    onCollide(player){  // I fall when you touch me
         super.onCollide(player);
 
         this.setInteractive(false);
@@ -12,15 +11,12 @@ class FallingCat extends PlatformCat { // A cat that falls
         this.selectsLeft = 0;
         this.checkSleep();
         this.setAccelerationY(100);
-        this.body.checkCollision.down = false;
+        this.body.checkCollision.down = false; // Elegance
     }
 
-    onOverlap(player){
+    onOverlap(player){  // If somehow you get into me
         if (!this.selected && this.body.checkCollision.down){
-        //if (player.y + player.height < this.y){
-            //player.setVelocityY(0);
             player.y = this.body.y;
-        //}
         }
     }
 }

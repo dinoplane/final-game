@@ -24,7 +24,7 @@ class LevelLoader {
         this.map.addTilesetImage("ground_tileset", "ground_tileset_image");
     }
 
-    cleanInput(data){
+    cleanInput(data){ // Convert properties to form name: value
         let ret = {};
         for (let d of data){
             ret[d.name] = d.value;
@@ -38,7 +38,7 @@ class LevelLoader {
             return "";
     }
 
-    loadLevel(){
+    loadLevel(){    // parse and return
         let food_array = [];
         let cat_array = [];
         let popup_array = [];

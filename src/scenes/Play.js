@@ -5,7 +5,6 @@ class Play extends Phaser.Scene {
     constructor(){
         super("playScene");
         this.VELOCITY = 200;
-
     }
 
     create(){
@@ -88,7 +87,7 @@ class Play extends Phaser.Scene {
             else this.moveCam();
         }); 
 
-        // 
+        // Graders
         this.keyP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
         this.keyP.on('down', (key) => {
             this.loadNextLevel();
@@ -108,31 +107,19 @@ class Play extends Phaser.Scene {
             this.input.mouse.enabled = false;
         }
 
+        // Set food
         this.scene.get('transitionScene').updateFood(this.objects.food.length);
         
     }
 
-    onGameOver(){
-    }
-    
-
-
     loadNextLevel(){
         level += 1;
-        
         this.scene.get('transitionScene').transition();
-        // var timer = this.time.delayedCall(500,  () => {
-        //     this.scene.restart();
-        // });
-
-        // })
-        
     }
 
     moveCam() {
         if (!this.isZoomed){
             this.cameras.main.startFollow(this.player, true);
-            //this.background.scrollFactorX = 0.5;
             this.cameras.main.zoomTo(1, this.resetDuration, Play.CAMERA_TWEEN, false);
             this.tweens.create({
                 targets: this.background,
@@ -148,7 +135,6 @@ class Play extends Phaser.Scene {
 
     resetCam() {
         if (this.isZoomed){
-            //this.isZoomed  = false;
             // stop following game objects
             this.cameras.main.stopFollow();
             
@@ -159,8 +145,7 @@ class Play extends Phaser.Scene {
             let f = game.config.width / this.levelLoader.getMapWidth(); 
             let g = game.config.height / this.levelLoader.getMapHeight();
             let z = Math.min(f, g);
-            //this.background.scrollFactorX = 1;
-            //this.background.setScale(1);
+
             this.tweens.create({
                 targets: this.background,
                 scrollFactorX: 0,
@@ -169,7 +154,6 @@ class Play extends Phaser.Scene {
                 ease: Play.CAMERA_TWEEN,
                 onUpdate: ()=> {}
             }).play();
-            // this.background.setScrollFactor(1, 1)
             //zoom out
             this.cameras.main.zoomTo(z, this.resetDuration, Play.CAMERA_TWEEN, false);
         }
@@ -183,8 +167,8 @@ class Play extends Phaser.Scene {
     }
 
 
-    update(time, delta){
-        if (this.player.food == this.foodNum && !this.levelComplete){
+    update(){
+        if (this.player.food == this.foodNum && !this.levelComplete){ 
             this.levelComplete = true;
             this.player.onLevelComplete();
         }
@@ -196,20 +180,6 @@ class Play extends Phaser.Scene {
         this.objects.popups.forEach((popup) => {
             popup.update();
         });
-
-    //     this.te.setText([
-    //         'x: ' + pointer.x,
-    //         'y: ' + pointer.y,
-    //         'mid x: ' + pointer.midPoint.x,
-    //         'mid y: ' + pointer.midPoint.y,
-    //         'velocity x: ' + pointer.velocity.x,
-    //         'velocity y: ' + pointer.velocity.y,
-    //         'movementX: ' + pointer.movementX,
-    //         'movementY: ' + pointer.movementY,
-    //         'world x: ' + pointer.worldX,
-    //         'world y: ' + pointer.worldY,
-    //     ]);
-    // }
     }
 }
 
