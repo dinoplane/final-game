@@ -103,7 +103,7 @@
   <object id="83" gid="6" x="388" y="448" width="64" height="64">
    <properties>
     <property name="elements" value="'Moving cats make them... zzz. '"/>
-    <property name="oneUse" type="int" value="-1"/>
+    <property name="oneUse" type="int" value="0"/>
     <property name="rangeOffsetX" type="int" value="-150"/>
     <property name="rangeOffsetY" type="int" value="150"/>
     <property name="rangeWidth" type="int" value="300"/>

@@ -16,7 +16,8 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
                 callback: this.reset,
                 //args: [],
                 callbackScope: this,
-                loop: true
+                loop: true,
+                paused: true
             });
         }
 
@@ -110,7 +111,7 @@ class PopupElement { // Takes in an element and tweens it when the player is in 
 
     onOverlapStart(){
         if (!(this.oneUse == 0 && this.isUsed))
-            this.appear.play();
+            if (!(this.oneUse > 0 && !this.useTimer.paused)) this.appear.play();
             if (this.oneUse > 0) {
                 this.useTimer.paused = true
                 this.useTimer.delay = this.oneUse;

@@ -113,12 +113,13 @@
   <object id="75" gid="6" x="704" y="780" width="64" height="64">
    <properties>
     <property name="elements" value="'Use ', up, ' ', W, ' or ', space, ' to jump!'"/>
-    <property name="oneUse" type="int" value="-1"/>
+    <property name="oneUse" type="int" value="1000"/>
    </properties>
   </object>
   <object id="83" gid="6" x="1222.55" y="746.788" width="64" height="64">
    <properties>
     <property name="elements" value="'Collect all the ', food ,' to complete the level!'"/>
+    <property name="oneUse" type="int" value="1000"/>
     <property name="rangeOffsetY" type="int" value="150"/>
    </properties>
   </object>

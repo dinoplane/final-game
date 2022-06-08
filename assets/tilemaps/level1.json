@@ -46,8 +46,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",
@@ -426,8 +426,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",

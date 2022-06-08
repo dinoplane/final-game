@@ -46,8 +46,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",
@@ -67,14 +67,14 @@
                         {
                          "name":"rangeWidth",
                          "type":"int",
-                         "value":300
+                         "value":150
                         }],
                  "rotation":0,
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
                  "x":346.788,
-                 "y":459.273
+                 "y":457.799160648489
                 }, 
                 {
                  "gid":6,
@@ -85,12 +85,12 @@
                         {
                          "name":"elements",
                          "type":"string",
-                         "value":"'Press ', R, ' to restart.'"
+                         "value":"'And press ', R, ' to restart.'"
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":0
                         }, 
                         {
                          "name":"rangeHeight",
@@ -100,7 +100,7 @@
                         {
                          "name":"rangeOffsetX",
                          "type":"int",
-                         "value":0
+                         "value":200
                         }, 
                         {
                          "name":"rangeOffsetY",
@@ -116,8 +116,51 @@
                  "type":"RangeElement",
                  "visible":true,
                  "width":64,
-                 "x":846.408253500368,
-                 "y":466.782608695652
+                 "x":438.15449963154,
+                 "y":454.992285187915
+                }, 
+                {
+                 "gid":6,
+                 "height":64,
+                 "id":89,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"elements",
+                         "type":"string",
+                         "value":"'Use ', rclick, ' to cancel!'"
+                        }, 
+                        {
+                         "name":"oneUse",
+                         "type":"int",
+                         "value":-1
+                        }, 
+                        {
+                         "name":"rangeHeight",
+                         "type":"int",
+                         "value":150
+                        }, 
+                        {
+                         "name":"rangeOffsetX",
+                         "type":"int",
+                         "value":110
+                        }, 
+                        {
+                         "name":"rangeOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"rangeWidth",
+                         "type":"int",
+                         "value":150
+                        }],
+                 "rotation":0,
+                 "type":"RangeElement",
+                 "visible":true,
+                 "width":64,
+                 "x":346.776713338246,
+                 "y":455.840825350037
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -273,7 +316,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":89,
+ "nextobjectid":90,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -315,8 +358,8 @@
                         }, 
                         {
                          "name":"oneUse",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":-1
                         }, 
                         {
                          "name":"rangeHeight",
