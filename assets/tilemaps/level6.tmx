@@ -113,7 +113,11 @@
   <object id="76" gid="57" x="0" y="576" width="132" height="65"/>
   <object id="77" gid="58" x="832" y="256" width="157" height="96"/>
   <object id="78" gid="54" x="384" y="576" width="228" height="168"/>
-  <object id="79" gid="55" x="192" y="576" width="83" height="351"/>
+  <object id="79" gid="55" x="192" y="576" width="83" height="351">
+   <properties>
+    <property name="init_scale" type="float" value="1.1"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="Player">
   <object id="46" gid="4" x="0" y="512" width="64" height="64"/>
