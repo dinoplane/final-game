@@ -87,7 +87,7 @@ class Transition extends Phaser.Scene {
                     this.token.setVisible(false);
                     this.tokentext.setVisible(false);
                 } else if (this.scene.isActive('menuScene')) { // Menu to play
-                    level = 6;
+                    level = 0;
                     this.token.setVisible(true);
                     this.tokentext.setVisible(true);
                     if (this.scene.isSleeping('playScene')) {
